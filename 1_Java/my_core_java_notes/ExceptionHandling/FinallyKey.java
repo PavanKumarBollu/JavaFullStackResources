@@ -1,0 +1,63 @@
+class FinallyKey
+{
+	public static void main(String[] args) 
+	{
+		
+		//Case 1 when there is no exception.
+		try
+		{
+			//System.out.println("Try Block");
+		}
+		catch (Exception e)
+		{
+			//System.out.println("Catch Block");
+		}
+		finally{
+			//System.out.println("Finally Block Block");
+		}
+
+		//case 2 when there is a exception
+		try
+		{	
+			//System.out.println(10/0);
+			//System.out.println("Try Block");
+		}
+		catch (Exception e)
+		{
+			//System.out.println("Catch Block");
+		}
+		finally{
+		//	System.out.println("Finally Block Block");
+		}
+
+		System.out.println();
+
+
+		//case 3
+		try
+		{	
+			//System.out.println(10/0);
+			//System.out.println("Try Block");
+		}finally{
+			//System.out.println("Finally Block Block");
+		}
+
+		//without try we can't write the finally block.
+
+		try
+		{
+			System.out.println(10/0);
+			System.out.println("try Block");
+			//if there is any lines of code is there after the exception then those lines of code will never execute.
+		}
+		catch (Exception e)// Exception e = new Exception 
+		{
+			System.out.println("Catch Block");
+			System.exit(0);// shutting down the JVM.
+		}
+		finally{
+			System.out.println("Finally Block");
+		}
+
+	}
+}

@@ -1,0 +1,24 @@
+class Palindrome
+{
+	public static void main(String[] args) 
+	{
+		String name = "Nitin";
+		String res = "";
+
+		for(int i = name.length()-1; i >=0; i--){
+			res += "" + name.charAt(i);
+		}
+		System.out.println(name);
+		System.out.println(res);
+
+		if(name.equalsIgnoreCase(res))
+		{
+			System.out.println("palindrome");
+
+		}
+		else
+		{
+			System.out.println("Not Palindrom");
+		}
+	}
+}

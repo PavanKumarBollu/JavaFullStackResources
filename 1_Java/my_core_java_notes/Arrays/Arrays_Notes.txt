@@ -1,0 +1,308 @@
+Arrays
+======
+-Arrays Defination and Advantage and DisAdvantages
+-Array declarations.
+	-Array Construction
+	-Rules To follow While Creating a Arrays
+	-Default Values of the Arrays
+	-Shortcut of way declartion,construction,initialisation in single line
+-Two Dimentional ArrayDeclaration
+-Ananomyous Array
+-Usage of ananomyous array internally by jvm
+-How to check the class of the perticuler array type.
+-Usage of Arrays Inbuilt class
+
+
+
+
+Arrays Defination and Advantage and DisAdvantages
+=================================================
+Storing the collection of similer data by under the single variable name.
+
+   It refers to index collection of fixed no of homogenous data elements.
+   Single variable holding mulitple values which imporves readability of the program.
+
+
+Disadvntages
+  1. once we create the size cannot be increased/decreased.
+  2. It stores only homogenous data elements.
+
+
+Array declarations
+==================
+  Single Dimension Array
+
+Declaration of array
+====================
+ int[] a;//recomended to use as variable is seperated from type.
+ int a[];
+ int []a;
+
+int[6] a; // compile time error. we cannot specify the size.
+
+
+Array Construction
+==================
+   Every array in java is an object hence we create using new operator.
+
+example
+---------
+
+   int[]  a;
+   a=new int[5];
+
+      or
+   int[] a =new int[5];
+
+For every type corresponding classes are available but these classes are part of java language
+but not applicable at the programmer level.
+    int[]    [I
+    float[]  [F
+    double[] [D
+
+
+Rules To follow While Creating a Arrays
+=======================================
+
+Rule1::
+   At the time of Array construction compulsorily we should specify the size.
+   example::
+         int[] a=new int[5];
+         int[] a =new int[];//ce:: array dimension is missing.
+
+Rule2::
+  It is legal to have an array with size zero.
+     example::
+          int[] a =new int[0];
+          System.out.println(a.length);
+
+Rule3::
+   If we declare an array with negative size it would result in Negative Array size exception.
+       example::
+            int[] a=new int[-5]; //NegativeArraySizeException.
+
+Rule4::
+   The allowed datatypes to specify the size are byte,short,int,char.
+        example::
+             int[] a =new int[5];
+
+             byte b=10;
+             int[] a =new int[b];//valid
+
+             short s=25;
+             int[] a =new int[s];//valid
+
+             char c='A';
+             int[] a=new int[c];//valid
+
+	     int[] a=new int[10L];//CE
+	     int[] a=new int[3.5f];//CE
+
+
+Rule5:: The maximum allowed array size in java is maximum value of int size.
+    int[] a=new int[2147483647]; //but valid:: OutOfMemoryError 
+     int[] a=new int[2147483648]; //CE
+
+
+Default Values of the Arrays
+=============================
+Since arrays are treated as objects,internally based on the type of data we keep inside array
+  JVM will keep default values.
+     eg::int[] a =new int[5];
+         System.out.println(a);//[I@....
+         System.out.println(a[0]);//0
+
+     eg2:: int[] a=new int[4];
+           a[0]=10; a[1]=20; a[2]=30;
+           System.out.println(a[3]); //0
+           System.out.println(a[4]); //ArrayIndexOutOfBoundsException.
+           System.out.println(a[-4]);//ArrayIndexOutOfBoundsException.
+
+
+Shortcut of way declartion,construction,initialisation in single line
+=====================================================================
+  int[]a = {10,20,30,40};
+  char[] a= {'a','e','i','o','u'};
+  String[] a= {"sachin","ramesh","tendulkar","IND"};
+
+
+NOTE:
+=====
+Whenever we are assigning one array reference to another array reference,its just 
+        the reference which are being copied not the array elements.
+        While copying the reference only its type would be given importance,not its size.
+Example
+=======
+ 	int[] a= {10,20,30,40};
+     	int[] b= {100,200};
+     	a=b;
+     	b=a;
+
+
+
+
+Two Dimentional Array Delcaration 
+=================================
+
+2D-Array   =	1D-Array + 1D-Array 
+                 (ref)      (data)
+
+
+
+Valid Syntax Examples
+=====================
+
+Declaration(All are valid)
+    int[][] a ;
+    int  a[][];
+    int  [][]a;
+    int[] []a;
+    int[] a[];
+    int []a[];
+
+ArrayConstruction
+    int[][] a =new int[3][2];
+            or
+    int[][] a= new int[3][];
+      a[0]=new int[5];
+      a[1]=new int[3];
+      a[2]=new int[1];
+       
+ArrayInitalisation
+   a[0][0] = 10;
+   a[2][3] = 5;
+
+Tricky Question
+===============
+     int[] a,b; // a-> 1D,b->1D
+     int[][] a,b; //a->2D,b->1D
+     int[] a[],b; //a->2D,b->1D
+     int[] a[],[]b; //CE
+     int[] []a,b;  //a->2D,b->1D
+Rule:If we want to specify the dimension, we need to specify that before the first variable,but
+     from second variable onwards rule is not applicable.
+
+shortcut of working with 2-D array
+   int[][] a= {{10,20},{100,200,300},{1000}};
+
+
+		
+		int [][] xx,yy;//xx=2D yy=2d
+		int [] []x[],y;// x=3d y=2d
+		
+		int[][] xy[],yz;//xy 3d , yz 2d
+		
+		int [][]aa, bb[]; // aa= 2d bb=3d
+		
+		//int []arrr, []brr; CE
+		int []aaa, bbb[][];
+
+Ananomyous Array
+================
+    An array without a name is called Ananomyous Array.
+    These type of array is created just for instance use.
+
+eg:: public class Demo{
+	public static void main(String... args){
+		add(new int[]{10,20,30,40});
+		add(new int[]{10,20});
+		add(new int[]{});
+	}
+	public static void add(int[] a){
+		sum+=0;
+		for(int i=0;i<=a.length;i++){
+			sum+=a[i];
+		}
+		System.out.println("The sum is ::"+sum);
+	}
+     }
+
+Usage of ananomyous array internally by jvm
+===========================================
+public class Demo{
+	public static void main(String []args){
+		System.out.println("Working with array");
+	}
+}
+
+ javac Demo.java
+ java  Demo 10 20  => Demo.main(new String[]{"10","20});
+ java  Demo        => Demo.main(new String[]{});
+ java  Demo 10     => Demo.main(new String[]{"10"});
+ java  Demo sachin tendulkar => Demo.main(new String[]{"sachin","tendulkar"});
+
+
+How to check the class of the perticuler array type.
+====================================================
+
+ex: to check one dimentional int array class
+int[].getClass() --> will return the [i 
+
+
+
+
+Usage of Arrays Inbuilt class
+=============================
+ It is a helper class which is available in java.util package.
+ This helper class provides few methods through which the user would get a benfit of working with
+ few logics.
+
+Example1:
+  toString() is overriden to print the array elements in one line.
+
+int[] arr = { 10, 20, 30, 40, 50 };
+for (int data : arr) {
+    System.out.println(data);
+}
+System.out.println(Arrays.toString(arr));//10 20 30 40 50
+
+Examples2:
+  copyOf()
+     This method is used to copy the elements from one array into another array.
+  int[] arr = { 10, 20, 30, 40, 50 };
+  int[] duplicateArray = Arrays.copyOf(arr, arr.length);
+  System.out.println(Arrays.toString(duplicateArray));
+
+Example3:
+   sort()
+      It is used to sort the array elements in ascending order.
+int[] arr = { 50, 40, 30, 20, 10 };
+System.out.println(Arrays.toString(arr));//50 40 30 20 10
+Arrays.sort(arr);
+System.out.println(Arrays.toString(arr));//10 20 30 40 50
+
+Example4:
+  binarySearch()
+    if key found return the index otherwise
+    return -(low+1)
+
+ int[] arr = { 50, 40, 30, 20, 10 };
+ Arrays.sort(arr);
+ System.out.println(Arrays.binarySearch(arr, 2));//-1
+ System.out.println(Arrays.binarySearch(arr,35));//-4
+ System.out.println(Arrays.binarySearch(arr,100));//-6
+ 
+eg::
+    int[] arr = { 50, 40, 30, 20, 10 };
+    Arrays.sort(arr);
+    int key = 45;
+    System.out.println(Arrays.binarySearch(arr, 2, 4, key));//-4
+
+
+Example5:
+	copyOfRange()
+         This method is used to copy the array elements of the specified range.
+      int[] arr = { 50, 40, 30, 20, 10 };
+      System.out.println(Arrays.toString(arr));//50 40 30 20 10
+
+      int[] duplicateArray = Arrays.copyOfRange(arr, 1, 4);
+      System.out.println(Arrays.toString(duplicateArray));//40 30 20
+
+Example6:
+ equals()
+         To compare the contents of data in a particular order.
+
+      int[] arr1 = { 50, 40, 30, 20, 10 };
+      Arrays.sort(arr1);
+      int[] arr2 = { 10, 20, 30, 40, 50 };
+      System.out.println(Arrays.equals(arr1, arr2));

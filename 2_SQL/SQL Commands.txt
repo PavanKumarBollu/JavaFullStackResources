@@ -1,0 +1,14 @@
+SQL Commands
+============
+
+
+1. check MySQL version
+
+	open cmd and type mysql --version then press enter.
+
+2. to enter into database location in cmd 
+	
+	mysql -u root -p
+
+	then enter your password which you set while installing the mysql software.
+	then your ready to work with mysql in cmd.

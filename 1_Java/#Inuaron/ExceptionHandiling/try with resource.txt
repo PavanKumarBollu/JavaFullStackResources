@@ -1,0 +1,65 @@
+try with resource
+
+
+untill jdk1.6, it is compulsorily required to write finally block to close all the resources which are open as a part of try block.
+
+eg:: BufferReader br=null
+      try{
+	 br=new BufferedReader(new FileReader("abc.txt"));
+      }catch(IOException ie){
+          ie.printStackTrace();
+      }finally{
+	 try{
+	   if(br!=null){
+		br.close();
+	   }
+          }catch(IOException ie){
+		ie.printStackTrace();
+	  }
+      }
+
+Problems in the apporach
+========================
+1. Compulsorily the programmer is required to close all opened resources which increases the complexity of the program
+2. Compulsorily we should write finally block explicitly, which increases the length of the code and reviews readablity.
+   To Overcome this problem SUN MS introduced try with resources in "1.7" version of jdk.
+
+try with resources
+==================
+In this apporach, the resources which are opened as a part of try block will be closed automatically once the control reaches to the end of 
+try block normally or abnormally,so it is not required to close explicitly so the complexity of the program would be reduced.
+It is not required to write finally block explicitly,so length of the code would be reduced and readability is improved.
+
+try(BufferedReader br=new BufferedReader(new FileReader("abc.txt")){
+	//use br and perform the necessary operation
+        //once the control reaches the end of try automatically br will be closed     
+}catch(IOException ie){
+     //handling code
+}
+
+Rules of using try with resource
+================================
+1. we can declare any no of resources, but all these resources should be seperated with ;
+ eg#1.
+   try(R1;R2;R3;){
+         //use the resources
+   }
+
+2. All resources are said to be AutoCloseable resources iff the class implements an interface called "java.lang.AutoCloseable" either 
+    directly or indirectly
+         eg:: java.io package classes, java.sql.package classes
+
+3. All resource reference by default are treated as implicitly final and hence we can't perform reassignment with in try block.
+      try(BufferedReader br=new BufferedReader(new FileWriter("abc.txt")){
+		br=new BufferedReader(new FileWriter("abc.txt"));
+      }
+    output::CE: can't reassign a value
+
+4. untill 1.6 version try should compulsorily be followed by either catch or finally, but from 
+   1.7 version we can take only take try with resources without cath or finally.
+         try(R){
+		//valid
+         }
+
+5. Advantage of try with resources concept is finally block will  become dummy because we are not  required to close resources explicitly.
+

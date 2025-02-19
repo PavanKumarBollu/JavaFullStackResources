@@ -1,0 +1,58 @@
+new vs newInstance()
+===================
+ => new is an operator to create an objects, if we know classname at the begining then we can
+    create an object using new operator.
+ => newInstance() is a method present in class called "Class", which can be used to create
+    Object.
+ => If we dont' know the class name at the begining and its available dynamically RunTime then
+    we should go for newInstance() method.
+
+eg#1.
+ class Demo{
+	Demo(){
+		System.out.println("Zero argument constructor");
+	}
+ }
+ public class Test{
+	public static void main(String... args){
+		Object o=Class.forName(arg[0]).newInstance();
+		System.out.println(o.getClass().getName());
+	}
+  }
+ => If dynamically provide class name is not available then we will get the RuntimeException
+    saying "ClassNotFoundException".
+ => To use newInstance() method compulsorily correspoding class should contains no argument
+    constructor, otherwise we will get the RuntimeException saying "InstantiationException".
+ => If the constructor exists with Zero argument and if the access modifier is private then
+    it would reslut in IllegalAccessException.
+
+Difference b/w new and newInstance()
+new => It is an operator which is used to create Object
+       If we know the name of the class at the begining then we should use new operator.
+                 Test t=new Test();
+       If the corresponding .class is not available at the RunTime then we will get
+       RuntimeException saying "NoClassDefFoundError", it is "uncheckedException".
+       To use new Operator the correspoding class not required to contain no argument constructor.
+
+newInstance() => It is an method present in java.lang.Class which is used to create an Object.
+                 If we don't know the className at the begining and available dynamically at
+                 the runtime.
+                     Object o=Class.forName("Test").newInstance();
+                 If the corresponding .class is not available at the RunTime then we will get
+                 RuntimeException saying "ClassNotFoundException", it is "checkedException".
+                To use newInstance() the corresponding class should compulsorily contain no
+                argument constructor, otherwise we will get RuntimeException saying
+                  "InstantiationException".
+                 
+
+Difference b/w ClassNotFoundException and NoClassDefFoundError
+ ClassNotFoundException =>It is a checkedException
+                          For dynamically provided class name at the Runtime, if the Correspoding
+                          .class files is not available then we will get RuntimeException saying
+                          "ClassNotFoundException".
+                       eg:: Object o =Class.forName(args[0]).newInstance();
+
+ NoClassDefFoundError   => It is a uncheckedException.
+                           For HardCoded class names, if the Correspoding .class files is not                                 available then we will get RuntimeException saying
+                           "NoClassDefFoundError".
+                        eg:: Test t=new Test();

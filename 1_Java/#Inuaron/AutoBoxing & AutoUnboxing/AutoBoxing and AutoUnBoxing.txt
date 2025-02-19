@@ -1,0 +1,143 @@
+ AutoBoxing and AutoUnBoxing
+ =========================
+ untill 1.4Version, we can't provide wrapper class objects in place of primitive and
+ primitive in place of wrapper object all
+ the required conversions should be done by the programmer.
+ But from jdk1.5 Version onwards,we can provide primtive in place of wrapper and in 
+place of wrapper we can keep primitive
+ also.All the requried conversion will be done by the compiler automatically, this 
+mechanism is called as "AutoBoxing" and
+ "AutoUnBoxing".
+ eg#1.
+ Boolean b1 = Boolean.valueOf(true);
+ if (b1)
+   System.out.println("hello");
+ eg#2.
+ ArrayList al = new ArrayList();
+  al.add(10);
+
+
+ Autoboxing
+ =========
+  Automatic conversion of primtive type to wrapper object by the compiler is called
+ "AutoBoxing".
+ Integer i1 = 10;
+               |
+ |After compilation the code would be 
+|
+ |
+  Integer i1 = Integer.valueOf(10);
+ Note: Autoboxing is done by the compiler using a method called "valueOf()".
+
+
+
+
+AutoUnBoxing
+ ============
+   Automatic conversion of wrapper object to primtive type by compiler is called 
+"AutoUnBoxing".
+ Integer i1 = new Integer(10);
+  int i2 = i1;
+ |
+ |compiler converts Integer to int type using intValue()
+ |
+ int i2 = i1.intValue();
+ Note: AutoUnboxing is done by the compiler using a method called "xxxValue()"
+ Case1:
+ =====
+ class Test 
+{
+ static Integer i1 = 10;// AutoBoxing
+ public static void main(String[] args) 
+{
+ int i2 = i1;//AutoUnBoxing
+ m1(i2);
+ }
+ public static void m1(Integer i2){//AutoBoxing
+ int k = i2;//AutoUnBoxing
+ System.out.println(k);//10
+ }
+ }
+ Compiler is responsible for conversion of primitive to wrapper and wrapper to 
+primitive using the concept of 
+"AutoBoxing and AutoUnBoxing".
+ case2:
+ class Test 
+{
+ static Integer i1;//i1 = null
+ public static void main(String[] args) 
+{
+ int i2 = i1;// int i2 = i1.intValue() :: NullPointerException
+ System.out.println(i2);
+ }
+ }
+ Case3 :
+ Integer i1 = 10;//AutoBoxing
+ Integer i2 = i1;
+ i1++; = > i1 = i1+1
+ System.out.println(i1);
+ System.out.println(i2);
+ System.out.println(i1==i2);
+ Case4:
+ Integer x = new Integer(10);
+ Integer y = new Integer(10);
+ System.out.println(x == y);//false
+ Case5:
+ Integer x = new Integer(10);//memory from heap area
+ Integer y = 10;//AutoBoxing ===> Integer y = Integer.valueOf(10);
+ System.out.println(x == y);//false
+ Case6:
+ Integer x = new Integer(10);
+ Integer y = x; ===> reference is reused so pointing to same object
+ System.out.println(x == y);//true
+ Case7:
+ Integer x = 10;
+ Integer y = 10;
+ System.out.println(x == y);
+ Integer a = 100;
+ Integer b = 100;
+ System.out.println(a == b);
+ Integer i = 1000;
+ Integer j = 1000;
+System.out.println(i == j);
+
+
+ Note: 
+1. To implement autoboxing concpet in wrapper class a buffer of object will be 
+created at the time of class loading.
+ 2. During AutoBoxing,if an object has to be created first jvm will check whether 
+the object is already available inside buffer
+    or not.
+ 3. If it is available, then JVM will reuse the buffered object instead of creating 
+a new Object.
+ 4. If the Object is not available inside buffer, then jvm will create a new object 
+in the heap area, this approach improves the
+    performance and memory utilization
+ But this buffer concept is applicable only for few cases
+ 1. Byte     => -128 to +127
+ 2. Short   => -128 to +127
+ 3. Integer=> -128 to +127
+ 4. Long    =>  -128 to +127
+ 5. Character =>  0 to 127
+ 6. Boolean   => true,false 
+In the remaining cases new object will be created.
+ // String/primtive to wrapper   => valueOf()
+ // Wrapper type    to primitive => xxxValue()
+ class Test 
+{
+ public static void main(String[] args) 
+{
+ Integer x = 128;
+ Integer y = 128;
+ System.out.println(x == y);//false
+ Integer a = 127;
+ Integer b = 127;
+ System.out.println(a == b);//true
+ Boolean b1 = true;
+ Boolean b2 = true;
+ System.out.println(b1==b2);//true
+ Double d1 = 10.0;
+ Double d2 = 10.0;
+ System.out.println(d1==d2);//false
+ }
+}

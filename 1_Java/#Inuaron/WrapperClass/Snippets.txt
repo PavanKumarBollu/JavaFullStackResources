@@ -1,0 +1,109 @@
+Snippets
+ =======
+ Integer i1= new Integer(10);
+ Integer i2= new Integer(10);
+ System.out.println(i1==i2);//false
+ Integer i1 = 10;
+ Integer i2 = 10;
+ System.out.println(i1==i2);//true
+ Integer i1 =Integer.valueOf(10);
+ Integer i2 =Integer.valueOf(10);
+ System.out.println(i1==i2);//true
+ Integer i1 =10;
+ Integer i2 =Integer.valueOf(10);
+ System.out.println(i1==i2);//true
+ Note: 
+When compared with constructors it is recommended to use valueOf() method to create
+ wrapper object.
+
+Wrapper class
+ ============
+  1. AutoBoxing
+  2. Widening(Implicit TypeCasting done by the Compiler (applicable for both 
+primitive and Wrapper type))
+  3. Var-Args
+ case1::
+ Widening vs Autoboxing
+ class AutoBoxingAndUnboxingDemo { 
+public static void methodOne(long l) { 
+System.out.println("widening"); 
+} 
+public static void methodOne(Integer i) { 
+System.out.println("autoboxing"); 
+} 
+public static void main(String[] args) { 
+int x=10; 
+methodOne(x); // primtive ====> do type casting====> found ==> 
+long(binding happens by compiler)
+} 
+} 
+output: widening
+ case2::Widening vs var-arg method 
+class AutoBoxingAndUnboxingDemo { 
+public static void methodOne(long l) { 
+System.out.println("widening"); 
+} 
+public static void methodOne(int... i) { 
+System.out.println("var-arg method"); 
+} 
+public static void main(String[] args) { 
+int x=10; 
+ methodOne(x); // primtive ====> do type casting====>
+ found ==> long(binding happens by compiler)
+ } 
+} 
+output: widening
+ Case 3: Autoboxing vs var-arg method :
+ class AutoBoxingAndUnboxingDemo { 
+public static void methodOne(Integer i) { 
+System.out.println("AutoBoxing"); 
+} 
+public static void methodOne(int... i) { 
+System.out.println("var-arg method"); 
+} 
+public static void main(String[] args) { 
+int x=10; 
+methodOne(x); // int =====> implicit type casting===> 
+long,float,double 
+} 
+} 
+Output: AutoBoxing
+ Case4: 
+   // int =====> Autoboxing ===> Integer
+ class AutoBoxingAndUnboxingDemo { 
+public static void methodOne(Long l) { 
+System.out.println("Long"); 
+} 
+public static void main(String[] args) { 
+int x=10; 
+methodOne(x); //CE: can't find the method
+ } 
+}
+ Note: 
+Widening followed by Autoboxing is not allowed in java,  but Autoboxing followed by
+ widening is allowed. 
+Case 5: 
+class AutoBoxingAndUnboxingDemo { 
+public static void methodOne(Object o) { 
+System.out.println("Object"); 
+} 
+public static void main(String[] args) { 
+int x=10; 
+ methodOne(x); // AutoBoxing ===> int ===> Integer
+   // Widening   ===> Integer ====> 
+Number,Object 
+} 
+}
+ Output: Object
+ Which of the following declarations are valid ?
+ 1. int i=10 ;//valid 
+2. Integer I=10 ; //AutoBoxing(valueof())
+ 3. int i=10L ; // invalid(long===> int)
+ 4. Long l = 10L ; //AutoBoxing(valueOf())
+ 5. Long l = 10 ;  //AutoBoxing=> Integer====> Number,Object , so invalid
+ 6. long l = 10 ; // valid(int===> long)
+ 7. Object o=10 ; //AutoBoxing==> Integer ===> Number,Object  so valid
+ 8. double d=10 ;  // valid(int===> double)
+ 9. Double d=10 ; // AutoBoxing=> Integer====> Number,Object , so invalid
+ 10. Number n=10;  //AutoBoxing==> Integer ===> Number,Object  so valid
+

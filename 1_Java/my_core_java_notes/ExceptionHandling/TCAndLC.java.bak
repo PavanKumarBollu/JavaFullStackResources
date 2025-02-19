@@ -1,0 +1,38 @@
+class A
+{
+	void m1(){
+			System.out.println("Hello World! + M1()"); 
+	}
+}
+class B extends A
+{
+	//m1()
+	void m2(){
+			System.out.println("Hello World! + M2()"); 
+	}
+}
+class C extends A
+{
+	//m1()
+	void m3(){
+			System.out.println("Hello World! + M3()"); 
+	}
+}
+
+
+
+class TCAndLC
+{
+	public static void main(String[] args) 
+	{
+		A obj1 = new A();
+		B obj2 = new B();//tight coupling
+
+		//B obj3 = new C();
+		//A obj4 = new B();
+		A obj5 = new C();
+		obj5.m1();
+		//B obj6 = new A();
+		
+	}
+}

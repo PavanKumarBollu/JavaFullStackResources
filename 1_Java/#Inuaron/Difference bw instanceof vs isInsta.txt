@@ -1,0 +1,24 @@
+Difference b/w instanceof vs isInstance()
+instanceof => It is an operator which can be used to check whether the given object is of
+              particular type or not.
+              We know at the type of begining it is available.
+		eg:: String s=new String("sachin");
+		     System.out.println(s instanceof Object);//true
+
+isInstance() =>It is an method present in java.lang.Class, we can use isInstance() method to check
+               whether the given object is of particular type or not where type at begining is
+               available Dynamically at RunTime.
+
+eg#1.
+class Demo{
+	
+}
+public class TestApp {
+	public static void main(String[] args) throws Exception{
+	  Demo d=new Demo();
+	  System.out.println(Class.forName(args[0]).isInstance(d));	
+	}
+}
+java TestApp Demo //true
+java TestApp java.lang.String //false
+java TestApp java.lang.Object //true

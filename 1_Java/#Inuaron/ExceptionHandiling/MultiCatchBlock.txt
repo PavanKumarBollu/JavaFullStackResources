@@ -1,0 +1,68 @@
+MultiCatchBlock
+===============
+Till jdk1.6, eventhough we have multiple exception having same handling code we have to write a
+seperate catch block for every exceptions, it increases the length of the code and reviews 
+readability.
+try{
+   ....
+   ....
+   ....
+   ....
+}catch(ArithmeticException ae){
+	ae.printStackTrace();
+}catch(NullPointerExcepion ne){
+	ne.printStackTrace();
+}catch(ClassCastException ce){
+	System.out.println(ce.getMessage());
+}catch(IOException ie){
+	System.out.println(ie.getMessage());
+}
+
+To overcome this problem SUNMS has introduced "Multi catch block" concept in 1.7 version
+try{
+   ....
+   ....
+   ....
+   ....
+}catch(ArithmeticException |NullPointerException e){
+	e.printStackTrace();
+}catch(ClassCastException |IOException e){
+	e.printStackTrace();
+}
+
+In multicatch block,there should not be any relation b/w exception types(either child to parent
+or parent to child or same type) it would result in compile time error.
+
+eg:: try{
+
+     }catch( ArithmeticExeption | Exception e){
+		e.printStackTrace();
+     }
+Output:CompileTime Error
+
+
+Exception Propogation
+=====================
+ With in a method, if an exception is raised and if that method does not handle that exception
+ then Exception object will be propogated to the caller method then caller method is responsible
+ to handle that exceptions, This process is called as "Exception Propogation".
+
+ReThrowing an Exception
+======================
+To convert one exception type to another exception type, we can use rethrowing exception concept.
+
+eg::
+public class TestApp 
+{
+	public static void main(String[] args) 
+	{
+	  try{
+		System.out.println(10/0);
+          }catch( ArithmeticException  e){
+		throw new NullPointerException();
+          }
+	}
+}
+Output::
+Exception in thread "main" java.lang.NullPointerException
+        at TestApp.main(TestApp.java:10)

@@ -1,0 +1,104 @@
+Variables
+=========
+variables are nothing but containers.
+
+
+syntax:
+=======
+
+datatype variableName = literal(Value);
+
+Examples:
+=========
+
+int age = 10;
+String place = "mi";
+
+
+Local Variable
+
+	is a variable, 
+	it belongs to the perticuler method, block.
+
+
+Global Variable
+	
+	it a variable
+	it belongs to the all the methods which are available inside the class.
+
+Example
+=======
+
+class Demo1
+{
+	//Global Area
+	static int num = 12;
+
+
+
+	public void sum()
+	{
+		//Local Area
+		int num = 10;
+
+		System.out.println("i am inside main method ");
+		System.out.println(num);
+
+		//this vs this()
+
+		System.out.println(num);
+		//System.out.println(num);
+	}
+}
+
+
+
+
+
+
+
+
+
+class Variables
+{
+	//Global Area
+	static int num = 12;
+
+
+	public static void main(String[] args)
+	{
+
+
+		new Demo1().sum();
+
+
+
+		//Local Area
+		//int num = 10;
+
+		//System.out.println("i am inside main method ");
+		//System.out.println(num);
+		//System.out.println(num);
+		//test();
+
+
+	}
+
+	public static void test()
+	{
+		System.out.println("i am inside test method ");
+		System.out.println(num);
+		//System.out.println(num1);
+	}
+
+
+}
+
+
+
+
+
+
+
+
+

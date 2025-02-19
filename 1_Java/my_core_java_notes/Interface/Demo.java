@@ -1,0 +1,43 @@
+interface IMembers
+{
+	//the members of the interface must and should always be public static final
+	// when you work with interfaces you must and should initiate(Assigning the value) the variables 
+
+
+
+
+	String name = "Rohit";//--> public static final String name = "Rohit";
+
+	public static final int age = 25;
+	// final means once the variable is created then we can't change the value
+
+	// i will provide the value later.
+
+	//public static final int Num;// expecting = but found ; 
+
+	public void dis();
+}
+class MembersImpl implements IMembers
+{
+	// if we have member with same name of the interface of parent class then first priority will be always to the same class member
+	// then the other members are considered.
+
+	String name = "Sharma";
+	@Override
+	public void dis()
+	{
+		System.out.println("Display");
+		System.out.println(name);
+		System.out.println(age);
+
+	}
+}
+
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		MembersImpl obj = new MembersImpl();
+		obj.dis();
+	}
+}

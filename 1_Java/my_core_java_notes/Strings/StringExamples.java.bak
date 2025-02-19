@@ -1,0 +1,28 @@
+class StringExamples
+{
+	public static void main(String[] args) 
+	{
+
+		String str1 = "You can not change me";
+		String str2 = new String("You can not change me");
+		String str3 = "You can not ";
+		String str4 = "change me";
+		String str5 = str3.concat(str4);
+		String str6 = str5;
+		String str7 = str3 + str4;
+
+		String str8 = "You can not change me";
+		String str9 = "You can not ";
+
+
+
+//		System.out.println(str1 == str2);//False
+		//System.out.println(str1 == str3);//False
+		//System.out.println(str1 == str4);//False
+		//System.out.println(str1 == str5);//Expecting True but got the False.
+		//System.out.println(str1 == str6);//False.
+		//System.out.println(str1 == str7);//False.
+		System.out.println(str1 == str8);//True. 
+		System.out.println(str3 == str9); //True.
+	}
+}

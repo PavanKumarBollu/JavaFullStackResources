@@ -1,0 +1,23 @@
+
+class SleepMethod
+{
+	public static void main(String[] args) throws InterruptedException
+	{
+		for (int i =0; i< 10 ; i++ )
+		{
+			if(i%2 ==0)
+			{
+				System.out.println("Ohh I am Sleepy...");
+
+				Thread.sleep(2000);//sleeps for the 2 seconds
+
+				//System.out.println(i);
+			}
+			else
+			{
+				System.out.println(i);
+			}
+
+		}
+	}
+}

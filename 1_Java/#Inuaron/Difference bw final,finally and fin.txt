@@ -1,0 +1,22 @@
+Difference b/w final,finally and finalize
+=========================================
+final
+  => final is the modifier applicable for classes, methods and variables
+  => If a class declared as the fianl then child class creation is not possible.
+  => If a method declared as the final then overriding of that method is not possible.
+  => If a variable declared as the final then reassignement is not possible.
+
+finally
+  => It is a final block associated with try-catch to maintain clean up code, which should
+     be executed always irrespective of whethere exception raised or not raised and whether
+     handled or not handled.
+
+finalize
+  => It is a method, always invoked by Garbage Collector just before destroying an object to
+     perform cleanup activites.
+
+Note::
+  1. finally block meant for cleanup activites related to try block where as finalize() method
+     for cleanup activites related to object.
+  2. To maintain cleanup code finally block is recomended over finalize() method because we can't
+     expect exact behaviour of GC.

@@ -1,0 +1,21 @@
+
+class Examples
+{
+
+	public static void main(String... args){
+class Examples
+{
+	public static void main(String[] args) 
+	{
+
+		String name = "SachinTendulkar";
+			
+			String name = "SachinTendulkar";
+			int place = name.indexOf('a');//1
+			System.out.println(place);//1
+			System.out.println(name.charAt(place));//a
+
+
+
+	}
+}

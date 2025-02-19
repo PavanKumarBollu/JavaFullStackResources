@@ -1,0 +1,52 @@
+Java Topics
+===========
+module1
+=======
+
+
+-Overview of the Java Programming(hello world programming).
+-features of java (Object-oriented, Platform-independent..etc).
+-Compiler, JVM, JRE, JDK .
+-installing the and setting up the Java environment.
+-Structure of the java programm.
+-compilation and execution.
+-datatypes, variables, constants
+-Operators in java.
+-conditional statements if, if else, switch.
+-control Statements for while do-while for-each.
+
+
+Module 2
+=========
+
+-identifiers.
+-naming conventions.
+-static members.
+-methods, method overloading.
+-this and this() method and this vs this(); 
+-constructors and constructor overloading
+-jvm memory architecture
+-how to take the input from the user
+-arrays 1d array and 2d arrays
+	-Arrays Class.
+-inheritance(single, multilevel, hierarchical, multiple, hybrid).
+-super keyword, super() method and super vs super().
+-polymorphism (method Overloading and method Overriding).
+-Defining and importing packages.
+-access modifiers (public, protected, private, default).
+-Encapsulation.
+-interface Introduction.
+
+	-implementing the multiple inheritance using interfaces.
+	-Difference between abstract and interfaces.
+	-adapter class.
+
+-abstraction.
+-nested class and innerclass.
+-final classes.
+
+Module 3
+========
+Introduction To Exception Handiling
+
+

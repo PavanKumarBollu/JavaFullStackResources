@@ -1,0 +1,33 @@
+class Child extends Thread
+{
+	@Override
+	public void run()
+	{
+		System.out.println(Thread.currentThread().getPriority());
+
+		for (int i = 0; i < 5 ; i++ )
+		{
+			System.out.println(Thread.currentThread().getName());
+		}
+	}
+	
+}
+
+
+class YieldMethod
+{
+	public static void main(String[] arg)
+	{
+		Child c = new Child();
+		c.start();
+		//at this line we have two threads main and thread-0
+
+		Thread.yield();
+		System.out.println(Thread.currentThread().getPriority());
+
+		for (int i = 0; i < 5 ; i++ )
+		{
+			System.out.println(Thread.currentThread().getName());
+		}
+	}
+}

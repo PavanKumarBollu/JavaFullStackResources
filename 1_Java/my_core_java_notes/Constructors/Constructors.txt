@@ -1,0 +1,60 @@
+Constructors
+============
+-constructor is a specialized method in java which is used to assign the default value to the class members or to perform some activity when you create a objects.
+
+
+-when you don't create any constructor by default the compiler will keep the default constructor behind the scenes.  
+
+-Same name as class name
+-we can have the parameters
+-constructor will be called automatically when you create a object
+-return statement is invalid
+-will not have return type explicitly
+-inside constructor Frist statement is super() or this()
+-super() calls the parent class constructor
+-this() calls the same class constructor
+-both this() and super()in same constructor is invalid
+-we can't write the super() or this() other than the first line inside the constructor.
+
+
+
+Constructor Overloading
+=======================
+
+-having more than one constructor in a same class allowed as long as they differs in the parameters.
+
+-we can create a parameterized constructer inside a class, when you create a parameterized constructor the compiler will not keep any default constructor.
+
+
+Methods Vs Constructor
+=====================
+
+Methods
+-------
+
+-call explicitly by using the method name;
+-explicit return type needed except void type
+-writing the return statements is allowed
+
+Constructor
+-----------
+-when the object is instantiated automatically the constructor is called.
+-no explicit return type is allowed.
+
+
+
+this Vs this()
+==============
+
+this
+----
+
+-this is a keyword which contains the current object reference 
+-this always refers to the current object.
+
+
+this()
+------
+
+-this() is a method which we use to call the same class constructor 
+

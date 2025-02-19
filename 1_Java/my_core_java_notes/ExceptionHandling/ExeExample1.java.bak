@@ -1,0 +1,20 @@
+class ExeExample1
+{
+	public static void main(String[] args) 
+	{		
+		System.out.println("Main is Started");
+		doStuff();
+		System.out.println("Main is Ended");
+
+	}
+	public static void doStuff(){
+		System.out.println("doStuff is Started");
+		doMoreStuff();
+		System.out.println("doStuff is Ended");
+	}
+	public static void doMoreStuff(){
+		System.out.println("moreStuff is Started");
+		int sum = 10/0;
+		System.out.println("moreStuff is Ended");
+	}
+}

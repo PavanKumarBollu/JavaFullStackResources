@@ -1,0 +1,129 @@
+Topics
+======
+-->MethodSignature
+-->Difference B/W parameters and arguments
+-->types of Methods
+-->Method Hiding or Method Shadowing
+
+MethodSignature
+===============
+Methods are nothing but a blocks which contains some lines of code, those lines of the code will be executed when we want.
+we can execute lines of code which is there inside a method as many times as we want 
+
+Signature
+---------
+accessModifier returnType methodName(Parameters)
+{
+	//lines to execute
+}
+Example:
+
+public void dispaly(String name)
+{
+	System.out.println(name);
+}
+
+display("rohit);
+
+public void displayAge(int age)
+{
+	System.out.println(age);
+}
+
+displayAge(30);
+
+public int getRollNumber()
+{
+	return rollNo;
+}
+
+
+
+
+Difference B/W parameters and arguments
+=======================================
+
+parameters-> the local variables which we define inside the () are called the parameters
+arguments-> actual values to those parameters are called arguments
+
+parameters won't change but the arguments will change.
+
+example:
+
+public void displayStudent(String name, int age)//name and age is the parameters
+{
+	System.out.println("studentName: " + name + " and student age " + age);
+}
+
+displayStudent("rohit", 30);//rohit and 30 is the arguments
+displayStudent("virat", 25);// virat and 25 is the arguments
+
+
+
+
+types of Methods
+================
+
+
+1.instanceMethods --> Reguler Methods Or Object Specified Methods.
+2.StaticMethods --> Class Methods.
+3.Abstract Methods --> inheritance.
+4.Special Methods(Constructors)
+5.Main Method
+6.Getter and Setter Methods-- Encapsulation.
+
+
+
+Method Hiding OR Method Shadowing:
+==================================
+
+
+In java both parent Class and Child Class can have static methods with same Signature
+
+this is not considered as method overriding because static methods are belongs to class not to the objects.
+
+Association with class:
+Static methods belongs to the class, not to a any specific object therefore the method which gets called will decide at runtime(compile time) only, 
+based on the reference type which you will pass the associated method will be called hence no polymorphism will come into picture.
+
+
+Example:
+========
+
+
+class Parent
+{
+	public static void m1()
+	{
+		System.out.println("I am from parent class");
+	}
+}
+
+class Child extends Parent
+{
+	public static void m1()
+	{
+		System.out.println("I am from Child class");
+	
+		// Stage 2
+		//System.out.println("Calling the parent class method");
+		//Parent.m1();
+	}
+}
+
+
+
+class Demo
+{
+	public static void main(String[] arg)
+	{
+		Parent c = new Child();
+		c.m1();//i am from parent class
+
+
+		Child c1 = new Child();
+		c1.m1();// i am from the parent class
+	}
+
+}
+

@@ -1,0 +1,31 @@
+import java.util.*;
+
+class ExeExample3
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		//System.out.println("Enter The Size of the array");
+		// size = sc.nextInt();
+		//int[] arr = new int[size];
+		//int ele;
+		//int position;
+		//for(int i = 0; i < arr.length; i++)
+		//{
+		//	System.out.println("Enter Element To Store Element");
+		//	ele = sc.nextInt();
+		//	System.out.println("Enter The Position To Store Element");
+		//	position = sc.nextInt();
+		//	arr[position] = ele;
+
+		//}
+
+		System.out.println("Enter Your name");
+		String name = sc.next();
+
+		char lastL = name.charAt(5);
+
+		System.out.println(lastL);
+		
+	}
+}

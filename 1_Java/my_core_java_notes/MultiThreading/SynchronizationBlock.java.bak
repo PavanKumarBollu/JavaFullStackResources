@@ -1,0 +1,38 @@
+class DisplayName
+{
+	public void name(String name)
+	{
+		;
+		;
+		;
+		;
+		;
+		//One lack lines of code
+
+		synchronized(this)
+		{
+			for (int i = 0; i< 5 ; i++ )
+			{
+				System.out.println(
+			}
+		}
+		;
+		;
+		;
+		;
+		;
+		;
+
+	}
+
+}
+
+
+
+class SynchronizationBlock
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+	}
+}

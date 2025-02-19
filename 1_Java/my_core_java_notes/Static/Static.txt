@@ -1,0 +1,9 @@
+Static 
+======
+topics:
+-------
+static variables
+static methods
+static block
+
+

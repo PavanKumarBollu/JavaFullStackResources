@@ -1,0 +1,2288 @@
+Topics
+======
+Java Features.
+JVM-Architecture.
+Compilation vs Interpretation.
+Bytecode
+Java Initialization.
+Variables (Identifiers).
+Datatypes.
+Operators.
+Control Structures.
+Arrays
+OOPS
+Classes And Objects.
+Access  modifiers.
+Abstraction
+Inheritance
+Polymorphism- Method Overloading and Method Overriding.
+Abstract Classes and Interfaces.
+Dynamic Memory Allocation and Garbage Collection.
+Strings || StringBuffer || StringBuilder.
+Date And Time API.
+Exception Handling || CompileTime Exception(Checked) || Runtime Exception(Unchecked).
+Wrapper Classes.
+AutoBoxing And AutoUnboxing.
+MultiThreading -- Synchronized Block, methods
+Collection Framework.
+Genarics
+Lamda Expressions.
+StreamApI.
+
+
+
+
+
+
+
+
+
+********************************************************************************************************************
+
+
+
+
+*****************************************************************************************************************
+
+**********************************************************************************************************************************
+ 
+
+
+DataTypes:
+==========
+
+Every variable or Expression has a type in java. and all the types are strictly typed in java.
+
+bcz java is strictyly typed language the compiler role is to check the literal stored in the variable can handle it or not 
+this checking is called typeChecking/ Strictly types checking.
+
+
+				DataTypes
+				    |
+				    |
+			 ___________|____________
+			|			|
+		     Primitive	          Non-Primitive
+
+
+
+
+Datatypes
+-------------
+ 	Numeric Datatype
+		a. whole number
+			1. byte(1byte)
+			2. short(2bytes)
+			3. int(4bytes) * commonly used datatype
+			4. long(8 bytes)
+		b. realnumber
+			1. float
+			2. double
+
+
+
+Non-PrimitiveDataTypes:
+=======================
+
+String
+Object
+List
+Tuple
+Stack
+Queue......  etc.
+
+
+Primitive DataTypes:
+====================
+
+1.byte
+2.short
+3.int
+4.long
+5.float
+6.double
+7.boolean
+
+Note : the information of the datatypes are given in the following way
+	1.size of the data types
+	2.min values it can store
+	3.max value it can store
+
+byte:
+=====
+	byte: 
+	size -> 8 bits
+	minvalue -> -128
+	maxvalue -> 127
+
+
+	System.out.println("Byte Size :: "+ Byte.SIZE);
+ 	System.out.println("MINVALUE of byte is :: "+ Byte.MIN_VALUE);
+ 	System.out.println("MAXVALUE of byte is :: "+ Byte.MAX_VALUE);
+
+short:
+======
+
+	size : 16bits(2 byte)
+ 	minvalue: -32768
+ 	maxvalue: +32767
+
+ 	System.out.println("Size of int is :: "+Short.SIZE);
+ 	System.out.println("MINVALUE of int is :: "+Short.MIN_VALUE);
+	System.out.println("MAXVALUE of intt is :: "+Short.MAX_VALUE);
+
+int:
+====
+
+	size: 32bits(4 bytes)
+	minvalue:-2147483648
+	maxvalue: 2147483647
+
+ 	System.out.println("Size of int is :: "+Integer.SIZE);
+ 	System.out.println("MINVALUE of int is :: "+Integer.MIN_VALUE);
+	System.out.println("MAXVALUE of intt is :: "+Integer.MAX_VALUE);
+
+
+Note: 
+=====
+By default the compile will store the whole numbers as a int only. we can also store the values in the byte and short also.
+
+
+long:
+=====
+
+	size: 64bits(8bytes)
+	minvalue:-9223372036854775808
+	maxvalue:9223372036854775807
+
+	System.out.println("Size of long is :: "+Long.SIZE);
+ 	System.out.println("MINVALUE of long is :: "+Long.MIN_VALUE);
+ 	System.out.println("MAXVALUE of long is :: "+Long.MAX_VALUE); 
+
+note:
+=====
+	if you want to store the values in the long type then you must suffix the value with either "L" or "l".
+	Otherwise compile time error
+	
+	Ex: 
+		long a = 123l;
+		long b = 123; //CE
+
+
+float:
+======
+	size: 32 bits(1 byte = 8bits, 32/8 = 4 bytes)
+ 	minvalue:1.4E-45
+	maxvalue: 3.4028235E38
+
+	System.out.println("Size of float is :: "+Float.SIZE);
+	System.out.println("MINVALUE of float is :: "+Float.MIN_VALUE);
+	System.out.println("MAXVALUE of float is :: "+Float.MAX_VALUE);
+	
+Note:
+=====
+	By default compiler will store the realNumbers/ decimalNumbers as double values if you want to store it a float,
+	then you have to suffix with "f" or "F" other wise CE.
+	
+
+double:
+=======
+	size: 64s bits(1 byte = 8bits, 64/8 = 8 bytes)
+ 	minvalue:4.9E-324
+ 	maxvalue: 1.7976931348623157E308
+
+
+	System.out.println("Size of double is :: "+	Double.SIZE);
+	System.out.println("MINVALUE of double is :: "+	Double.MIN_VALUE);
+	System.out.println("MAXVALUE of double is :: "+	Double.MAX_VALUE);
+
+
+
+Note:
+======
+
+To map primitive data as Object in java from JDK1.5 concept of "Wrapper class" was introduced in JDK1.5 version.
+	respective Object classes of primitive datatypes.
+
+ byte -------------> Byte(C)
+ short--------------> Short(C)
+ int --------------> Integer(C)
+ long --------------> Long(C)
+ float --------------> Float(C)
+ double------------> Double(C)
+
+
+***********************************************************************************************************************************
+
+
+
+
+ Types of variables
+ ==============
+ Division 1 : Based on the type of value represented by a variable all variables are
+ divided into 2 types. They are: 
+	1. Primitive variables
+	2. Reference variables
+ Primitive variables:
+ 	Primitive variables can be used to represent primitive values.
+ 	Example: int x=10; 
+Reference variables: 
+
+Reference variables can be used to refer objects. 
+	Example: Student s=new Student();
+
+instance variable
+	If the variable is declared inside the class, but outside the methods such variables are called as "instance variables".
+								or
+ 	if the value of the variables changes from object to object then such variables are called as "instance variables"
+ eg#1.
+
+ Student std1= new Student();//id = 10, name =sachin
+ Student std2= new Student();//id = 7,   name=dhoni
+
+ When will the memory for instance varaible be given?
+
+  Ans. Only when the object is created JVM will create a memory and by default jvm 
+	will also assign the default value based on the datatype of the varaible.
+ 	eg: int -> 0, float-> 0.0f, boolean -> false,char ->, String -> null,....
+
+ Note: scope of instance variable would be available only when we have reference pointing to the object, if the object reference 	becomes null, then we can't access "instance varaibles".
+
+ Key points about instance varaibles
+ =============================
+ Instance variables: 
+	=> If the value of a variable is varied from object to object such type of variables are called instance variables.
+ 	=> For every object a separate copy of instance variables will be created.
+ 	=> Instance variables will be created at the time of object creation and destroyed at the time of object destruction hence the scope of instance variables is exactly same as scope of objects.
+ 	=> Instance variables will be stored on the heap as the part of object.
+ 	=> Instance variables should be declared with in the class directly but outside of any method or block or constructor.
+ 	=> Instance variables can be accessed directly from Instance area. But cannot be accessed directly from static area.
+ 	=> But by using object reference we can access instance variables from static area.
+ 
+	eg#1.
+ 	public class Test {
+ 		boolean b;
+ 		public static void main(String[] args) {
+ 			Test t=new Test();
+ 			System.out.println(t.b);//false
+
+ 		}
+ 	}
+ eg#2
+ 	public class Test {
+ 		int i=10;//instance variable
+ 		public static void main(String[] args) {
+ 			System.out.println(i);//CE: instance variable can't be accessed directly in static context
+ 			Test t=new Test();//Object created i = 10 is stored in heap area
+ 			System.out.println(t.i);//10
+ 			t.methodOne();
+		}
+ 		public void methodOne(){
+ 			//inside instance method instace variable can be directly accessed.
+		}
+		System.out.println(i);//10 becoz it is an instance varaible
+	}
+local variables
+-----------------
+
+  1. Variables which are created inside the method are called local variables and memory for those variables will be given in  the 	stack area.
+  2. During the execution of the method the memory for local variables will be given, and after the execution of the method the memory for variables will be taken out from the stack area.
+  3. Local varaibles default value will not be given by the JVM, programmer should 
+	give the default value.
+  4. If the programmer doesn't give default value and if he uses the varaible 
+	inside the method then program would  result in "CE".
+
+ Key points of Local variables
+------------------------------------
+Local variables: 
+	=> Some times to meet temporary requirements of the programmer we can declare variables inside a method or block or 	constructors such type of variables are called local variables or automatic variables or temporary variables or stack 	variables. 
+	=> Local variables will be stored inside stack. 
+	=> The local variables will be created as part of the block execution in which it is declared and destroyed once that block 	execution completes. Hence the scope of the local variables is exactly same as scope of the block in which we declared.
+ 	=> It is highly recommended to perform initialization for the local variables at the time of declaration at least with default values.
+ 	
+	eg#1.
+	public class Test {
+		public static void main(String[] args) {
+			int i=0;
+			for(int j=0;j<3;j++)
+			{
+			}
+			i= i + j;
+			System.out.println (i);//valid
+ 			System.out.println(j);//CE: 'j' variable not declared
+ 			}
+ 	}
+
+ 	eg#2.
+	
+	class Test {
+		public static void main(String[] args) {
+			try{
+				int i=Integer.parseInt("ten");
+			}
+			catch(NullPointerException e){
+				System.out.println(i);//CE: 'i' not declared
+			}
+		}
+	}
+	
+	eg#3.
+	class Test{
+		public static void main(String[] args){
+			int x;
+			System.out.println("hello");//hello
+		}
+	}
+
+ Note: code would be compiled becoz variable x is not used anywhere.
+
+
+	eg#4
+	class Test{
+		public static void main(String[] args){
+			int x;
+			System.out.println(x);//CE: 'x' not initalized
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+********************************************************************************************************************************
+ Identifiers
+ ===========
+  It is a name in java program.
+  It can be a classname, methodname, variable name and label name.
+ class Test{
+ public static void main(String[] args){
+ int x= 10;
+ }
+ }
+ Totally 5 identifiers
+ eg#2.
+ class Test{
+ public static void main(String[] args){
+ System.out.println("sachin");
+ }
+ }
+ Totally 7 identifiers.
+
+ Rules(syntax for compiler + jvm) for writing an identifier
+--------------------------------------------------------------------------
+Rule1: The only allowed characters in java identifiers are
+ 	a to z, A to Z,0 to 9, _(underscore),$  
+Rule2: If we use any other characters it would result in compile time error
+ 	int ^* = 10;(invalid)
+ 	int total = 10;(valid)
+ 	int total#= 35;(invalid)  
+Rule3: Identifiers are not allowed to start with digits
+ 	int telusko1 =100;(valid)
+ 	int 1telusko = 100;(invalid)
+Rule4: Java identifiers are case sensitive,meaning number and Number is different.
+	 class   Demo{
+		 int number=10;
+		 int Number=20;
+		 int nUmber= 30;
+		 int NUMBER = 40;
+	 }
+Rule5: There is no length limit on java identifiers, but still it is a good 
+practice to keep the length of the identifier not more than 15characters.
+
+ 	int priorityOfThreadWithMinValue = 1;
+
+Rule6: We can't use reserve words as a identifiers.
+  	eg:  int if = 10; //CE
+Rule7: Predefined class names can be used as identifiers like String,Runnable
+ eg#1
+ eg#2
+ String Runnable = "sachin";
+ System.out.println(Runnable);//sachin
+ int String = 10;
+ System.out.println(String);//10
+Note: Even though predefined class names can be used as an indetifiers,it is not a good practise to keep.
+
+Interview Question
+------------------------
+	int If =10;//if and If is different
+	System.out.println(If);//10
+	int Integer = 10;
+	System.out.println(Integer);//10
+	int int =10;//CE
+	System.out.println(int);
+
+
+
+
+
+
+
+*************************************************************************************************************************************
+
+Number
+======
+  a. byte,short,int,long => we can't represent POSITIVE_INFINITY, NEGATIVE_INFINITY, NaN
+  b. float double => we can represent POSITIVE_INFINITY, NEGATIVE_INFINITY, NaN.
+
+eg:: System.out.println (10/0);   => ArithmeticException
+     System.out.println (0/0);    => ArithmeticException
+     System.out.println (0%0);    => ArithmeticException
+
+     System.out.println(10/0.0); => infinity
+     System.out.println(-10/0.0);=>-infinity
+     
+     System.out.println(0.0/0.0);=> NaN
+     System.out.println(-0.0/0.0);=>NaN
+
+ArithmeticExcpetion => It is not a compile time error,it is a RunTimeException
+                       It occurs only in integral arithmetic not in floating point
+                       arithmetic.
+                       The only operator which causes this exception is "%,/".
+
+2. RelationalOperators
+==================
+It can be applied on every type except boolean type
+  System.out.println(10>10.5);//false
+  System.out.println('a'>95.5);//false
+  System.out.println('z'>'a');//true
+  System.out.println(true>true);//CE:incompatible types
+
+We can't apply relational operator on String objects
+  System.out.println("sachin">"dhoni");
+
+Nesting of relational operators in not permitted
+  System.out.println(10<20<30); //CE:< can't be applied on boolean and int.
+
+For any 'x' value including NaN, the following expression return false
+  System.out.println(10<Float.NaN); //false
+  System.out.println(10<=Float.NaN); //false
+  System.out.println(10>Float.NaN); //false
+  System.out.println(10>=Float.NaN); //false
+  System.out.println(Float.Nan==Float.NaN); //false
+
+Note::
+  System.out.println(Float.Nan!=Float.NaN); //true
+  System.out.println(10!=Float.NaN); //false
+
+
+
+3. Logical Operators:
+
+	&& (Logical AND)
+	|| (Logical OR)
+	! (Logical NOT)
+
+	Examples:
+	
+		boolean isRaining = true;
+		boolean isSunny = false;
+	
+		boolean isUmbrellaRequired = isRaining && !isSunny; // true
+
+
+
+
+
+
+
+
+
+EqualityOperator(==,!=)
+=======================
+  We can apply equality operator for every primitive type including boolean type
+a. System.out.println(10==20); //false
+b. System.out.println('a'=='b');//false
+c. System.out.println('a'=97.0);//false
+d. System.out.println(true==true);//true
+e. System.out.println(false==false); //true
+
+
+eg#1.
+  Thread t=new Thread();
+  Object o=new Object();
+  String s=new String("abc");
+  System.out.println(t==o);//false
+  System.out.println(o==s);//false
+  System.out.println(t==s);//CE:incompatible types
+
+instanceof
+==========
+ This operator is used to check whether reference is of particular type or not.
+ if it is of same type/parent type then it returns true, otherwise it returns false.
+
+	Syntax:: r instanceof X
+               r=> reference
+               X=> class/Interface
+       Note:: relation from r to X should compulsorily exists otherwise CompileTimeError.
+
+eg:: Thread t= new Thread();
+     System.out.println( t instanceof Thread);//true
+     System.out.println( t instanceof Object);//true
+     System.out.println( t instanceof Runnable);//true
+     System.out.println( t instanceof String); //compiletime error
+
+eg:: String s=new String("sachin");
+     System.out.println(s instanceof String);//true
+     System.out.println(s instanceof Object);//true
+     System.out.println(s instanceof Thread);//compile time error
+
+eg:: Whenever we are checking parent object is of child type or not it would result in false
+     1. Object obj= new Object();
+        System.out.println(obj instanceof String);//false
+
+     2. Object obj=new String();
+        System.out.println(obj instanceof String);//true
+  
+Note: for any class/interface X null instanceof X is always false
+     3. System.out.println(null instanceof Runnable); //false
+
+Ternary operator
+================
+The ternary operator is a concise way to express conditional assignments in Java. 
+It's a shorthand for a simple if-else statement.
+
+syntax:
+	condition ? expression1 : expression2
+
+How it works:
+
+	Condition: Evaluate the condition.
+	Expression1: If the condition is true, execute this expression.
+	Expression2: If the condition is false, execute this expression.
+Example:
+
+	int number = 10;
+	String result = (number > 0) ? "Positive" : "Non-positive";
+	System.out.println(result);
+
+Output: Positive
+
+Example2 :
+
+	int age = 20;
+	String eligibility = (age >= 18) ? "Eligible to vote" : "Not eligible to vote";
+	System.out.println(eligibility);
+
+Output: Eligible to vote
+
+Evaluation of Java Operands
+===========================
+evaluation will happen from Left to Right.
+
+public class TestApp{
+	public static void main(String... args){
+		System.out.println(m1(1) + m1(2) *m1(3)/m1(4) *m1(5) +m1(6));
+	}
+	public int m1(int i){
+		System.out.println(i);
+		return i;
+	}
+}
+
+Note::
+1+2*3/4*5+6
+1+6/4*5+6
+1+1*5+6
+1+5+6
+6+6
+12
+
+***************************************************************************************************************
+
+Flow control statements
+=======================
+It decides the order in which the control will be trasfered.
+
+flow control
+============
+a. selective statement
+      1. if
+      2. if else
+      3. switch
+b. iterative statement
+      1. while
+      2. dowhile
+      3. for
+      4. foreach
+c. transfer staements
+      a. break
+      b. continue
+      c. return
+      d. System.exit(0)
+
+if block
+========
+
+  To select some statements for execution based on condition,we use if block
+
+syntax::
+
+   if(boolean){
+	  //statement-1
+   }
+      statement-2
+
+workflow
+=======
+  boolean condition true means statement-1 will be executed otherwise statement-2 will be 
+  executed.
+
+eg#1.
+   int x=0;
+   if(x){
+	System.out.println(x);
+   }
+   output:Compile time error
+
+eg#2
+   int x=0;
+   if(x==0){
+	System.out.println(x);
+   }
+   output:: 0
+
+eg#3
+   boolean res=false;
+   if(res){
+	System.out.println(res);
+   }
+   output:: nothing will be printed
+
+eg#4
+   boolean res=false;
+   if(res=true){
+	System.out.println(res);
+   }
+   output:: true
+
+dowhileloop
+===========
+ if we want to execute the body of the loop atleast once then we prefer using do while loop.
+
+do{
+
+}while(boolean);
+
+curly braces are optional,we can take only one statement between do and while.
+one statement should not be declarative statement
+
+eg::
+do{
+	System.out.println("hello");
+}while(true);
+
+output:: hello infinite times
+
+eg::
+do;while(true);
+output:: compiles succesfull
+
+eg::
+do
+  int x=10;
+while(true);
+output:: compile time error
+
+eg::
+do{
+  int x=10;
+}while(true);
+output:: compilation succesfull
+
+eg::
+dowhile(true)
+System.out.println("sachin");
+while(true);
+sachin infinite times
+
+eg::
+dowhile(true);
+output:: compilation error.
+
+eg::
+do{
+	System.out.println("sachin");
+}while(true);
+System.out.println("dhoni");
+output:: unreachable code
+
+eg::
+do{
+	System.out.println("sachin");
+}while(false);
+System.out.println("dhoni");
+Ouput:: sachin dhoni
+
+eg::
+int a=10,b=20;
+do{
+	System.out.println("sachin");
+}while(a<b);
+System.out.println("dhoni");
+output::sachin infinite times
+
+eg::
+int a=10,b=20;
+do{
+	System.out.println("sachin");
+}while(a>b);
+System.out.println("dhoni");
+
+output:: sachin dhoni
+
+
+eg::
+final int a=10,b=20;
+do{
+	System.out.println("sachin");
+}while(a<b);
+System.out.println("dhoni");
+
+output::CE
+
+eg::
+final int a=10,b=20;
+do{
+	System.out.println("sachin");
+}while(a>b);
+System.out.println("dhoni");
+
+Output:: sachin dhoni
+
+
+eg::
+final int a=10,b=20;
+do{
+	System.out.println("sachin");
+}while(a<b);
+System.out.println("dhoni");
+
+Output:: CE
+
+eg::
+final int a=10;
+do{
+	System.out.println("sachin");
+}while(a>20);
+System.out.println("dhoni");
+
+Output:: sachin dhoni
+
+forloop
+======
+ It is one of the most commonly used loop and best suitable if we know the no of iterations in 
+ advanced.
+
+Syntax::
+  for(initialisation;condition;incr/dec)
+  {
+	//body of loop
+  }
+
+Note: curly braces are optional, we can take only one statement and that statement should not be
+      declarative.
+
+
+eg:: 
+int i=0;
+for(System.out.println("hello");i<3;System.out.println("hi")){
+  i++;
+}
+Output:: hello hi hi hi
+
+eg::
+for(;;){
+	System.out.println("hello");
+}
+Output:: hello
+
+eg::
+for(;;)
+  int x=10;
+output:: Compile time error
+
+
+eg::
+for(;;){
+	int x=10;
+}
+output::Compiles succesfully
+
+eg::
+for(int i=0;i<true;i++){
+  System.out.println("sachin"); 
+}
+System.out.println("dhoni");
+
+output::CE
+
+eg:: 
+for(int i=0;i<false;i++){
+  System.out.println("sachin"); 
+}
+System.out.println("dhoni");
+output:: CE
+
+eg::
+for(int i=0;;i++){
+  System.out.println("sachin"); 
+}
+System.out.println("dhoni");
+
+Output::CE
+
+eg::
+int a=10,b=20;
+for(int i=0;a<b;i++){
+  System.out.println("sachin"); 
+}
+System.out.println("dhoni");
+output:: sachin ....
+
+eg::
+final int a=10,b=20;
+for(int i=0;a<b;i++){
+  System.out.println("sachin"); 
+}
+System.out.println("dhoni");
+output:: CE
+
+forloop on arrays
+=================
+eg#1.
+
+int[] arr={10,20,30};
+for(int i=0;i<=2;i++){
+   System.out.println(arr[i]);
+}
+
+for(int i=0;i<=arr.length;i++){
+   System.out.println(arr[i])
+}
+
+for(int i=0;i<=arr.length;i++)
+   System.out.println(arr[i])
+
+
+eg#2
+int[] arr = {{10,20,30},{40,50,60},{70,80,90}};
+
+for(int i=0;i<3;i++){
+    for(int j=0;j<3;j++){
+	System.out.print(arr[i][j]+"\t");
+    }
+   System.out.println();
+}
+
+for(int i=0;i<arr.length;i++){
+    for(int j=0;j<arr[i].length;j++){
+	System.out.print(arr[i][j]+"\t");
+    }
+   System.out.println();
+}
+
+for(int i=0;i<arr.length;i++){
+    for(int j=0;j<arr[i].length;j++)
+	System.out.print(arr[i][j]+"\t");
+    System.out.println();
+}
+
+
+
+
+
+Transfer statement
+=================
+1. break
+2. continue
+3. return
+
+break
+  It is used to break out of the loop.
+  It is used in switch to stop fall through
+  It is used inside labeled block to break block execution based on some condition.
+
+switch
+=====
+  int x=0;
+  switch(x){
+	case 0: System.out.println("hello");
+		break;
+	case 1: System.out.println("hiee");
+  }
+Output:hello
+
+forloop
+=======
+  for(int i=0;i<5;i++){
+	if(i==3)
+	   break;
+	System.out.println(i);
+  }
+Output::
+1
+2
+3
+
+Inside labeled block
+====================
+int x=10;
+l1:{
+	System.out.println("begin");
+	if(x==10)
+	   break l1;
+	System.out.println("end");
+}
+    System.out.println("hello");
+
+Output:: begin
+         hello
+
+These are the only places where we can use break othe places if we use compiler will throw an error as break outside swith or loop.
+
+eg::
+int x=10;
+if(x==10)
+  break;
+System.out.println("hello");
+
+output:: ce:: break outside switch or loop
+
+continue
+=======
+ To skip current iteration and continue for next iteration we use continue.
+
+eg#1.
+for(int i=0;i<=5;i++){
+	if(i==3)
+	   continue
+    System.out.println(i);
+}
+output::
+0
+1
+2
+4
+5
+
+eg#2.
+int x=2;
+for(int i=0;i<10;i++)
+{
+	if(i%x==0)
+	   continue;
+	System.out.println(i);
+}
+output
+1
+3
+5
+7
+9
+
+eg#3.
+int x=10;
+if(x==10)
+  continue
+System.out.println(x);
+we can use continue only inside loop,if we use it any where else it would result in compile time
+error saying :continue outside the loop.
+
+labelled break and continue
+===========================
+l1:for(;;){
+   .....
+   .....
+   l2:for(;;){
+	.....
+	.....
+	.....
+	l3:for(;;){
+		.....
+		.....
+		.....
+		break l1;
+		break l2;
+		break l3;
+		.....
+		.....
+		.....
+	}
+	......
+	......
+
+   }
+   ....
+   ....
+   ....
+}
+
+eg#1.
+l1:for(int i=0;i<3;i++){
+	for(int j=0;j<3;j++){
+		if(i==j)
+			stmt-1;
+		System.out.println(i+"...."+j);
+	}
+   }
+what is the output if the stmt-1 is replaced as shown below?
+stmt-1 : break; 
+stmt-1 : break l1;
+stmt-1 : continue;
+stmt-1 : continue l1;
+
+dowhile with continue
+=====================
+  int x=0;
+  do{
+	++x;
+	System.out.println(x);
+	if(++x<5)
+	  continue;
+        ++x;
+	System.out.println(x);
+   }while(++x<10);
+
+Note:: Compiler will never check unreachability in case of if else where as unreachable code is 
+       applicable only for loops.
+
+
+*************************************************************************************************************
+
+Arrays
+   It refers to index collection of fixed no of homogenous data elements.
+   Single variable holding mulitple values which imporves readability of the program.
+
+
+Disadvntages
+  1. once we create the size cannot be increased/decreased.
+  2. It stores only homogenous data elements.
+
+Array declarations
+==================
+  Single Dimension Array
+
+Declaration of array
+====================
+ int[] a;//recomended to use as variable is seperated from type.
+ int a[];
+ int []a;
+
+int[6] a; // compile time error. we cannot specify the size.
+
+
+Array Construction
+==================
+   Every array in java is an object hence we create using new operator.
+
+example
+   int[]  a;
+   a=new int[5];
+
+      or
+   int[] a =new int[5];
+
+For every type corresponding classes are available but these classes are part of java language
+but not applicable at the programmer level.
+    int[]    [I
+    float[]  [F
+    double[] [D
+
+Rule1::
+   At the time of Array construction compulsorily we should specify the size.
+   example::
+         int[] a=new int[5];
+         int[] a =new int[];//ce:: array dimension is missing.
+
+Rule2::
+  It is legal to have an array with size zero.
+     example::
+          int[] a =new int[0];
+          System.out.println(a.length);
+
+Rule3::
+   If we declare an array with negative size it would result in Negative Array size exception.
+       example::
+            int[] a=new int[-5]; //NegativeArraySizeException.
+
+Rule4::
+   The allowed datatypes to specify the size are byte,short,int,char.
+        example::
+             int[] a =new int[5];
+
+             byte b=10;
+             int[] a =new int[b];//valid
+
+             short s=25;
+             int[] a =new int[s];//valid
+
+             char c='A';
+             int[] a=new int[c];//valid
+
+	     int[] a=new int[10L];//CE
+	     int[] a=new int[3.5f];//CE
+
+
+Rule5:: The maximum allowed array size in java is maximum value of int size.
+    int[] a=new int[2147483647]; //but valid:: OutOfMemoryError 
+     int[] a=new int[2147483648]; //CE
+
+ArrayInitialisation
+===================
+  Since arrays are treated as objects,internally based on the type of data we keep inside array
+  JVM will keep default values.
+     eg::int[] a =new int[5];
+         System.out.println(a);//[I@....
+         System.out.println(a[0]);//0
+
+     eg2:: int[] a=new int[4];
+           a[0]=10; a[1]=20; a[2]=30;
+           System.out.println(a[3]); //0
+           System.out.println(a[4]); //ArrayIndexOutOfBoundsException.
+           System.out.println(a[-4]);//ArrayIndexOutOfBoundsException.
+
+Shortcut of way declartion,construction,initialisation in single line
+=====================================================================
+  int[]a = {10,20,30,40};
+  char[] a= {'a','e','i','o','u'};
+  String[] a= {"sachin","ramesh","tendulkar","IND"};
+
+Array Element Assignements
+==========================
+  case 1:: In case of primitive array as an array element any type is allowed which can be 
+           promoted to declared type.
+
+   int[] a=new int[10];
+    a[0]=97;
+    a[1]='a';
+    byte b= 10;
+    a[2]=b;
+    short s=25;
+     a[3]=s;
+     a[4]=10L;//CE: possible loss of precession
+
+  case 2:: In case of Object type array as an array elements we can provide either declared type
+           object or its child class objects.
+
+eg#1.
+     Object[] obj=new Object[5];
+     obj[0] =new Object();//valid
+     obj[1] =new Integer(10);//valid
+     obj[2] =new String("sachin");//valid
+
+eg#2.
+    Number[] num=new Number[10];
+     num[0]=new Integer(10);//valid
+     num[1]=new Double(10.0);//valid
+     num[2]=new String("sachin");//invalid
+
+case3:: In case of interface type array as an array element we can provide its implementation 
+        class Object.
+      Runnable[] r=new Runnable[5];
+       r[0]= new Thread("sachin");
+       r[1]= new String("dhoni");//CE
+
+case4:: In case of abstract class type array as an array element we can provide its child class
+        object.
+
+
+Array variable assignment
+========================
+case1:: Element level type promotion is not applicable
+          eg:: char value can be type promoted to int, but char[] can't be type promoted to int[].
+
+int[] a= {1,2,3};
+char[] c={'a','b','c'};
+int[] b = a;
+int[] a = c;//invalid
+
+
+case2:: In case of Object type array,its child type array can be assigned.
+          eg:: String[] names={"sachin","saurav","dhoni"};
+               Object[] obj=names;
+
+eg:: int[]=> int[] (valid)
+     char[] => int[] (invalid)
+     int  => long (valid)
+     int[] => long[] (invalid)
+     char  => int(valid)
+     char[] = int[] (invalid)
+     String => Object (valid)
+     String[] => Object[](valid)
+
+case3:: Whenever we are assigning one array reference to another array reference,its just 
+        the reference which are being copied not the array elements.
+        While copying the reference only its type would be given importance,not its size.
+
+eg:: int[] a= {10,20,30,40};
+     int[] b= {100,200};
+     a=b;
+     b=a;
+     
+
+case4:: Whenever we are copying the array,its reference will be copied but we should match it with
+        the array dimension and its type,otherwise it would result in compile time error.
+
+eg:: int[][] a= {{10},{20},{30}};
+     int[] b={100,200,300};
+         b= a; //CE: incompatible type
+
+Note:: In array assignment,its type and dimension must be matched otherwise it would result in
+       compile time error.
+
+       int[] a ={10,20,30};S.o.p(a);//[I@..
+       float[] f={10.0f,20.0f}; S.o.p(f); //[F@..
+       boolean[] b= {true,false}; S.o.p(b); //[Z@..
+       Integer[] i={10,20,30}; S.o.p(i);//[L@...
+       Float[] f = {10.0f,20.0f}; S.o.p(i); //[L@...
+
+Tricky Questions
+================
+  a. int[] a,b;  // a-> 1D, b-> 1D
+  b. int a[],b[]; // a-> 1D, b->1D
+  c. int a[],b;   // a-> 1D, b-> normal variable
+  d. int a[],[]b; //CE
+  e. int a,[]b;   //CE
+  f. int []a,[]b; //CE
+  g. int []a,b;   //a => 1D,b=> 1D.
+
+
+2-D Array
+========
+   2D-Array =1D-Array + 1D-Array 
+               (ref)       (data)
+
+Declaration(All are valid)
+    int[][] a ;
+    int  a[][];
+    int  [][]a;
+    int[] []a;
+    int[] a[];
+    int []a[];
+
+ArrayConstruction
+    int[][] a =new int[3][2];
+            or
+    int[][] a= new int[3][];
+      a[0]=new int[5];
+      a[1]=new int[3];
+      a[2]=new int[1];
+       
+ArrayInitalisation
+   a[0][0] = 10;
+   a[2][3] = 5;
+
+Tricky Question
+===============
+     int[] a,b; // a-> 1D,b->1D
+     int[][] a,b; //a->2D,b->1D
+     int[] a[],b; //a->2D,b->1D
+     int[] a[],[]b; //CE
+     int[] []a,b;  //a->2D,b->1D
+Rule:If we want to specify the dimension, we need to specify that before the first variable,but
+     from second variable onwards rule is not applicable.
+
+shortcut of working with 2-D array
+   int[][] a= {{10,20},{100,200,300},{1000}};
+
+
+length vs length()
+  length=> It is a property of Array type class.
+  length() => It is a method of String class.
+
+int[] a= {10,20,30};
+S.o.p(a);
+S.o.p(a.length);//3
+S.o.p(a.length());//CE::symbol not found
+
+String[] names={"sachin","saurav","dhoni","yuvi"};
+S.o.p(names); //[L@....
+S.o.p(names[0]);//sachin
+S.o.p(names.length);//4
+S.o.p(names[0].length());6
+
+int[] a[] ={{10,20,30},{100,200},{1000},{40,50,60,70}};
+S.o.p(a);//[[I@...
+S.o.p(a[0]);//[I@...
+S.o.p(a.length);//4
+S.o.p(a[0].length);3
+
+Ananomyous Array
+================
+    An array without a name is called Ananomyous Array.
+    These type of array is created just for instance use.
+
+eg:: public class Demo{
+	public static void main(String... args){
+		add(new int[]{10,20,30,40});
+		add(new int[]{10,20});
+		add(new int[]{});
+	}
+	public static void add(int[] a){
+		sum+=0;
+		for(int i=0;i<=a.length;i++){
+			sum+=a[i];
+		}
+		System.out.println("The sum is ::"+sum);
+	}
+     }
+
+Usage of ananomyous array internally by jvm
+===========================================
+public class Demo{
+	public static void main(String []args){
+		System.out.println("Working with array");
+	}
+}
+
+ javac Demo.java
+ java  Demo 10 20  => Demo.main(new String[]{"10","20});
+ java  Demo        => Demo.main(new String[]{});
+ java  Demo 10     => Demo.main(new String[]{"10"});
+ java  Demo sachin tendulkar => Demo.main(new String[]{"sachin","tendulkar"});
+
+Usage of Arrays Inbuilt class
+=============================
+ It is a helper class which is available in java.util package.
+ This helper class provides few methods through which the user would get a benfit of working with
+ few logics.
+
+eg#1.
+  toString() is overriden to print the array elements in one line.
+
+int[] arr = { 10, 20, 30, 40, 50 };
+for (int data : arr) {
+    System.out.println(data);
+}
+System.out.println(Arrays.toString(arr));//10 20 30 40 50
+
+eg#2.
+  copyOf()
+     This method is used to copy the elements from one array into another array.
+  int[] arr = { 10, 20, 30, 40, 50 };
+  int[] duplicateArray = Arrays.copyOf(arr, arr.length);
+  System.out.println(Arrays.toString(duplicateArray));
+
+eg#3.
+   sort()
+      It is used to sort the array elements in ascending order.
+int[] arr = { 50, 40, 30, 20, 10 };
+System.out.println(Arrays.toString(arr));//50 40 30 20 10
+Arrays.sort(arr);
+System.out.println(Arrays.toString(arr));//10 20 30 40 50
+
+eg#4.
+  binarySearch()
+    if key found return the index otherwise
+    return -(low+1)
+
+ int[] arr = { 50, 40, 30, 20, 10 };
+ Arrays.sort(arr);
+ System.out.println(Arrays.binarySearch(arr, 2));//-1
+ System.out.println(Arrays.binarySearch(arr,35));//-4
+ System.out.println(Arrays.binarySearch(arr,100));//-6
+ 
+eg::
+    int[] arr = { 50, 40, 30, 20, 10 };
+    Arrays.sort(arr);
+    int key = 45;
+    System.out.println(Arrays.binarySearch(arr, 2, 4, key));//-4
+
+
+eg#5. copyOfRange()
+         This method is used to copy the array elements of the specified range.
+      int[] arr = { 50, 40, 30, 20, 10 };
+      System.out.println(Arrays.toString(arr));//50 40 30 20 10
+
+      int[] duplicateArray = Arrays.copyOfRange(arr, 1, 4);
+      System.out.println(Arrays.toString(duplicateArray));//40 30 20
+
+eg#6. equals()
+         To compare the contents of data in a particular order.
+
+      int[] arr1 = { 50, 40, 30, 20, 10 };
+      Arrays.sort(arr1);
+      int[] arr2 = { 10, 20, 30, 40, 50 };
+      System.out.println(Arrays.equals(arr1, arr2));
+
+
+
+*************************************************************************************************************
+
+A java program can contain any no of source file,but only one class  should contain public 
+access modifier.
+ Rule: If a class is public then that source code file name should be same as that of class name
+       otherwise it would result in "CompileTimeError".
+
+If class is not public, then we can give any name for our source code file.
+
+class A{} class B{} class C{}
+
+case1:
+ For the above src code file name can be any filename.
+
+case2:
+ if the class B is declared as public then we need to give src code name as "B.java" otherwise it
+ would result in "CompileTimeError".
+
+case3:
+ If both B and C class java code is made as public then we can't save the file name, if we say and
+ if we compile then the program would result in "CompileTimeError".
+
+case4:
+ class A{
+     public static void main(String... args){
+          System.out.println("A class main method ");
+     }
+ } 
+ class B{
+     public static void main(String... args){
+          System.out.println("A class main method ");
+     }
+ }  
+ class C{
+     public static void main(String... args){
+          System.out.println("A class main method ");
+     }
+ }  
+ class D{} 
+
+For the above code, we can keep any name, assume the source code file name is "ABC.java"
+ upon compilation the no of .class file generated is 
+  A.class,B.class,C.class,D.class  
+
+java A => A class main method
+java B => B class main method
+java C => C class main method
+java D => NoSuchMethodError(main method not found)
+java ABC => NoClassDefFoundError(if the required .class file is not available then it would result
+            in Exception called "NoClassDefFoundError".
+
+
+import statement
+===============
+public class Test{
+	public static void main(String... args){
+		ArrayList al=new ArrayList();
+	}
+}
+javac Test.java
+ cannot find symbol
+ symbol: class ArrayList
+ location:class Test
+
+How to resolve this problem?
+We can resolve this problem by using fully qualified class name.
+    java.util.ArrayList al=new java.util.ArrayList();
+ In the above approach, it increases the length of the code and reduces readablity of the code.	
+ To resolve this problem we use import statement.
+ using import statement, we need not want to inform the fully qualified classname,we can use
+ short names directly which decreases the length of the code and increases the readablity of the
+ application.
+
+Import statement is of 2 types
+a. Explicit import
+     eg: import java.util.Arraylist
+            It is most recomended,becoz it increases the readability of the application.
+            
+b. Implicit import
+     eg: import java.util.*;
+             It is never recomended,becoz it decreases the readability of the application.
+
+
+case1:
+  which of the following is valid?
+1. import java.util;
+2. import java.util.ArrayList.*;
+3. import java.util.*;
+4. import java.util.ArrayList
+
+case2:
+ class MyList extends java.util.ArrayList{
+	//code
+ }
+In the above code fully qualified class name is used, when we use fully qualified class name then
+ it is not required to write import statement,if we use import statement then it is not required
+ to use fully qualifed class name.
+
+case3:
+Ambigous error, as both the packages contain classes.
+eg#1
+import java.util.*;
+import java.sql.*;
+class Test{
+	public static void main(String... args){
+		Date d=new Date();
+	}
+}
+
+eg#2.
+import java.awt.*;
+import java.util.*;
+public class Test  {
+	public static void main(String[] args){
+		List<String> l=new ArrayList<String>();
+      }
+}
+
+Case4: 
+ While resolving class names error,compiler will always gives preference for
+ 1. Explicit class import
+ 2. Current working directory
+ 3. Implicit class import.
+
+eg#1.
+import java.sql.*;
+import java.util.Date;
+public class Test  {
+	public static void main(String[] args){
+		Date d=new Date();
+      }
+}
+As noticed above the compiler prefered taking it from "java.util" package.
+
+Case5:
+  When ever we use import statement, by default all the classes and interfaces which are a part
+ of current package will be available but not subpackage
+
+eg:: java => util => regex => pattern
+
+To use pattern class in our code, we need to use
+ a. import java.*;
+ b. import java.util.*;
+ c. import java.util.regex.*;
+ d. import java.util.regex.pattern;
+
+Case6:
+ In java language,by default 2 packages we need not want to import they would be available to
+ every java program
+  a. java.lang package
+  b. current working directory
+
+Case7:
+ import statement is totaly compile time constant, meaning "if more no of import statements" then
+ more would be the compile time.but no change in the execution time.
+
+
+Difference b/w c language #include vs import statement
+      #include 
+   =============
+It can be used in C,C++.
+At compilation time only compiler will copy the
+code from standard library and keep it in the
+ current program.
+It is static inclusion.
+It results in wastage of memory.
+<jsp:@file=>
+
+    import
+ ===========
+It can be used only in java.
+At the execution time, the required .class file
+will be loaded into the current program.
+ It is called as dynamic inclusion.
+ It wont result in wastage of memory.
+<jsp:include=>
+
+Note: In case of include statement, all the header file will be copied to the result programming
+      so we say include statement as "static binding".
+      In case of import statement, jvm will not load all the .class file from the given package
+      depending upon the statement jvm execute the required .class file will be loaded, so we say
+      it follows "load-on-demand", "dynamic loading", "load-on-fly".
+
+JDK1.5 new features
+===================
+1. foreach
+2. vararg
+3. Queue
+4. generics
+5. Boxing and AutoBoxing
+6. Covariant types
+7. Annotations
+8. Enum
+9. Static import
+10.StringBuilder
+
+Static import
+============
+ static variables, static methods can be accessed directly using the classname.
+ if we use static import then it is not recomended to use class name also.
+ In case of normal import
+   * => represent the current package .class files(classes,interface,enum)
+ In case of static import
+   * => represent the current class, static variables and methods.
+
+eg#1 without using static import
+public class Test  {
+	public static void main(String[] args){
+		System.out.println(Math.sqrt(4));
+		System.out.println(Math.max(10,20));
+		System.out.println(Math.random());
+      }
+}
+
+eg#2 using static import
+import static java.lang.Math.sqrt;
+import static java.lang.Math.*;
+public class Test  {
+	public static void main(String[] args){
+		System.out.println(sqrt(4));
+		System.out.println(max(10,20));
+		System.out.println(random());
+      }
+}
+
+eg#4.
+import static java.lang.System.out;
+public class Test  {
+	public static void main(String[] args){
+		out.println("Welcome to ABC for technology training");		
+      }
+}
+
+System    =>It is a className which is a part of "java.lang" package.
+out       =>It is a static variable which is of type "out".
+println() => It is a method.
+
+eg#4.
+import static java.lang.Integer.*;
+import static java.lang.Byte.*;
+import static java.lang.System.out;
+public class Test  {
+	public static void main(String[] args){
+		out.println("Welcome to ABC for technology training");
+		out.println(MAX_VALUE);//CE: MAX_VALUE present in Integer,Byte also
+      }
+}
+
+Note: 
+Two packages containing common classes and interface is a common,so ambiguity problem
+is common in "normal import".
+Two classes/interfaces containing common static variables,static method is also common, so ambiguity problem is common in "static import".
+
+Note: While resolving static members compiler will give precedence in the following order
+ a. current class static members
+ b. Explicit class members
+ c. Implicit class members
+
+eg#1.
+
+import static java.lang.Integer.MAX_VALUE;//line-n2
+import static java.lang.Byte.*;
+import static java.lang.System.out;
+public class Test  {
+	static int MAX_VALUE=999;//line-n1
+	public static void main(String[] args){
+		out.println(MAX_VALUE);
+      }
+}
+
+Scenario1:upon execution output:: 999
+Scenario2: if we comment line-n1, then output is Integer max value
+Scenario3: if we comment line-n2, then output is 127(byte max_value)
+
+Which of the following import statements are valid ?
+ 1. import java.lang.Math.*;
+ 2. import static java.lang.Math.*;
+ 3. import java.lang.Math;
+ 4. import static java.lang.Math;
+ 5. import static java.lang.Math.sqrt.*;
+ 6. import java.lang.Math.sqrt;
+ 7. import static java.lang.Math.sqrt();
+ 8. import static java.lang.Math.sqrt;
+
+static import rather than reducing the coding efforts it increases the confusion, so we don't prefer using "static import".
+
+Difference b/w normal import vs static import? 
+ normal import => To import classes/interface of a particular package.
+                  By using this we can access class/interface using short name rather than writing
+                  fully qualified class name.
+ static import => To import static members of a class directly without using class name.
+                  When we use static import those static members/static memebers can be accessed
+                  without using class name.
+ 
+
+Packages
+=============
+ It is a process of grouping all the related classes/interfaces into single unit.
+
+Objective of Packages is
+ 1. To avoid naming conflicts
+ 2. To improve modularity of the application.
+ 3. To provide security.
+ 4. Convention of pacakges is reverse the internet domain name.
+
+eg#1.
+package com.abc.nitin.jobs;
+
+public class Test{
+	public static void main(String... args){
+		System.out.println("ABC jobs....");
+	}
+}
+
+javac -d . Test.java
+java com.abc.nitin.jobs.Test
+    ABC jobs....
+
+-d => it represents the destination location where .class along with package should be stored.
+ . => it represnts the current location(package will be created and .class file will be stored)
+
+
+eg#2.
+package com.abc.nitin.jobs;
+public class Test{
+	public static void main(String... args){
+		System.out.println("ABC jobs....");
+	}
+}
+
+javac -d D:Test.java
+  In D drive com.abc.nitin.jobs.Test
+
+javac -d Z:Test.java
+  In Z drive com.abc.nitin.jobs.Test class file will be generated provided Z drive exists otherwise it would result in compileTimeError.
+
+Conclusion
+==========
+1. In java language, there should be only one package statement, more than one pacakge statement    if we take it would result in "CompileTimeError".
+     eg#1.
+	package pack1;
+        package pack2;
+	public class Test{
+		public static void main(String... args){
+			System.out.println("sachin");
+		}
+	}
+      javac -d . Test.java
+	compiletimeerror.
+
+
+
+2. In java language, 1st non comment statement if exists it should be package statement otherwise
+   it would result in compile time error.
+
+   eg#1.
+      import java.util.Scanner;
+      package pack1;
+      public class Test{
+		public static void main(String... args){
+			Scanner scanner=new Scanner(System.in);
+		}
+      }
+     javac -d . Test.java
+     compileTimeError.
+
+standard java file structure
+============================
+  package(only one statement) 
+  import(any no of import statement)
+  class/interface/enum
+
+pick which one of the following is valid
+========================================
+ 1. An empty file saved as Test.java
+
+ 2.  Test.java
+	package pack1;
+
+ 3.  Test.java
+	import java.util.Scanner;
+
+ 4.  Test.java
+    package pack1;
+    import java.util.Scanner;
+
+ 5.  Test.java
+    class Test{
+
+    }
+
+class modifiers
+===============
+ Whenever we are creating any class,then we need to give information to our jvm like
+  a. Is it accesible from everywhere.
+  b. Whether child class creation is possible or not
+  c. Wheter object creation is possible or not..
+
+To specify this information we need to use access modifiers like
+  a. public 
+  b. default
+  c. final
+  d. abstract
+  e. strictfp
+
+if we try to use any other modifiers it would result in CompileTimeError.
+
+eg#1
+private class Test{
+	public static void main(String... args){
+		System.out.println("hello");
+	}
+}
+javac Test.java
+ compileTimeError.
+
+For inner classes
+=================
+   public,default,final,abstract,strictfp => outer class.
+   private,protected,static               => inner class.
+
+
+What is the difference b/w access modifier vs access specifier?
+ In old language like c++, we have access specifier like private,protected,default,public but in 
+ java language we dont have any access specifier,we just have access modifier.
+  1. public
+  2. private
+  3. protected
+  4. static
+  5. strictfp
+  6. synchronized
+  7. final
+  8. abstract
+  9. native
+  10.transient
+  11.volatile
+
+public access modifier
+======================
+  com.abc.pack1
+       |=> Test1.java
+  
+  com.abc.pack2
+       |=> Test2.java
+
+
+eg#1.
+package com.abc.pack1;
+public class Test1 {
+	public void m1(){
+		System.out.println("Hello i am from m1()");
+	}
+}
+ javac -d . Test1.java
+  compilation succesfull
+
+eg#2.
+package com.abc.pack2;
+import com.abc.pack1.Test1;
+public class Test2  {
+	public static void main(String[] args){	
+			Test1 t=new Test1();
+			t.m1();
+      }
+}
+ javac -d . Test2.java
+ java com.abc.pack2.Test2
+     Hello i am from m1()
+
+Note: If the public access modifier is removed from Test1.java then upon compiling Test2.java file
+      it would result in "CompilationError".
+
+
+Default Access modifier
+======================
+ => It is accesible only at the package level.
+ => It is called as package level access modifier.
+
+eg#1.
+package com.abc.pack1;
+class Test1 {
+	public void m1(){
+		System.out.println("Hello i am from m1()");
+	}
+}
+ javac -d . Test1.java
+ compilation succesfull
+
+eg#2.
+package com.abc.pack1;
+public class Test2  {
+	public static void main(String[] args){	
+			Test1 t=new Test1();
+			t.m1();
+      }
+}
+ javac -d . Test2.java
+ java com.abc.pack1.Test2
+    Hello i am from m1()
+
+2. final access modifier
+    It can be applied on class,variable and methods
+
+ final applied on class => prevents inheritance.
+ final applied on variable => can't change the value.
+ final applied on methods => wont participate in overriding.
+
+finalmethods
+===========
+ In inheritance,by default all the methods available in parent would reach to child.
+ If we want child not to override the methods then in the parent class, we need to make the method
+ as final, so overriding it wont support.
+
+eg: public class Parent{
+	public void property(){
+		System.out.println("land+cash+gold");
+	}
+	public final void marry(){
+		System.out.println("family girl only....");
+	}
+    }
+    class Child extends Parent{
+	public  void marry(){
+		System.out.println("My choice......");
+	}
+    }
+
+final class
+===========
+ If a class is final,then for that class child class can't be created meaning inheritance is not
+ possible.
+
+eg#1.
+ final class Parent{
+
+ }
+ class Child extends Parent{
+	
+ }
+ javac Parent.java
+ javac Child.java
+   cannot inherit from Parent
+
+
+Note: Every method present inside the final class, is by default final whether we declare or not.
+      This rule is not applicable for variables in final class.
+
+eg#1.
+final class Parent{
+    static int data=10;
+    static{
+	data=100;
+    }
+}
+javac Parent.java
+ compilation succesfull.
+
+abstract => access modifier applicable at class/method level.
+if the method is abstract,then following combinations of access modifier is illegal
+    abstract => static,synchronized,strictfp
+                private,native,final
+
+Note::
+final class Demo{
+    public abstract void m1(); //invalid
+}
+
+abstract class Demo{
+	public final void m1();//valid
+}
+
+class level modifiers
+=====================
+  =>public,default,abstract,final,strictfp.
+
+Member modifiers
+================
+ If a member is declared as public,then those members can be accesible outside the package.
+ Before checking those members,first visibility should be there for class.
+
+public access modifier
+======================
+  com.abc.pack1
+       |=> Test1.java
+  
+  com.abc.pack2
+       |=> Test2.java
+
+
+eg#1.
+package com.abc.pack1;
+class Test1 {
+	public void m1(){
+		System.out.println("Hello i am from m1()");
+	}
+}
+ javac -d . Test1.java
+  compilation succesfull
+
+eg#2.
+package com.abc.pack2;
+import com.abc.pack1.Test1;
+public class Test2  {
+	public static void main(String[] args){	
+			Test1 t=new Test1();
+			t.m1();
+      }
+}
+ javac -d . Test2.java
+  compilationerror.
+
+default access modifier
+======================
+  com.abc.pack1
+       |=> Test1.java
+  
+  com.abc.pack2
+       |=> Test2.java
+
+
+=> if the member is declared as default, then those members should be accesible within the
+   package.
+
+eg#1.
+package com.abc.pack1;
+class Test1 {
+	public void m1(){
+		System.out.println("Hello i am from m1()");
+	}
+}
+ javac -d . Test1.java
+  compilation succesfull
+
+eg#2.
+package com.abc.pack1;
+import com.abc.pack1.Test1;
+public class Test2  {
+	public static void main(String[] args){	
+			Test1 t=new Test1();
+			t.m1();
+      }
+}
+    javac -d . Test2.java
+      Hello i am from m1()
+
+private modifier
+===============
+=> If a member is declared as private,then those members will be accesible only in that particular
+   class.
+=> private methods are not visible in child class, so if the parent class method is abstract
+   then abstract and private method is illegal.
+
+
+protected modifier
+==================
+ => If a memeber is declared as protected,then those members within the same package can be            accessed any where.
+ => If a member is declared as protected, then those members can be accessed outside the package
+    also but only in the child class using the child class reference,otherwise it would result
+    in compiletime error.
+ => protected = default + child classes oly using child reference.
+
+eg#1.
+package com.abc.pack1;
+public class Test1{
+    protected void m1(){
+	System.out.println("Inside m1()");
+    }
+}
+
+eg#2.
+package com.abc.pack1;
+public class Test2 extends Test1{
+	public static void main(String... args){
+
+		Test1 t1=new Test1();
+		t1.m1();//inside m1()
+
+		Test2 t2=newTest2();
+		t2.m1();//inside m1()
+	
+		Test1 t11=new Test2();
+		t2.m1();//inside m1()	
+	}
+}
+
+Scneario2:Outside the package
+
+eg#1.
+package com.abc.pack1;
+public class Test1{
+    protected void m1(){
+	System.out.println("Inside m1()");
+    }
+}
+eg#2.
+package com.abc.pack2;
+public class Test2 extends Test1{
+	public static void main(String... args){
+
+		Test1 t1=new Test1();
+		t1.m1();//CE
+
+		Test2 t2=new Test2();
+		t2.m1();//inside m1()
+	
+		Test1 t11=new Test2();
+		t11.m1();//CE	
+	}
+}
+
+Visibility
+==========                                    private      default    protected     public
+ Within a same class                             yes         yes          yes         yes
+ from the child class within a package           no          yes          yes         yes
+ from the non child class within a pacakge       no          yes          yes         yes
+ from the child class outside the package        no          no           yes         yes
+ from the non child class outside the pacakge    no          no           no          yes
+
+public has highest access privilege where private has low access privilige.
+
+final instance variable
+=======================
+ if a variable is declared as final then it should be initalised by the programmer at 3 different
+ places like
+   a. at the time of declaration
+   b. inside constructor
+   c. inside instance block.
+
+
+final static variable
+=====================
+ if a variable is declared as final, then it should be initalised by the programmer at 2 differnt
+ places like
+   a. Time of declaration
+   b. inside static block.
+
+final local variable
+====================
+ In case of final local variable, before we use that variable if we initalize then no compile time
+ error.
+ The only access modifier applicable at local variable level is "final".
+
+ native
+ ======
+It is a modifier appicable at only method level,not at variable or class level.
+If the implementation of a method is given by other language then those methods are called 
+"native methods".
+ The main objective of native keyword is
+a. It improves the performance.
+b. It helps us to use legacy code in java language
+c. It helps us to have machine level interaction
+
+
+
+eg#1.
+package com.abc.pack1;
+class Native{
+	static{
+		System.out.println("Native library");
+	}
+	public native void m1();
+}
+class Test1{
+	public static void main(String... args){
+		new Native().m1();
+	}
+}
+
+native methods means implementation is already given so for native methods body wont be there we
+should terminate it with ;.
+
+native -> implemenation already available, so we can't use abstract
+native -> implementation already available in other language, we can't guarantee those langauge
+          support standard IEEE format represenation for floating point number so strictfp is
+          illegl along with native
+native methods  participate in inheriatnce,so overriding or overloading is  possible.
+
+native => Good imporoves the performance
+native => Drawback is it breaks the platform independance nature of java language.
+
+synchronized => applicable at only class level.
+transient and volatile => applicable at variable level only.
+
+conclusions
+===========
+oly modifier applicable at consturctor level is private,default,protected,public
+oly modifier applicable for local variable is "final".
+oly modifier applicable for class,but not for interface is "final".
+oly modifier applicable for class,but not for enum are final and abstract.
+modifier applicable for inner class,but not for outer class is
+   private,protected,static.
+modifier applicable only for methods is "native".
+modifier applicable only for variables is "transient and volatile".
+
+
+
+****************************************************************************************************
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

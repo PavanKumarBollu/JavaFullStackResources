@@ -1,7 +1,7 @@
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
 
 @WebServlet(urlPatterns="/test")
 public class TestServlet extends HttpServlet

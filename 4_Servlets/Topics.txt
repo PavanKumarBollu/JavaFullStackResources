@@ -1,0 +1,28 @@
+1. Different ways of Creating a Servlet 		--> 30_01_2023_servlet_class_notes.pdf
+
+2. Why need HttpServlet(AC)?				--> 30_01_2023_servlet_class_notes.pdf
+
+3. For a webapplication  how to send GET request? 	--> 30_01_2023_servlet_class_notes.pdf
+
+4. Life Cycle of HttpServlet				--> 30_01_2023_servlet_class_notes.pdf
+
+5. Hierachy of calling the methods in servlets 		--> 30_01_2023_servlet_class_notes.pdf
+
+6. Example of doGet And doPost Methods 			--> 30_01_2023_servlet_class_notes.pdf
+
+7. Playing with request Object				--> 30_01_2023_servlet_class_notes.pdf
+
+8. Servlets Hirarchy					--> 30_01_2023_servlet_images.pdf
+
+9. getting the data from the requestObject 		--> 30_01_2023_servlet_images.pdf
+
+10.  HttpRequest Structure				--> 31_01_2023_servlet_class_notes.pdf
+
+11. Working with ServletResponse/HttpServletResponse 	--> 31_01_2023_servlet_class_notes.pdf
+
+12. To send binary information like videos,		--> 31_01_2023_servlet_class_notes.pdf
+    audio,images etc response will be through "Stream".
+
+13. In single application can we use both PrintWriter object and ServletOutputStream to send the response?
+ 	Ans. 	Not possible, it would result in "java.lang.IllegalStateException: getWriter()
+ 		has already been called for this response".

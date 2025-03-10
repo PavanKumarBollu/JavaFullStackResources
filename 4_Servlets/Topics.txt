@@ -1,3 +1,77 @@
+						1_24_01_2023_servlet_class_notes.pdf
+						==================================
+
+ => Different types of application built using java 
+
+ => Difference b/w Web applications vs Distributed applications. <== Refer : 24_01_2023_servlet_images.pdf
+ 
+ => webserver
+
+ => Deployment and Un-Deployment
+ 
+ => webclient
+
+ => static response OR  dynamic response
+
+ => Flow diagram of static response AND Flow diagram of static response
+
+ => CGI
+
+ => Servlet
+
+ => JSP 
+ 
+ => Architecture of webserver(tomcat) 
+
+ => ServletContainer AND  JSP container
+ 
+ =>  Manual Starting of the TomCat Server <== look in page 4
+
+ => Servlet Packages a. javax.servlet.*  b. javax.servlet.http.*
+
+ => Servlet(I) Interface Methods And GenaricServlet(I) methods And HttpServlet(I) Methods
+
+
+ 
+ 						25_01_2023_servlet_live_class_notes.pdf
+						=======================================
+
+=> BIG-7 methods
+
+=> What is the difference b/w GET and POST request type?
+
+=> What is idempotent request?
+
+=> How to send GET request?
+
+=> How to send POST request?
+
+=> How to create Servlet in Java?
+
+
+						27_1_2023_servlet_class_notes.pdf
+						=================================
+
+=> Standard folder structure of webapps to deploy in tomcat server
+
+=> Servlet Life cycle actions
+
+=> Limitation of implementing Servlet interface
+
+=> creation of Servlet using GenaricServlet And Behind the Scenes
+
+=> Code in GenericServlet
+
+=>  Servlet Program Execution 27_1_2023_servlet_program_execution.pdf 
+
+
+
+
+
+
+						30_01_2023_servlet_class_notes.pdf
+						==================================
+
 1. Different ways of Creating a Servlet 		--> 30_01_2023_servlet_class_notes.pdf
 
 2. Why need HttpServlet(AC)?				--> 30_01_2023_servlet_class_notes.pdf
@@ -16,6 +90,11 @@
 
 9. getting the data from the requestObject 		--> 30_01_2023_servlet_images.pdf
 
+
+						31_01_2023_servlet_class_notes.pdf
+						==================================
+
+
 10.  HttpRequest Structure				--> 31_01_2023_servlet_class_notes.pdf
 
 11. Working with ServletResponse/HttpServletResponse 	--> 31_01_2023_servlet_class_notes.pdf
@@ -26,3 +105,87 @@
 13. In single application can we use both PrintWriter object and ServletOutputStream to send the response?
  	Ans. 	Not possible, it would result in "java.lang.IllegalStateException: getWriter()
  		has already been called for this response".
+
+=> ServletContext(I) vs ServletConfig(I) 
+
+=> ServletContext(I) 
+
+=> ServletConfig(I)
+
+=> Init-Parameters 
+
+
+
+
+						01_02_2023_servlet_class_notes.pdf
+						==================================
+=> Eclipse Shortcuts
+
+=> why there is no main method in Servlets??
+
+=> ServletConfig InitParameters Using 1.Xml 2.Annotations 
+
+=> ServletContext(I)
+ 
+=>  Difference b/w ServletContext vs ServletConfig object
+
+=> 
+
+
+						02_02_2023_servlet_class_notes.pdf
+						==================================
+
+=> commonly used packages in servlet coding
+ 
+=>  using these interfaces abstraction is promoted through which WODA is achieved
+ 	ServletRequest(I)
+ 	ServletResponse(I)
+ 	HttpServletRequest(I)
+ 	HttpServletResponse(I)
+ 	ServletContext(I)
+ 	ServletConfig(I)
+						
+=>  Different types of scope and attributes in Servlet
+	 a. Form parameters(QueryString[k,v])
+ 	 b. ServletInitializationParameters(ServletConfig[k,v])
+ 	 c. ContextInitializationParamters(ServletContext[k,v])
+
+=> Based on our requirement we need to store the attributes in particular scope. 
+	In Servlet we have 3 types of scope
+	 	1. request
+ 		2. session(HttpSessionTracking)
+ 		3. application/context .
+
+=>  Getting information from the url
+		
+		1. getRequestURI()
+ 		2. getQueryString()
+ 		3. getServletPath()
+ 		4. getPathInfo()
+ 		5. getContextPath()
+
+=>  Deployment Types
+	Harddeployment
+	Smoothdeployment
+
+
+
+						6_02_2023_jspvsHtml_difference.pdf
+						===================================
+
+=> HTML Vs JSp
+
+=> Request Dispatching Forward And Include <= Look into the project folder
+
+
+
+
+
+
+
+
+
+
+
+
+

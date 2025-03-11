@@ -1,5 +1,5 @@
 						1_24_01_2023_servlet_class_notes.pdf
-						==================================
+=====================================================================================
 
  => Different types of application built using java 
 
@@ -9,13 +9,13 @@
 
  => Deployment and Un-Deployment
  
- => webclient
+ => web client
 
  => static response OR  dynamic response
 
  => Flow diagram of static response AND Flow diagram of static response
 
- => CGI
+ => CGI Common Gateway Interface
 
  => Servlet
 
@@ -23,7 +23,7 @@
  
  => Architecture of webserver(tomcat) 
 
- => ServletContainer AND  JSP container
+ => Servlet Container AND  JSP container
  
  =>  Manual Starting of the TomCat Server <== look in page 4
 
@@ -34,7 +34,7 @@
 
  
  						25_01_2023_servlet_live_class_notes.pdf
-						=======================================
+=======================================================================================
 
 => BIG-7 methods
 
@@ -50,7 +50,7 @@
 
 
 						27_1_2023_servlet_class_notes.pdf
-						=================================
+=================================================================================
 
 => Standard folder structure of webapps to deploy in tomcat server
 
@@ -70,7 +70,9 @@
 
 
 						30_01_2023_servlet_class_notes.pdf
-						==================================
+==================================================================================
+
+
 
 1. Different ways of Creating a Servlet 		--> 30_01_2023_servlet_class_notes.pdf
 
@@ -91,8 +93,13 @@
 9. getting the data from the requestObject 		--> 30_01_2023_servlet_images.pdf
 
 
+
+
+
+
+
 						31_01_2023_servlet_class_notes.pdf
-						==================================
+==================================================================================
 
 
 10.  HttpRequest Structure				--> 31_01_2023_servlet_class_notes.pdf
@@ -118,7 +125,7 @@
 
 
 						01_02_2023_servlet_class_notes.pdf
-						==================================
+==================================================================================
 => Eclipse Shortcuts
 
 => why there is no main method in Servlets??
@@ -132,8 +139,13 @@
 => 
 
 
+
+
+
+
+
 						02_02_2023_servlet_class_notes.pdf
-						==================================
+==================================================================================
 
 => commonly used packages in servlet coding
  
@@ -170,8 +182,13 @@
 
 
 
+
+
+
+
+
 						6_02_2023_jspvsHtml_difference.pdf
-						===================================
+===================================================================================
 
 => HTML Vs JSp
 
@@ -183,6 +200,78 @@
 
 
 
+
+
+						07_02_2023_servlet_classnotes.pdf
+==================================================================================
+
+
+=> Session Tracking mechanism
+
+=> Types of Session Tracking mechanism
+
+=> HttpSessionTracking mechanism.
+
+=> Cookie Session Tracking mechanism.
+
+
+
+
+						08_02_2023_Servlet_class_notes.pdf
+======================================================================================
+
+
+=> URL-ReWriting Session Tracking mechanism.
+
+=> Hidden Form Field Session Tracking mechanism.(developer specification)
+
+=> HttpSessionTracking
+
+=> CookieSessionTracking
+
+=> URLReWriting Tracking
+
+=> Configuring welcome pages
+
+
+
+
+						09_02_2023_filters_class_notes.pdf
+=======================================================================================
+
+=> Configuring welcome pages
+
+
+=> FilterApi interfaces
+ 	1. Filter(I)
+ 	2. FilterConfig(I)
+ 	3. FilterChain(I)
+
+=> FilterMapping to particular url-pattern
+
+=> FilterMapping to Total WebApplication
+
+=> FilterChaining
+
+=> Webcontainers rule for ordering the filter in FilterChain
+
+=> Wrappers and Listeners
+ 
+
+
+
+						10_02_2023_Servlet_Listener_class_notes.pdf
+======================================================================================
+
+
+=> Listeners
+
+=> RequestListener
+
+=> SerlvetRequestListener
+
+=> ServletRequestAttributeListener
+ 
 
 
 

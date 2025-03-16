@@ -1,4 +1,4 @@
-						1_24_01_2023_servlet_class_notes.pdf
+						24_01_2023_servlet_class_notes.pdf
 =====================================================================================
 
  => Different types of application built using java 
@@ -80,13 +80,33 @@
 
 3. For a webapplication  how to send GET request? 	--> 30_01_2023_servlet_class_notes.pdf
 
+=> For a webapplication how to send  POST request?      
+
 4. Life Cycle of HttpServlet				--> 30_01_2023_servlet_class_notes.pdf
 
 5. Hierachy of calling the methods in servlets 		--> 30_01_2023_servlet_class_notes.pdf
+		
+		Hierarchy of calling the methods
+		================================
+
+ 			a. public service(SRreq,SResp)
+ 			b. protected service(HSReq,HSResp)
+ 			c. public void doXXXX(HSReq,HSResp)
 
 6. Example of doGet And doPost Methods 			--> 30_01_2023_servlet_class_notes.pdf
 
 7. Playing with request Object				--> 30_01_2023_servlet_class_notes.pdf
+		
+
+		To retrieve only one value from request object
+   			public abstract java.lang.String getParameter(java.lang.String);
+
+ 		To retrive multiple values from request object
+ 			public abstract java.lang.String[] getParameterValues(java.lang.String);
+
+ 		To know the type of request from request object
+  			public abstract java.lang.String getMethod();
+
 
 8. Servlets Hirarchy					--> 30_01_2023_servlet_images.pdf
 
@@ -104,10 +124,20 @@
 
 10.  HttpRequest Structure				--> 31_01_2023_servlet_class_notes.pdf
 
+	ToKnowAbout Client On RequestObject We Can use the Following Methods
+	--------------------------------------------------------------------
+
+	 public abstract Enumeration<String> getHeaderNames();
+	 public abstract String getHeader(String keyName)
+
+
 11. Working with ServletResponse/HttpServletResponse 	--> 31_01_2023_servlet_class_notes.pdf
 
 12. To send binary information like videos,		--> 31_01_2023_servlet_class_notes.pdf
     audio,images etc response will be through "Stream".
+
+		 	-> PrintWriter		=> only character type of data.
+ 			-> ServletOutputStream	=> we can send both character type and binary type of data.
 
 13. In single application can we use both PrintWriter object and ServletOutputStream to send the response?
  	Ans. 	Not possible, it would result in "java.lang.IllegalStateException: getWriter()
@@ -133,6 +163,26 @@
 => ServletConfig InitParameters Using 1.Xml 2.Annotations 
 
 => ServletContext(I)
+
+=> How to keep the data in ServletContext object?
+
+=> How to get the Servlet Context Data..?
+	
+		Two Ways -> Using ConfigObject 
+			    ServletConfig config = getServletConfig();
+				config.getServletContext();
+			 Methods
+			 -------
+				public String GetInitParameter(String name);
+				public Enumeration getInitParameterNames();
+		
+			 -> Using Context
+				getServletContext();
+			 Methods
+			 -------
+				public String getInitParameter(String name);
+				public Enumeration getInitParameterNames();
+
  
 =>  Difference b/w ServletContext vs ServletConfig object
 
@@ -148,6 +198,20 @@
 ==================================================================================
 
 => commonly used packages in servlet coding
+
+=> There are 3 types of parameters(k,v) possible in servlet
+
+ 		a. Form parameters(QueryString[k,v])
+ 		b. ServletInitializationParameters(ServletConfig[k,v])
+ 		c. ContextInitializationParamters(ServletContext[k,v])
+
+
+ 	The above 3 parameters type are read-only.from the servlet we can perform only read operation, 
+	we cannot modify remove values based on our requirement.
+	so we say parameter type of data is not best suited for sharing the data between component of the webapplication.
+
+ 	parameter data => both key and value should be String.
+
  
 =>  using these interfaces abstraction is promoted through which WODA is achieved
  	ServletRequest(I)
@@ -167,6 +231,12 @@
 	 	1. request
  		2. session(HttpSessionTracking)
  		3. application/context .
+
+=>  write a program to display hit count(number of requests) of a webapplication?
+ 
+
+=> Write a program to display all the attribute information present in application scope?
+
 
 =>  Getting information from the url
 		
@@ -206,13 +276,83 @@
 ==================================================================================
 
 
+
+
 => Session Tracking mechanism
 
-=> Types of Session Tracking mechanism
+In webapplication to manage the client previous request data at the time of processing later request , we need to have a clear cut seperation b/w the clients data. To manage this, we need to go for Server side mechanism called "SessionTracking".
+
+when the user uses the application we will use the Session Object for each user to keep track of their data the mechanism is called session tracking mechanism 
+
+
+=> State of the Session
+	
+	The data which is transferred b/w client and server through multiple no of requests during a particular session then
+	that data is called "State of the Session"
+
+=> Types of Session Tracking mechanism.
+
+	1. HttpSessionTracking mechanism.
+
+		=>  	If we allow mulitple users to access webapplication then to container 
+			we need to instruct the creation of HttpSession	objects, 
+			In this case how container will identify user specific HttpSession object in order 
+			to put the user specific attributes and get the attributes?
+
+ 	Answer: 
+		HttpSession objects are created manually, and for these objects container will maintain unique ID in the form of 
+ 		HexaDecimal value called SessionID. Container will prepare Session id value in the form of key called "JSessionID".
+ 		Container will create a cookie and attach the session id to send it as a response to the browser every time when
+		the interaction happens b/w client and server. when we use request.getSession(), 
+		container will get  the sessionid and checks whether that user specific object is  available or not, 
+		if avaiable it will identify that object to process the data.
+
+	2. Cookie Session Tracking mechanism.
+ 	3. URL-ReWriting Session Tracking mechanism.
+ 	4. Hidden Form Field Session Tracking mechanism.(developer specification)
+ 		As per SUN specification for ServletApi, we have only 3 mechanism for SessionTracking.
 
 => HttpSessionTracking mechanism.
 
+
+
+=> how to delete the session object manually
+
+	by using the public void invalidate() method we can destroy the session object manually
+
+
+=> how to get the session id which is used by the perticuler client .?
+
+	use the request.getRequestedSessionId() method to get the session id
+
+
+=> Limitations of HttpSession Tracking mechanism
+================================================
+
+	1. Creating HttpSession object w.r.t client at the server side is too costly 
+	which would decrease the performance of the application(managing the session object at the server side).
+
+ 	2. HttpSession object is exchanged b/w the client and server through cookie file,
+	if client disables cookie at the client side then this mechanism won't work effectively.
+
+	To resolve this issue, we have a new mechanism called "Cookie Session Tracking".
+
+
+
+
+
 => Cookie Session Tracking mechanism.
+
+=> limitations of Cookie Session Meachanism
+===========================================
+ 	1.In case of Cookie Session tracking,cookies are maintained at the client side. 
+	  if browser disables the cookie then this   mechanism wont' work effectively.
+
+ 	2.Since cookies are stored in the client machine(browser), 
+	  there is every possibility that client can misuse the data sent from the server.(security breach can happen)
+
+ To overcome this limiation we need to use "URLReWriting Mechanism"
+
 
 
 
@@ -222,6 +362,20 @@
 
 
 => URL-ReWriting Session Tracking mechanism.
+
+ URLRe-Writing Mechanism
+ ======================
+
+ 	=> This mechanism is same as "HttpSessionTracking" mechanism,but sessionid won't be stored inside cookie
+	rather the  sessionId will be appended to  the url 
+	everytime when the request-response happens b/w client and server.
+
+ 	eg: 	<form method ="get" action='"+response.encodeURL('./second')+"'>	</form>
+  									|
+ 								./second?JSESSIONID = .......
+
+ Note: In Realtime project we don't use technologies directly,we use framework to improve the productivity,
+	so by default   Framework support SessionTracking Mechanism through "URL-ReWriting" only.
 
 => Hidden Form Field Session Tracking mechanism.(developer specification)
 

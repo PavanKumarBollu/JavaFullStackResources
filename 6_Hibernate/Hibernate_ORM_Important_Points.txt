@@ -1,0 +1,275 @@
+Hibernate ORM
+=============
+
+
+					28_02_2023_hibernate_introduction_images.pdf AND 28_02_2023_hibernate_class_notes.pdf
+					======================================================================================
+
+
+=> Language Vs Technology Vs Framework
+
+=> Technology Using Vs Framework Using in The Backend
+
+=> Framework and its Types
+
+=> ORM
+
+=> For this concept programmer should follow mapping rule
+
+=> What is Persistence?
+
+=> Terminologies associated with Persistency
+
+	=> 1. Persistence store
+	
+	=> 2. Persistence data
+
+	=> 3. Persistence operation
+
+	=> 4. Persistence Logic
+
+	=> 5. Persistence technology/Framework
+
+=> When we already have JDBC Technology, What is the need to go for framework/tool called ORM?
+
+=> Limitations of JDBC
+	-> total 12 Limitations
+
+
+=> ORM:- (ORM stands for ): Object Relational Mapping.
+
+
+
+=> What is Framework?
+
+
+=> How many types of framework are available?
+
+	=> a. invasive framework
+
+	=> b. non-invasive framework
+
+
+					01_03_2023_hibernate_class_notes.pdf AND 01_03_2023_hibernate_images.pdf
+					=========================================================================
+
+
+
+=> Hibernate Architecture
+
+=> JPA (Java Persistence API)
+
+=> Hibernate Configuration File
+
+=> Hibernate Mapping file
+
+=> Steps to prepare  Hibernate Application:
+
+=> Prepare Mapping File.
+
+=> Prepare Hibernate Configuration File
+
+=> Prepare Hibernate Client Application
+
+	     =>	1.Create Configuration class object
+ 		2. Create Session Factory object
+ 		3. Create Session Object
+ 		4. Create Transaction object if it is required.
+ 		5. Perform Persistence operations
+ 		6. Close Session Factory and Session objects.
+
+=> SRO(Single Row Operation)
+
+=> Bulk operation(working with mulitple records)
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+=>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

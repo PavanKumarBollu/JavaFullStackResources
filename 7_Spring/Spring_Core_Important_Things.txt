@@ -1,0 +1,338 @@
+Spring_Core_Important_Things
+-----------------------------
+
+
+=====================================================================
+20_03_2023_SpringCore_notes.pdf AND 20_03_2023_SpringCore_images.pdf
+=====================================================================
+
+
+
+=> What is Framework
+
+Framework is not a new technology, rather it is an abstraction provided on top of technology.
+
+=> Spring Overview
+=>Building Applications Using Technology
+=> Building Applications Using Framework
+=>Building Applications Using Application Framework.
+=> Distributed Applications
+=> Local Client And remote client
+=> Spring IOC
+
+ Spring    -----> based on configuration details supplied, it will create 
+an object and maintains the object and performs dependency injection.
+
+
+=> Different types of Framework to build application
+ =================================================
+ 	a. Web application based framework
+ 	b. ORM Framework
+ 	c. Application Framework
+ 	d. Bigdata Framework
+ 	e. Distributed Application Development framework
+
+
+=>  Based on the mode of development we do, we have 2 types of framework
+ 	a. Invasive Framework
+		 eg: Servlet,Struts(1.X)
+ 	b. Non-Invasive Framework
+		 eg: Spring,Hibernate,......
+
+
+=> Terminologies
+
+	1. Middleware Services
+ 	2. Java Bean
+ 	3. LocalClient vs RemoteClient
+
+
+=>  How Spring evolved?
+
+=> Is Spring alternative to EJB, Struts, Hibernate, JEE technology?
+
+ Spring vs EJB
+ -------------
+
+	Answer. No , Spring framework is used to develop all kinds of app. Web Services are alternative to EJB's.
+
+ Spring Vs Struts
+ ----------------
+
+ 	Answer. No, Struts will be used to build only webbased application Spring can be used to build any type of application.
+
+    		SpringMVC is an alternative to Struts.
+
+     Spring vs Hibernate
+     ===================
+
+ Answer. NO, hibernate is orm framework to build persistence logic Spring has its own orm module through which it promotes abstraction
+
+   	SpringORM, SpringDataJPA is an alternative to hibernate.
+
+    Spring vs JEE(Java Enterprise Edition)
+-------------------------------------------
+
+ Answer. No, JEE is a technology which gives api for persistence logic and building webapps  Where as Spring provides an abstraction on top of JEE api's
+ 		 
+		SpringJDBC-> JDBC,
+		SpringMVC-> Servlet, JSP
+
+
+SpringCore
+==========
+
+ It is base module for other modules.
+  => This module is given to supply Spring containers to perform Dependency management.
+  => This module gives 2 spring containers/IOC[Inversion Of Control] containers called
+ 		a. BeanFactory Container
+ 		b. ApplicationContext Container(Latest one)
+  		=> These 2 containers perform the following operations
+ 			a. It manages the SpringBean/Object life cycle
+ 			b. It performs Dependency Management
+			a. Dependancy LookUp[JNDI]
+ 			b. Depenancy Injection[commonly used]
+
+
+ SpringApp can be developed in 4 approaches
+ 	a. XML approach(only used in maintenance project).
+ 	b. using Annotation driven configuration(XML + Java).
+ 	c. using java code configuration.(no XML)
+ 	d. using Spring boot autodriven configuration.[supported by SpringBoot]
+ Different modes of DependancyInjection
+ =====================================
+ 1. Setter Injection.
+ 2. Constructor injection.
+ 3. Field injection.
+ 4. MethodInjection/Method replacer.
+ 5. LookUp Method Injection.
+ 6. Dependancy LookUp Injection.
+
+
+=> What is SpringBean?
+
+	Any Java class(PreDefined/userDefined/ThirdParty api) whose object is created and  managed by Spring container is called "SpringBean".
+ 
+=> Dependancy Management
+ =======================
+ => It is the process of assigning dependant object to Target object by loading both the classes and by creating the objects for both the classes.
+ => The classes/objects which uses the other class services is called "Target Class".
+ => The classes that acts like helper class to main/target class is called "Dependant class".
+
+ 		eg:: Target class    => Flipkart, Vehicle,   
+			Student,      Mobile
+ 			CourseMaterial,  SIM
+=> 1. Setter Injection.
+     Dependant class => DTDC    , Engine , 
+=> It is the process of assigning dependant object to Target object by loading both the classes and by creating the objects for both the classes and injecting the Dependent object to Target Object using Setter is called "Setter Injection".
+
+
+
+
+
+
+=====================================================================
+21_03_2023_Spring_core_classnotes.pdf AND 21_03_2023_Springimages.pdf
+=====================================================================
+
+
+=> Spring jars can be downloaded from the following link
+
+=> Setter Injection
+
+=> What is the difference b/w FileSystemResource and ClassPathResource?
+ 
+
+=> Constructor Injection
+
+=>  What happens if we enable both setter injection and constructor injection to bean property? 
+	Tell me which id will be injected as final values?
+
+=> Bean Factory Lazy Loading 
+
+=> Application Context Eager Loading 
+
+=> Cache and In-Memory Data
+
+=> IOC Container Behind the Scenes 
+	it will use the reflection API 
+
+
+=================================================================
+23_03_2023_spring_class_notes.pdf AND 23_03_2023_springimages.pdf
+=================================================================
+
+***** VVVV IMP *******
+=> One Project using SpringCore[DI strategy by configuring the container]-----> Check the images once to get the clarity of the project
+
+=>  Reading the data from properties file into xml
+	To read the data from properties file into xml by the container we need to use "ApplicationContext(I)" IOC container.
+
+=> Scope attribute in Spring
+	singleton (default)
+	prototype
+	will be discussed in web application (HTTP protocol)
+	=================================================
+ 	request
+ 	session
+	application
+ 	WebSocket
+
+
+***** VVVVVVIMP ******
+=> Note: Can we make SpringIOC container to create only one object, even if the scope is prototype?
+  ans. Yes, by writing our own design pattern code and also using an attribute called <bean  ... factory-method=""> in xml file.
+	Check the code in the pdf once to get the more clarity
+
+
+=>  Default bean id
+ 	fullypackagenameFollowedby#0 ( Starts with #0 )
+	Ex: com.pavan.beans.Student#0
+	
+
+****** VVVVV IMP ***********
+
+=> Driver Manager Source into Project and Layered Approach Style
+
+
+
+
+================================
+24_03_2023_SpringClass_notes.pdf 
+================================
+
+
+=> While developing layered application, Instead of configuring all DAO classes, ServiceClass, Controller Class as a springbean in single configuration file(.cfg.xml),It is recommended to take multiple xml files and link them to single xml file.
+			<import resource="location of .xml file"/>
+
+
+=> Collection Injection
+
+	 Property type		 tag/attribute
+ 	===============		 =============
+   	simple/primitive-------->  <value>
+ 	object ----------------->  <ref>
+     	array  ----------------->  <array>/<list>
+    	List  ------------------>  <list>
+     	Set  ------------------->  <set>
+    	Map  ------------------->  <map>
+     	Properties ------------->  <props>
+
+
+=>  Collection injection in Realtime
+
+
+=> NULL Injection 
+	setter injection      --> by default it is null if you won't specify any value
+	constructor injection --> bean won't be created if you won't specify any value
+
+=> Bean inheritance
+
+	parent="parentId" and abstract = true
+
+
+=> Important points of inheritance in bean configuration file
+
+=> Bean inheritance in Realtime
+
+=>  Assignment Project with following Specifications
+		
+		Design a layered approach application to perform CRUD opearation on database called  Employee using SpringCore Concepts 
+		to be used are 
+			a. Properties file injection
+ 			b. use BeanInheritane and work with hikaricp
+ 			c. use Collection injection
+ 			d. use VO,BO,DTO approach
+ 			a. Employee => eid, ename, eage, eaddress 
+				operation performed are
+ 				a. insert
+ 				b. update(by doing validation)
+ 				c. delete
+ 				d. read based on id
+ 				e. getAllRecord
+
+
+
+
+===========================================================================
+27_03_2023_spring_core_classnotes.pdf AND 27_03_2023_spring_core_images.pdf
+===========================================================================
+
+
+=> Collection Merging
+
+	Keypoints
+	--------
+	=> Collection merging is possible only with collection, array bean properties...not on simple, object type bean properties
+ 	=> merge attribute is available only in <list>,<set>,<map>,<props>,<arry> tags
+ 	=> The possible values for merge attributes are
+		 a. false
+		 b. true
+		 c. default(default)
+	=> Both setter and constructor injection supports the "collection merging".
+
+=> Bean alias
+
+=> AutoWiring
+
+	Assigning the dependent class object to target class object is called "Dependency injection" / "AutoWiring".
+
+	AutoWiring can be done in 2 ways
+		a. Explicit AutoWiring / Manual Injection
+ 			a. <property name='' ref=''/>
+ 			b. <constructor-arg name='' ref=''/>
+ 		b. AutoWiring / AutoInjection
+ 			<bean id ='' class='' autowire=''/>
+ 			autowire will take 3 values
+ 				a. byName
+ 				b. byType
+ 				c. constructor
+ 	Note: AutoWiring is very useful because it helps in RAD(Rapid Application Development).
+
+=> autowire = byName
+
+=> autowire = byType
+
+=> autowire = constructor
+
+=> limitations of AutoWiring
+
+=> autowire-candidate = false
+
+
+	 What is the difference b/w autowire and autowire-candidate.?
+ 		autowire = no => Disables the AutoWiring, programmer should explicitly perform AutoWiring.
+ 		autowire-candidate =false => it makes the spring bean not to participate in AutoWiring.
+
+ 	 Note: The bean which is disabled through <bean id="" class="" autowire candidate="false"/> can be used for Explicit AutoWiring
+ 
+
+=>  Support of I18N(Internationalization) Making our application work for all different locale is called I18N.
+  Locale => Language+ Country eg: en-US, en-BR, hi-IN, fr-FR, de-DE,.....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

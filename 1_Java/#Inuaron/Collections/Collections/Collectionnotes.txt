@@ -27,9 +27,9 @@ To resolve this problem we can use
 Limitations of Arrays
 =====================
 1. Array is fixed in size, we can't increase or decrease the size of array.
-2. To use the array compulsorily we should know the array size at the begining itself.
+2. To use the array compulsorily we should know the array size at the beginning itself.
 3. Array can hold only homogeneous datatype elements.
-4. Array is not implemented using  standard datastructure,so we don't have ready made
+4. Array is not implemented using  standard DataStructure, so we don't have ready made
    methods to perform our task.
       eg: based on some condition, if we want to sort the student object in student[] 
           direct methods are not available so it increases complexity of programmer.
@@ -39,36 +39,35 @@ To Overcome the limitations of Arrays we use "Collections".
 Collections
 ==========
 1. They are growable in nature(we can increase and decrease)
-2. They can hold both hetereogenous and homogenous dataelements
-3. Every collection class is implemented using some standard datastructure, so ready methods are
+2. They can hold both heterogenous and homogenous data elements
+3. Every collection class is implemented using some standard data structure, so ready methods are
    available, as a programmer we need to implement rather we should just know how to call those
    methods.
 
-Which one is prefered over Arrays and Collections?
- Arrays is prefered, because performance is good.
- Collections is not prefered because
-     1. List l=new ArrayList(); // default: 10 locations
-        if 11th element has to added, then 
+Q> Which one is preferred over Arrays and Collections?
+
+ Arrays is preferred, because performance is good.
+ Collections is not preferred because
+     1. List l=new ArrayList(); // default: 10 locations if 11th element has to added, then 
              a. create a list with 11 locations
              b. copy all the elements from the previous collection
              c. copy the new reference into reference variable
              d. call garbage collector and clean the old memory.
 
-Note: To get something we need to compromise something, so if we use Collections performance
-      is not upto the mark.
-Array is language level concept(memory wise it is not good, perforamnce is high)
-Collection is API level(memory wise it is good,perfomance is low)
+Note: To get something we need to compromise something, so if we use Collections performance is not upto the mark.
+Array is language level concept(memory wise it is not good, performance is high)
+Collection is API level(memory wise it is good, performance is low)
       
 Difference b/w Arrays and Collection
 =====================================
 Arrays      =>  It is used only when Array size is fixed
 Collection =>  It is used only when size is not fixed(dynamic)
 
-Arrays      =>  memory wise not recomended to use.
-Collection =>  memory wise recomended to use.
+Arrays      =>  memory wise not recommended to use.
+Collection =>  memory wise recommended to use.
 
-Arrays      =>  Performance wise recomended to use.
-Collection  =>  Perforamance wise it is recomended to use.
+Arrays      =>  Performance wise recommended to use.
+Collection  =>  Performance wise it is not recommended to use.
 
 Arrays      =>  It can hold only homogenous objects
 Collection =>  It can hold both heterogenous and homogenous Objects
@@ -86,18 +85,20 @@ Collection =>  It is  implemented using  standard datastructure, so  ready made 
 
 
 What is Collection?
- In Order to represent a group of individual object as a single entity then we need to go for
- Collection.
 
-CollectionFramework
-  Group of classes and interface, which can be used to represent group of individual object as
-  a single entity, then we need to go for "CollectionFramework".
+ In Order to represent a group of individual object as a single entity then we need to go for  Collection.
+
+Collection Framework
+=====================
+
+ Group of classes and interface, which can be used to represent group of individual object as a single entity, 
+	then we need to go for "Collection Framework".
 
    Java                    C++
   Collection          => container
-  CollectionFramework => STL(standard template library)
+  Collection Framework => STL(standard template library)
 
-To know more information about the framework,then we need to know the specification(interface)
+To know more information about the framework, then we need to know the specification(interface)
  9 key interfaces of Collection framework
     a. Collection(I)
     b. List(I)
@@ -109,7 +110,9 @@ To know more information about the framework,then we need to know the specificat
     h. SortedMap(I)
     i. NavigableMap(I)
 
-Collection
+					Collection(I)
+					=============
+
   1. In order to represent a group of individual object, then we need to go for
      "Collection".
   2. It is a root interface of collection framework
@@ -125,7 +128,9 @@ Difference b/w Collection(I) and Collections(C)?
                 for Collection Objects.
 
 
-List(I) 
+					List(I) 
+					=======
+
   1. Insertion order must be preserved.
   2. Duplicates are allowed.
   3. It is the child interface of Collection.
@@ -140,7 +145,9 @@ List(I)
 
 Vector and Stack are a part of jdk1.0 version so they are called as "legacy classes".
 
-Set(I)
+					Set(I)
+					======
+
  It is used to represent a group of individual objects as a single entity such that
   1. Duplicates are not allowed
   2. Insertion is not preserved
@@ -153,9 +160,11 @@ Set(I)
      |
   HashSet(I)(1.2v)
      |
- LinkedHashSet(I)(1.4v)
+ Linked HashSet(I)(1.4v)
 
-SortedSet(I)
+					Sorted Set(I)
+					=============
+
  It is used to represent a group of individual objects as a single entity such that
   1. Duplicates are not allowed
   2. elements should be added based on some sorting order
@@ -168,7 +177,10 @@ Collection(I)(1.2v)
      |
 SortedSet(I)(1.2v)
      
-NavigableSet(I)
+					NavigableSet(I)
+					===============
+
+
    1. It is a child class of SortedSet.
    2. Various methods are a part of NavigableSet for navigation purpose.
    3. Implementation class for NavigableSet is TreeSet.
@@ -188,7 +200,9 @@ What is the difference b/w List and Set?
  List => Duplication are allowed, insertion order is preserved.
  Set  => Duplication are not allowed, insertion order not preserved.
 
-Queue (I):
+					Queue (I):
+					==========
+
 => It is the Child Interface of Collection.
 => If we want to Represent a Group of Individual Objects Prior to Processing then we 
    should go for Queue.
@@ -208,7 +222,9 @@ Note:
 => If we want to Represent a Group of Key - Value Pairs then we should go for Map
 
   
-Map(I)
+					Map(I)
+					======
+
   a. To represent a group of individual objects as keyvalue pair then we need to opt for Map(I).
        Map
 	|=> HashMap
@@ -220,43 +236,46 @@ Map(I)
 	      |
 	    Properties
 
-8) SortedMap (I):
+					SortedMap (I):
+					=============
+
 => It is the Child Interface of Map. 
 => If we want to Represent a Group of Objects as Key- Value Pairs according to Some 
    Sorting Order of Keys then we should go for SortedMap.
 => Sorting should be Based on Key but Not Based on Value
 
-9) NavigableMap (I):
+					NavigableMap (I):
+					=================
+
 => It is the Child Interface of SortedMap. 
 => It Defines Several Methods for Navigation Purposes.
 
-Legacy Characters
- 1. Enumeration
- 2. Dictionary
- 3. Vector
- 4. Stack
- 5. Hashtable
- 6. Properties
+
 
 
 Utility classes
+===============
+
  1. Collections
  2. Arrays
 
 Cursors
+========
+
  1. Enumeration(I)
  2. Iterator(I)
  3. ListIterator(I)
 
 Sorting
+=======
+
  1.Comparable
  2.Comparator
 
 
 Collection(I)
 =============
-  1. Inside this interface, the commonly used method required for all the collection classes is
-     present
+  1. Inside this interface, the commonly used method required for all the collection classes is present
 
 a. boolean add(object o)=> Only one object
 b. boolean addAll(Collection c)=>To add group  of Object
@@ -264,8 +283,7 @@ c. boolean remove(Object o) => to remove particular object
 d. boolean removeAll(Collection c)=> to remove particular group of collection
 e. void clear() => to remove all the object
 f. int size()  => to check the size of the array
-g. boolean retainAll(Collection c) => except this group of objects remaining all objects should 
-                              be removed.
+g. boolean retainAll(Collection c) => except this group of objects remaining all objects should be removed.
 h. boolean contains(Object o) => to check whether a particular object exists or not
 i. boolean containsAll(Collection c) => To check whether a particular Collection exists or not
 j. boolean isEmpty() => To check whether the Collection is empty or not
@@ -318,6 +336,7 @@ c. ArrayList l=new ArrayList(Collection c)
 
 eg#1.
 ArrayList l = new ArrayList();
+
     l.add("A");
     l.add(10);
     l.add("A");
@@ -407,7 +426,7 @@ LinkedList
  b. heterogenous objects are allowed
  c. null insertion is possible
  d. duplicates are allowed
- e. linkedlist implements Serializable and Cloneable interface but not RandomAccess.
+ e. LinkedList implements Serializable and Cloneable interface but not Random Access.
 
 Usage
 1. If our frequent operation is insertion/deletion in the middle then we need to opt for  "LinkedList".
@@ -417,7 +436,7 @@ Usage
    	l.add(z);
  	l.add(2,'a');
  	l.remove(3);
-2. LinkedList is the worst choice if our frequent operation is retreival operation
+2. LinkedList is the worst choice if our frequent operation is retrieval operation
 
 Constructors
 ============
@@ -519,7 +538,10 @@ public class StackDemo {
    }
 }
 
-The 3 Cursors of Java:
+				The 3 Cursors of Java:
+				======================
+
+
 => If we want to get Objects One by One from the Collection then we should go for Cursors.
 => There are 3 Types of Cursors Available in Java.
 	1) Enumeration
@@ -527,6 +549,8 @@ The 3 Cursors of Java:
 	3) ListIterator
 
 1) Enumeration:
+================
+
 	We can Use Enumeration to get Objects One by One from the Collection.
 	We can Create Enumeration Object by using elements().
 	public Enumeration elements();
@@ -562,6 +586,8 @@ To Overcome Above Limitations we should go for Iterator.
 
 
 2) Iterator:
+============
+
  => We can Use Iterator to get Objects One by One from Collection.
  => We can Apply Iterator Concept for any Collection Object. Hence it is Universal Cursor.
  => By using Iterator we can Able to Perform Both Read and Remove Operations.
@@ -708,7 +734,7 @@ Constructors
 
 LoadFactor
 =========
- After loading how much ratio,a new object will be created is called as "LoadFactor".
+ After loading how much ratio, a new object will be created is called as "LoadFactor".
  
 Program
 =======

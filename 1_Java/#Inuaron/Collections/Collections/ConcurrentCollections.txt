@@ -27,9 +27,9 @@ public class Test {
 	}
 }
 
-3. In Normal Collections,Simultaneoulsy if one Thread is performing read operation ,other thread      can't perform  write operation if we try to do it would result in    "ConccurentModificatinException"
+3. In Normal Collections, Simultaneously if one Thread is performing read operation ,other thread      can't perform  write operation if we try to do it would result in    "ConccurentModificatinException"
     
- So normal Collections are not suitable for "MultiThreading Applications".
+ So normal Collections are not suitable for "Multithreading Applications".
 
 eg#1.
 import java.util.ArrayList;

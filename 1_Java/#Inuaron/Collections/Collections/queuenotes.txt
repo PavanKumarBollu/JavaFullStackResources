@@ -35,7 +35,7 @@ Important methods associated with Queue
 
 PriorityQueue
 =============
- 1. To process the elements before processing, we need to store the elements based on some             priority order
+ 1. To process the elements before processing, we need to store the elements based on some priority order
  2. Priority Order
           => natural sorting order
 	  => customized sorting order

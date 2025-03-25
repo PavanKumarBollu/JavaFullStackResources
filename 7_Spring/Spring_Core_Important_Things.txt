@@ -312,6 +312,120 @@ SpringCore
 
 
 
+===========================================================================
+28_03_2023_spring_core_classnotes.pdf AND 28_03_2023_spring_core_images.pdf
+===========================================================================
+
+=> p-namespace and c-namespace 
+
+=> Syntax for p-namespace and c-namespace
+
+	<bean   p:propertyname="<value>" p:propertyname-ref="<beanid>"/>
+   	<bean   c:propertyname="<value>" c:propertyname-ref="<beanid>"/>
+
+=>  Limitations of p and c namespace
+
+=> List of Annotations
+	1. @Configuration
+ 	2. @Required
+ 	3. @Repository
+ 	4. @Order
+ 	5. @Autowired
+ 	6. @Qualifier
+ 	7. @Scope
+ 	8. @Component
+ 	9. @Service
+ 	10.@Controller
+ 	11.@Bean
+ 	12.@DependsOn
+ 	13.@Lazy
+	14.@Value
+ 	15.@Import
+ 	16.@ImportResource
+ 	17.@ComponentScan
+ 	18.@PropertySource
+ 	19.@Primary
+ 	20.@LookUp
+ 	21.@PostConstruct
+ 	22.@PreDestroy
+
+***** VVVIMP *****
+=> Mode of Spring application development
+
+	1. XML Driven
+ 	2. Annotation driven configuration[XML + Annotation(bean code)]--> Using Xml For Container Configuration and Annotation for other things
+ 	3. 100% code driven configuration (pure java/no xml) --> using only java code no xml
+ 	4. Spring boot driven configuration 
+
+=> Annotation Driven Configuration
+	@Required --> Deprecated not using in real time if you want to use you don't any other choice go for the constructor injection
+	@Autowired 
+
+
+***** VVVIMP *****
+=> Stereotype Annotation --> Refer image file for the better clarity
+	We have multiple annotations with similar behavior. having minor differences so they are called as "Stereotype annotations".
+
+	@Component --> To configure java class as Spring bean (bean will be created and it is managed by IOC container)
+
+	@Service ----> @Component + also makes the service class by giving Transaction management support(Spring AOP)
+	
+	@Repository--> @Component + also makes the DAO class by Exception propagation facilities(SQLException to Spring specific Exception)
+
+	@Controller  =====> @Component + also makes the Controller class getting the facility of handling HTTP Requests. (SpringMVC)
+
+
+=> Annotations used for lazy loading, keeping the beans in particular scope, and getting values from properties file.
+
+ 	@Lazy ===> On the bean it would perform Lazy Loading
+ 	@Scope ==> It specifies the scope in which the bean should be kept.
+ 	@PropertySource(value="") => It specifies the location from where the properties file data should be taken.
+
+
+=======================================================================
+29_03_2023_spring_core_class_notes.pdf AND 29_03_2023_spring_images.pdf
+=======================================================================
+
+***** VVV IMP *****
+=> For Creating the project using the Spring --> refer the image for project setup idea 
+
+=> Spring Bean Life Cycle
+
+=> 100%Code driven SpringApp development/Java Config Approach of SpringApp development
+
+	Thumb Rule
+	----------
+	1. Configure userDefined classes as Springbean using Stereotype annotations(@Component) and 
+	   link them with Configuration class alternative to Springbean cfg file(xml file) using @ComponentScan
+
+	 	note: Java class that is annotated with @Configuration automatically becomes Configuration class
+
+ 	2. Configure PreDefined class as Spring beans using @Bean methods(method that is annotated with @Bean) of @Configuration class.
+ 	3. use AnnotationConfigApplicationContext class to create an IOC container having @Configuration class as the input classname
+ 	
+	Note: @Configuration class is internally a Spring bean because @Configuration internally contains @Component.
+
+
+=> Usage of @Import(In 100%purejava code configuration)
+	@Import(Resource = {Persistence.Class, Service.class, Controller.class})
+ 	@Configuration
+ 	public class AppConfig{
+ 	
+	}
+
+=> How to load data from properties file into Springbean ?
+ a. Using application.properties file ====> @PropertyResource(value="location of properties file") and binding it to @Value("${}") of field
+ b. Using application.properties file ====> Environment(I) =====> Inside bean call environment.getProperty("")
+
+	refer:: IOCProject-29-RealTimeDI-100%SpringAnnotationsCRUDAPP
+
+=> usage of the Environment(I) --> refer the image file for the clarity
+  
+
+
+
+
+
 
 
 

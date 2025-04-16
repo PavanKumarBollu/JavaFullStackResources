@@ -1,0 +1,106 @@
+=======================================================================================
+15_04_2023_Spring_data_jpa_class_notes.pdf AND 15_04_2023_spring_data_jpa_images.pdf
+=======================================================================================
+
+
+SpringDataJPA
+==============
+
+
+=> Spring Data
+	=> Spring data JPA
+ 	=> Spring data MongoDB
+
+=> Before the arrival of Spring data module
+
+	Note: Spring is not having any module to interact with NO SQL DBs/w before the arrival of Spring Data module
+ 	Note: Before arrival of Spring data module there is no single unified mechanism to talk both SQL and NoSQL DB s/w from Spring.
+
+  	We need to use different types of SQL or NO-SQL DBS/W. 
+	SpringData module provides abstraction on multiple technologies and frameworks to simplify 
+	the interaction b/w both SQL and NO SQLDBs/w in the unified model environment.
+
+=> Important sub modules of spring data module
+
+	a. Spring data JPA     => provides abstraction on ORM S/w
+ 	b. Spring data JDBC    => provides abstraction on JDBC technology.
+ 	c. Spring data MongoDB => provides abstraction on MongoDB Api and etc....
+
+=>  Main Modules
+ 	a. Spring Data JPA     => Spring Data Repository support for JPA
+  	b. Spring Data MongoDB => Spring based, object document support and repositories from MongoDB. 
+
+=> Limitations of SpringORM ---> **** IMP Interview Question ****
+
+	Ans: 	1. If we have 500 tables, then we need to have 500 DAO interfaces, 
+		 followed by 500 implementation classes for all the interface
+     		 and in all the implementation class the CRUD operation would be a common operation.
+  		2. In the above approach, the logic of many operations would be duplicated resulting in "boiler plate" code.
+  		3. To resolve this problem Spring community had come up with a module called SpringData 
+			which would generate redundant code automatically through an Pre-Defined Repositories.
+
+=> Spring Data JPA code
+
+	=> Just create Repository/DAO Interface extending Predefined Repository Interface 
+		(different types of repository interfaces are there)
+ 		(logic of many method prewritten)
+  	=> If needed declare some custom methods by following coding conventions. 
+
+=> Advantages with SpringDataJPA
+
+=> Normal Java class 
+=> In memory java class
+
+=> Note:: Spring DataJPA uses ProxyDP to generate the implementation class of programmer supplied DAO/Repository interface as a InMemory Proxy class dynamically at the runtime. While working with Spring DataJPA, the peristence layer just contains DAO /Repository interface having just few custom method declarations.
+
+
+=> Spring Data JPA 
+	=> It internally uses hibernate as ORM Framework
+  	=> Strong knowledge of hibernate is required to understand.
+  	=> While working with annotations we need to prefer the following order to build
+ 		Entity classes
+ 			a. JPA annotation
+ 			b. Java config annotations
+ 			c. hibernate specific annotations
+ 			d. Third party supplied annotations
+
+=> Repositories 
+	1.Repository
+  	2.CrudRepository
+  	3.PagingAndSortingRepository
+  	4.JpaRepository
+
+=> PagingAndSortingRepository(I)
+	=> It is given to perform sorting of records and pagination.
+   	=> Pagination will display huge amount of records page by page.
+   	=> We can sort the records either in Ascending order or in Descending order
+ 		In Ascending order
+ 			a. special characters(*,?,-,...)
+ 			b. numbers(0-9)
+ 			c. upper case alphabets(A-Z)
+ 			d. lower case alphabets(a-z)
+
+=> Iterable<T> findAll(Sort sort)
+
+=> Page<T> findAll(Pageable pageable)
+		refer:: DAO-SpringDataJPA-PagingAndSortingRepository---> for Paging and Sorting of PagingAndSortingRepository
+
+
+Image file
+==============
+
+=> Repository Hierarchy
+
+=> Behind the sense of SpringDataJPA
+
+=> Crud Repository methods
+
+=> optional Class methods
+  
+=> Spring Data Flow Diagram 
+
+
+
+
+
+ 

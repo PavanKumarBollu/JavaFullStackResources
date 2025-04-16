@@ -1,0 +1,329 @@
+================================
+Spring Web MVC-1  11th April
+================================
+
+=> Spring MVC And Web Application Distributed Application
+
+=> Spring Web MVC Module
+
+=> Spring Web MVC Components
+
+=> Front Controller 
+
+=> Handler Mapper
+
+=> Controller
+
+=> Model And View
+
+=> View
+
+=> Preprocessing
+
+=> Post Processing
+
+=> Spring Web MVC Behind the scenes
+
+=> Spring Web Summery
+
+
+
+================================
+Spring Web MVC-2  12th April
+================================
+
+=> Request Mapping and Context Path
+
+=> @GetMapping
+
+=> @PostMapping
+
+=> @PutMapping
+
+=> @DeleteMapping
+
+=> server.servlet.context.path = / appName
+
+
+================================
+Spring Web MVC-3  13th April
+================================
+
+=> Sending the data from the UI to controller and controller to UI
+
+=> Controller can response to the client in two ways
+	-> With View (Using the Presentation file)
+	-> Raw Response
+
+=> Model Object is used to send response to the client in presentation style
+
+=>Sending the Data From UI to controller can be done in three ways
+	-> Query Parameter	-> @RequestParam
+	-> Path Parameter	-> @PathVariable
+	-> Form
+
+
+
+==============================
+Spring Web Mvc-4 14th April
+==============================
+
+
+=> working with forms and sending the data through from to controller
+
+=> Steps to work with the forms in Spring Web MVC 
+
+=> Data Binding
+
+
+
+
+
+
+==========================================================================
+20_04_2023_Spring_MVC_classnotes.pdf AND 20_04_2023_Spring_MVC_images.pdf
+==========================================================================
+
+
+=> Note: In SpringBoot-MVC Apps the following components comes automatically so we need not develop them 
+	a. DispatcherServlet
+ 	b. IOC-Container
+ 	c. HandlerMapping
+ 	d. ViewResolver
+ To get all these we need to go for a starter file called "springboot-starter-web"
+
+=> Springboot-MVC
+
+	Prerequisite :: CoreJava + SpringCore + SpringDataJPA(JDBC, Hibernate) + Servlet, JSP, JSTL(basics knowledge)
+
+=>  Different ways of Developing Java Based Webapplication
+	 Model1Architecture
+	 Model2Architecture
+=>  What is the difference b/w MVC1 and MVC2 Architecture?
+	refer: image File
+	1. Browser gives the request
+ 	2. Controller servlet traps and takes the request[Depending on the URL pattern]
+ 	3. Using Navigation logic the Controller-Servlet passes the request to appropriate components(Service, DAO)
+ 	4. The service, DAO component process the request.
+ 	5. DAO component interacts with Backend system(DB S/W) through model
+ 	6. The result generated will be transferred to Service and then it will be forwarded to controller.
+ 	7. The controller component passes the result to view component.
+ 	8. View component formats the result using Presentation logic.
+ 	9,10. The formatted results goes to browser as the response. 
+
+=> MVC2 Architecture pros and cons
+
+=> MVC2 architecture rules or principles
+
+=> When we have MVC2 architecture to develop webapplication as layered applications, what is the need of webapplication frameworks in java?
+
+=>  Advantages of developing MVC2 architecture based webapplication development using webapplication framework
+
+=>  IS MVC1,MVC2 and Model1 are they design patterns or architecture?
+	Ans: These are architecture to develop the java based applications.
+
+=> What is the difference b/w Architecture and Design pattern?
+
+=> What is FrontController Servlet?
+
+=> Once the front controller is involved in MVC2 Architecture webapplication, there will be only one servlet in the entire webapplication that is FrontController servlet.
+	 Note: 
+		a. FrontController is only Servlet Component.
+ 		b. Handler/Controller/DAO classes are plain java classes.
+ 		c. View components are generally JSP/html/Thymleaf etc...
+
+				 refer:: Spring_mvc_01.png
+
+=> What is the difference b/w FrontController and Controller/Handler/Action classes in MVC2Architecture and FrontController Design Pattern?
+
+
+Note: 
+	=> In SpringMVC / Springboot-MVC the FrontController is "Dispatcher Servlet" which is ready made Servlet Component.
+ 	=> Every Servlet Component(Either Pre-defined/readymade/user-defined)must be configured with Servlet Container 
+	   and also must be linked with URL pattern(either with "/" or with "directory/extension" match URL pattern).
+
+
+=> 3 ways of Servlet Configuration with Servlet Container
+ 	1. Declarative approach
+	2. Annotation driven approach
+	3.Programmatic approach ***
+
+=>  Different approaches to develop SpringMVC applications
+
+
+=> The possible parameters for Handler method arguments are
+ 	a. javax.servlet.ServletRequest
+ 	b. javax.servlet.ServletResponse
+ 	c. @PathVariable
+ 	d. @RequestParam
+ 	e. @RequestHeader
+ 	f. @RequestAttribute
+ 	g. @ModelAttribute
+ 	h. Errors, BindingResult
+ 	i. @SessionAttribute
+
+=> The possible return types of Handler methods
+ 	a. String
+ 	b. View
+ 	c. Model
+ 	d. @ModelAttribute
+ 	e. ModelAndView
+ 	f. void
+
+=> Springboot MVC Flow/Spring MVC Flow
+
+
+Note:: 
+	EmbededEnvironment
+	==================
+ 		Application---> Started =======> JRE, Tomcat Container(virtual)
+ 				   |
+  				Stopped <======= JRE(removed) Tomcat Container(removed)
+
+=> Steps of Webapplication Work Flow
+
+=> HandlerMapping
+
+=> ViewResolver
+
+=> Advantages of placing jsp components in private area
+		along with the points refer:: spring-mvc_01.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+============================================================================================================================
+21_04_2023_spring_boot_mvc_class_notes.pdf AND 21_04_2023_spring_boot_mvc_images.pdf
+============================================================================================================================
+
+
+=> Control Flow of SpringBootMVC
+
+=> Key-points about SpringBootMVC application *******
+
+=> Note:: While creating SpringBootMVC project if we select the type as "war", then the starter files will create 2 java files
+	a. Main class cum Configuration class having @SpringBootApplication
+	b. ServletInitializer extending SpringBootServletInitializer
+Note: 
+	=> Embedded tomcat server is not taking index.jsp as the default welcome file, but external tomcat server will take
+	Only standalone execution of SpringBootMVC app takes the cfg "ContextPath" from application.properites file
+ 	=> The deployable webapplication execution in external server takes the project name as the "ContextPath".
+ 
+	=> If we are running SpringBootMVC app as a deployable app in external server, 
+		then we can comment main() of @SpringBootApplication class
+ 	=> If we are running SpringBootMVC app as a standalone app using embedded server
+ 		then we can remove "ServletInitializer" class.
+
+=>  Working with Handler Methods
+
+=> Usage of ModelAndView
+
+=> Usage of Model(I)
+
+=>  Usage of Map<String, Object>[Best Approach as it is Non-Invasive]
+
+=> Making the return type as void
+	If the handler method return type is void,it takes the incoming request path as excluding("/") as LVN by using 	"RequestToViewNameTranslator" concept internally.
+ 	eg:: incoming reuqest is "/wish", then it takes "wish" as LVN.
+=>  Behind the scenes of Dispatcher Servlet BindingAwareModelMap
+
+=> Sending the response directly to the browser without using DispatcherServlet
+	These type of handler methods are so useful when we perform "File Downloading" activities.
+	
+=> We need to consider the following points while giving requestpath to handler methods of Controller class
+ 	a. The request path of handler method must start with "/".
+ 	b. The request path of handler method is case Sensitive.
+	c. Multiple request have same request path with different request methods like POST/GET
+	d. Taking @RequestMapping without requestpath  takes "/" as default path
+	e. One Handler class can have multiple request paths
+	f. RequestMapping with Mode should be unique with respect to controller class.
+	g. In SpringMVC max two methods can be taken without requestpath(One with GET request and another one with POST request)
+	h. If two controller class have two handler methods with same request type and request mode 
+		then we need to differentiate them at the Controller level using "global request path"
+	j. We cannot take ServletContext,ServletConfig object as a parameter of handler 
+		method becoz they are global objects which go for
+   		@Autowired injections  more over they are not valid parameter types for handler 
+		methods,but we can take HttpSession type parameter in handler methods.
+	
+	Note:: Instead of using @RequestMapping by specifying requestmode GET/POST we can directly use "@PostMapping" and "GetMapping".
+
+======================================================================================
+22_04_2023_spring_MVC_classNotes.pdf AND 22_04_2023_spring_mvc_images.pdf
+======================================================================================
+
+=>  DataBinding and DataRendering
+
+Note: 
+DataBinding  => Binding the data from view component to controller in the form of java class object called Model class object.
+DataRendering=> Passing data/results/outputs from Controller to view Component as Model Attributes through Shared Memory called 
+  		BindingAwareModelMap object.
+
+
+=>  Passing different types of results/ouputs/data in DataRendering
+ 	a. Passing simplevalues
+ 	b. Passing array/collections
+	c. Passing collection of Model/Buisness Object
+ 	d. Passing single Object of Model/Buisness Object/Entity class.
+
+	Note: Model(I) comes from SpringFramework, where as Model is Bo/Entity class.
+
+=>  Conclusion of DataRendering in SpringBootMVC App
+ 	It is the process of passing data from controller class handler methods to view
+ 	components through DispatcherServlet using Sharedmemory
+    	called "BindingAwareModelMap"
+
+=> DataBinding
+	It is the process of giving the view comps supplied input values to handler methods of controller class
+ 		View to controller data passing :: Data Binding
+ 		Controller to View data passing :: Data Rendering
+	
+=> Binding can be done in 2 ways
+	"FormBinding/RequestWrapping".
+	 "RequestParam Binding".
+
+=>  "@ModelAttribute"  ||  Model class/JavaBean class
+	refer: Image File for more Clarity
+
+=> Internal Operations of FormBinding
+Note: Generally we take two handler methods in Controller class with respect to form page operation
+ 	a. First Handler method in GET Mode to Launch Form page.
+ 	b. Second Handler method in POST mode to process from page submission request.
+ 	***For both the handler methods we can take same request path with different request mode(recommended)
+ 	If the above request handler methods are having two different requests path then the request mode are your choice.
+	Taking same request path for both handler methods[Form launching and submit request processing form page]
+=> Taking action attribute in <form ..> becomes optional.
+=> When form page is launched we take initial data from Model class object properties and We can display in form page components as 
+    initial values.[It is possible if form page is designed using spring supplied JSP tags]
+=> If we use HTML Forms, then by default we will have support only for "OneWayBinding".[Form to Model class Object]
+=> To get the support of TwoWayBinding then we need to go for "SpringMVC JSP Taglibrary".[Form->Model, Model->Form]
+
+=> SpringMVC Taglibrary
+ 1. Generic Taglibrary
+ 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags" %>
+ 2. Form tag library
+ 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+ 
+		refer:: BootMVCPro6-DataBindingAppUsingSpringTagLibrary
+
+=> What is the difference b/w HTML Tags vs SpringMVC jsp tags?
+
+=> DataBinding using @RequestParam
+
+
+
+
+
+
+
+
+
+

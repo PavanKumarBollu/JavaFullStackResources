@@ -425,15 +425,25 @@ SpringCore
 
 
 
+==============================================================
+13_04_2023_Spring_ORM.pdf AND 13_04_2023_Spring_ORM_images.pdf
+==============================================================
 
 
+=> SpringORM
 
+=> Plain hibernate Work Flow
 
+=> Spring ORM Code(Integration with hibernate)
+	1. Create an Inject Hibernate Template class object
+ 	2. Perform Persistence operation 
+	Note: boiler plate problem is avoided.
 
+=> Advantages of Spring ORM
 
+=> HibernateTemplate Injection into the spring orm image
 
-
-
+=> Spring ORM Behind the Scenes 
 
 
 

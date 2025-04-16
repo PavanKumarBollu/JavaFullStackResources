@@ -1,0 +1,155 @@
+======================================================================================
+19_04_2023_SpringBoot_mongodb_session.pdf AND 19_04_2023_SpringBoot_mongodb_images.pdf
+======================================================================================
+
+
+
+SpringDataMongoDB
+=================
+
+=> Difference b/w SQL and NoSQL
+
+	refer:: 19_04_2023_SpringBoot_mongodb_images
+
+
+=> MongoDB
+	
+	 => It is document-based NOSQL DB s/w.
+ 	=> It internally maintains the data in the form of JSON Documents
+ 		JSON :: Java Script Object Notation
+eg#1.
+{
+
+ "Name": "sachin",
+ "address": {
+ 	"city": "Bandra",
+ 	"country" : "IND",
+ 	"State"   : "Mumbai"
+	}
+ "PhoneNumbers": ["111-222-333","999-888-777-66"]
+
+} 
+eg#2.
+{
+ 	"Name": "sachin",
+ 	"address": {
+ 		"city": "Bandra",
+ 		"country" : "IND",
+ 		"State"   : "Mumbai"
+		}
+ 	"PhoneNumbers": ["111-222-333","999-888-777-66"]
+ 	"emp_details":[
+ 	{
+ 	"emp_name":"sachin",
+ 	"email": "sachin@mi.com",
+ 	"job_profile": "batsman"
+ 	},
+ 	{
+		"emp_name":"dravid",
+ 		"email": "dravid@rcb.com",
+ 		"job_profile": "keeper"
+ 	},
+ 	{
+		"emp_name":"dhoni",
+ 		"email": "dhonin@csk.com",
+ 		"job_profile": "captain"
+ 	}
+ 	]
+
+ }
+
+=> MongoDB software installation
+=> SQL Terminologies And NoSQL Terminologies
+
+=>  Difference b/w SQL and No SQL
+	Table  <======> Collection
+ 	Record <======> Document
+
+=>  MongoDB shell commands
+
+	1. add <mongodb_home>\bin folder to path environment variable
+ 		path :: C:\Program Files\MongoDB\Server\4.4\bin
+  	2. open mongodb shell using mongo.exe file from command prompt of any location
+ 		cmd> mongo
+  	3. To list all logical DBs
+ 		cmd> show dbs
+
+  	4. To create a new logical DB
+ 		cmd> use fsDB
+ 		switched to db fsDB
+ 	Note:: untill u add a collection to logical db, the newly created logical db will not appear in the list of logical dbs.
+  	
+	5. To Create a collection with one document
+		cmd> db.customer.insertOne({cno:7,cname:"dhoni",cadd:"CSK",avg:53})
+ 		cmd> db.customer.insertOne({cno:10,cname:"sachin",cadd:"mi",avg:54.5})
+ 		cmd> db.customer.insertOne({cno:18,cname:"kohli",cadd:"RCB",avg:54})
+ 		cmd> db.customer.insertOne({cno:63,cname:'SKY',cadd:'mi',avg:45.0})
+	
+	6. To list out documents of the collection
+ 		cmd> > db.customer.find().pretty()
+
+
+	7. To insert many documents at once into collection
+ 		cmd> db.customer.insertMany([{cno:19,cname:"dravid",cadd:"RCB"}, {cno:45,cname:"rohith"}])
+
+	8. To display the documents in a pretty fashion
+ 		cmd> db.customer.find().pretty()
+
+	9. Inserting document to a collection with array values
+ 		cmd> db.customer.insertOne({cno:9,cname:'lara',mobileNo: [9997776655,676676554]})
+
+	10. To find docs of a collection with condition
+ 		cmd> db.customer.find({cname:'lara'}).pretty()
+		cmd> db.customer.find({cname:'sachin',cadd:'mi'}).pretty()
+		cmd> db.customer.find({cadd:'mi'}).pretty()
+
+	11. To delete mongodb document
+ 		cmd> db.customer.remove({cno:63})
+		cmd> db.customer.deleteOne({cno:45})
+  		cmd> db.customer.deleteMany({cno:18})
+ 
+	12. To drop a collection
+ 		cmd> db.customer.drop()
+
+
+
+==================================================================================================
+20_04_2023_spring_boot_mongodb_class_notes.pdf AND 20_04_2023_spring_boot_mongodb_images.pdf
+==================================================================================================
+
+=>  Working with MongoRepository
+
+	Repository(I)
+   		|extends
+  	CrudRepository(I)
+   		|extends
+  	PagingAndSortingRepository(I)
+   		|extends
+  	MongoRepository(I)
+
+=> Example using MongoRepository
+ 1. Create a SpringBootStarter Project having mongodb and lombok dependencies
+ 2. develop application.properties with following details
+	spring.data.mongodb.database=fsDB
+ 	spring.data.mongodb.port=27017
+ 	spring.data.mongodb.host=localhost
+ 3. Develop document and DTO class
+ 4. Develop Repository Interface
+ 5. Develop Service Interface and Implementation class.
+ 6. Develop Test class and execute the application
+ 	refer:: DAO-SpringDataJPA-MongoDB-CrudApp
+
+=>  After running the application,check in mongoshell using the following commands
+ 	 > show collections
+
+	 > db.customer.find().pretty()
+=> Usage of finder methods in SpringBootMongoDB
+ 
+=> MongoRepository Interface Methods Refer Diagram 
+
+
+
+
+
+
+

@@ -1,0 +1,232 @@
+============================================================
+07_04_2023_maven_log4j_sl4j_notes.pdf AND AppenderTypes.pdf
+============================================================
+
+
+
+=> Log4J and SL4J
+
+=> What is Logging?
+
+=> Auditing
+
+=> Use case of Logging
+
+=> Note:
+	onsite  =>go to client org location to recieve,install,maintain the project 
+	offsite =>stays in the software company to release the project and fix the production bugs given by client org.
+ 	offsite team is a supporting team to onsite team.
+
+=> Every project contains the following 4 environments
+ 	a. Dev environment.
+ 	b. Testing environment.
+ 	c. UAT environment.
+ 	d. Production environment.
+
+=> SL4J
+ 	->It stands for Standard Simple logging facade for Java
+ 	->It provides abstraction  on multiple logging api/tools/framework and provides unified api for logging by internally using our choice logging api.
+ 	SL4J(framework)[SUNMS]
+ 	log4j
+ 	logback
+ 	commons-logging
+
+=> Log4j Advantages
+
+	 Allows to categorize the log messages and we can add priorities for log messages.
+
+		DEBUG<INFO<WARN<ERROR<FATAL
+
+=> In testing environment what is the difference b/w bug and issue?
+   	bug  => code exists, but the expected functionality is not coming(wrong logic)
+ 		egg: click on home hyperlink, redirecting to about us page.
+   	issue=> feature/functionality is missing.
+
+=> Note: In realtime for every app 2 log-files will be maintained
+ 	a. Common log files(records all logs messages end to end)
+ 	b. Exception log files(records only ERROR and FATAL level log messages.. useful when system/project is down)
+
+=> Three important object of Log4j Programming
+ ===========================================
+ 	a. Logger object
+ 	b. Appender object
+ 	c. Layout object
+
+
+
+=> Log4j Architecture
+
+	refer diagram
+
+=> RollingFileAppender 
+
+	if the log file size is over then it will create another file to store the logs 
+
+=> Daily RollingFileAppender
+	Everyday new log file will be created and it will keep track the logs this is used by the tom cat server check tomcat folder for more clarity
+
+
+=> project Imp Code
+
+	private static Logger logger = Logger.getLogger(LoggingToTheConsole.class);
+	
+	static
+	{
+		SimpleLayout sLayout = new SimpleLayout();
+		ConsoleAppender consoleAppender = new ConsoleAppender(sLayout);
+		logger.addAppender(consoleAppender);
+		logger.setLevel(Level.ALL);
+	}
+
+
+=================================================================
+10_04_2023_log4j_class_notes.pdf AND 10_04_2023_log4j_images.pdf
+=================================================================
+
+
+=> Logger Object (IMP HAVE A LOOK IN PDF ONCE)
+
+=>  Appender Object
+
+=> Layout Object
+ 
+=> Log4j Architecture
+
+=> To load the properties file data into java program we need to use the following class
+
+=> Using log4j to work with properties file (IMP HAVE A LOOK IN PDF ONCE) 
+
+	case1:: Working with HTMLLayout and FileAppender
+	Case2:: Working with Multiple Appenders
+	Case3:Working with FileAppender and XMLLayout
+	Case4: RollingFileAppender and PatternLayout
+	Case5: For DailyRollingFileAppender and  PatternLayout--> imp used in the realtime project development
+
+
+
+
+
+
+
+
+
+============================================================================================================================
+12_04_2023_log4j_class_notes.pdf AND
+============================================================================================================================
+
+
+=> JDBC Appender To Write things to database
+
+	# JdbcAppender and PatternLayout
+ 	# Define the root logger with file appender
+ 	log4j.rootLogger = ALL, DB
+ 	# Define the Jdbcappender
+ 	log4j.appender.DB=org.apache.log4j.jdbc.JDBCAppender
+ 	log4j.appender.DB.URL=jdbc:mysql:///octbatch
+ 	# Set Database Driver clas name
+	log4j.appender.DB.driver=com.mysql.cj.jdbc.Driver
+	# Set database user name and password
+ 	log4j.appender.DB.user=root
+ 	log4j.appender.DB.password=root123
+ 	# Set the SQL statement to be executed.
+ 	log4j.appender.DB.sql=INSERT INTO log_data_tab
+ 	(`thread`,`categoryname`,`dateofgeneration`,`methodname`,`lineno`,`message`,`timeelapsed`,`prioritylevel`) 
+	VALUES ('%t','%c',current_timestamp,'%M','%L','%m','%r','%p')
+ 	# Define the pattern layout for file appender
+ 	log4j.appender.DB.layout=org.apache.log4j.PatternLayout
+
+
+table Schema
+=============
+
+CREATE TABLE log_data_tab (
+    thread VARCHAR(255),
+    categoryname VARCHAR(255),
+    dateofgeneration DATE,
+    methodname VARCHAR(255),
+    lineno INT,
+    message TEXT,
+    timeelapsed DECIMAL(10, 4),
+    prioritylevel VARCHAR(255)
+);
+
+
+
+=>  SL4J
+    ===== Simple Logging facade for java
+
+=> Logger levels of SL4J are  
+	debug<info<trace<warn<error
+	
+	 note: trace can be used for "Auditing" activities.
+
+
+=>  dependencies required are
+    =========================
+ <dependency>
+ 	<groupId>org.slf4j</groupId>
+ 	<artifactId>slf4j-api</artifactId>
+ 	<version>2.0.7</version>
+ </dependency>
+
+ <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+ <dependency>
+ 	<groupId>org.slf4j</groupId>
+ 	<artifactId>slf4j-simple</artifactId>
+ 	<version>2.0.7</version>
+ 	<scope>test</scope>
+ </dependency>
+
+ <dependency> 
+ 	<groupId>org.slf4j</groupId>
+ 	<artifactId>slf4j-log4j12</artifactId>
+<!-- this dependency to specify that we are working with slf4j if you want to work with logback change this dependency to specific logback dependency  -->
+ 	<version>2.0.7</version>
+ </dependency>
+
+
+
+=>  Note: SL4j generates the log messages by using log4j setup internally based on the instructions collected from log4j.properties
+      	  Springboot internally uses SL4j with log4j to generate the messages ,we can control these messages through "application.properties" file.
+
+
+============================================================================================================================
+14_04_2023_spring_boot_logging_classnotes.pdf
+============================================================================================================================
+
+=>SpringBoot using Log4j
+
+=>  Logger levels of SL4J are  
+ 	debug<info<trace<warn<error
+
+=> Required Dependency To Work with spring boot sl4j logging by default it is available in Spring boot projects don't include the dependency again
+
+	<dependency>
+ 		<groupId>org.springframework.boot</groupId>
+ 		<artifactId>spring-boot-starter</artifactId>
+  	</dependency>
+
+=> Using file as the appenders to record the log messages
+
+=> Integrating SpringBoot SL4J using Log4j2
+
+=> Working with console appender Keep log4j2-spring.xml file in src/main/resources
+
+=> Working with RollingFileAppender and PatternLayout Keep log4j2-spring.xml file in src/main/resources
+
+=> Working with DailyRollingFileAppender and PatternLayout Keep log4j2-spring.xml file in src/main/resources
+
+
+
+
+
+
+
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+
+

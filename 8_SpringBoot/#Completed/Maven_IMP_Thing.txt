@@ -1,0 +1,200 @@
+===================================================
+04_04_maven_class_notes.pdf AND Maven Life Cycle
+===================================================
+
+=> What is build process?
+
+=> Core Java Project build process
+ 
+=> limitations of batch files
+
+=> Key Features of maven
+
+=> Archetypes[Project templates]
+	1. maven-archetype-QuickStart[for standalone projects]
+  	2. maven-archetype-webapp[for web applications]
+
+=>  Maven can be build in 2 ways
+ 	a. In command line mode
+ 	b. From IDE Like Eclipse,Intelij,Netbeans,Eclipselink,....
+
+=>  To keep maven in our system
+
+=> Maven repositories
+
+=> In Maven everything (jar/plugin/project) is identified with 3 details[GAV]
+
+=> Repositories
+	a. Central Repositories(given by maven people)
+	b. Local  Repositories(In every machine where maven is required)
+	c. Remote  Repositories(Give by third party companies)
+
+=>  Creating an Project using MAVEN in CLI Mode
+
+=> 	In the command prompt execute the following life cycle actions
+ 		a. mvn package
+ 	» Generates jar files in target folder having <projectname>-ver. jar file
+ 		b. mvn clean
+ 	»  Cleans the project .. deletes target folder
+ 		c. mvn clean package
+ 	» Cleans the project and also creates jar file with latest code
+ 		d. mvn compile
+ 	>> compile the project code and generate the .class file in target folder.
+ 		To run jar file App manually
+
+=>  The Maven Life cycles are [Refer Image]
+ 	a. clean(3 phases)
+ 	b. default(23 phases)
+ 	c. site (4 phases)
+
+
+=> Maven can't execute the java app directly becoz there is no life cycle phases for that.
+  	To use that we need to use an extra plugin called :: exec-maven-plugin
+ <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+ 	<id>ArithmeticApp</id>
+ 	<phase>package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>in.ineuron.MathApp</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+ </build>
+
+
+
+
+
+
+
+
+
+
+====================================================================
+05_04_2023_maven_class_notes.pdf AND 05_04_2023_maven_work_flow.pdf
+====================================================================
+
+=> Creating a standalone maven project in Non-Interactive Mode
+ 
+=> Working in eclipse to create a maven standalone project
+
+	Maven Project
+ 		=> Dont select checkbox create a simple project
+ 		=> Choose archetype as maven-archetype-quickstart (select version-1.4 from org.apache.maven)
+ 		=> provide 
+			groupid : pwskills
+ 			artifactid: MavenProject1
+ 			version : 1.0
+ 			MavenProject1
+   				|=> src/main/java
+ 					|=> in.pwskills.JdbcSelectApp(main code)
+   				|=> src/main/test
+ 					|=> in.pwskills.AppTest.java
+   				|=> pom.xml(mysql-connectector-java.jar)
+
+
+
+=> Execution
+	-> right click on project-> run=> maven build => type in goals as exec:java and click on run
+
+
+=> Maven features
+	1. properties
+		In pom.xml file we use properties feature to link to the version of Spring module version
+	2. exclusion
+		In pom.xml file we can use exclusion to exclude particular dependant jar without excluding a main jar
+
+=>  Working with repositories
+
+	1. local repository
+ 	2. central repository
+ 	3. remote repository
+ 		refer: MavenProj1
+
+=>  Maven Inheritance
+	In one project pom.xml, we can add <parent> tag having other project info like 
+		<groupld>, <artifactld> and <version> to get other project dependencies and plugins.
+
+
+=======================================================================
+06_04_2023_maven_class_notes.pdf 
+=======================================================================
+
+=> Maven for webapps
+	archetype => maven-archetype-webapp
+ 	zipping   => war
+
+=> Creating a maven project for web applications
+
+=> Usage of one Maven project code in another Maven project code
+	mvn install => it creates the jar for the entire class and keeping the jar file in the local repository.  [under .m2 folder-->check for groupId]
+
+=> List out the dependency scope in Maven?
+
+	The various dependency scope used in Maven are:
+		Compile:
+		Provided: 
+		Runtime:
+		Test:
+		System:
+		Import:
+
+
+
+
+
+
+
+
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+
+
+============================================================================================================================
+
+============================================================================================================================
+
+

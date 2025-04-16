@@ -1,0 +1,426 @@
+======================================================
+24_04_2023_SpringRest_class_notes.pdf
+======================================================
+note: image file is missing so once go to video and try to cover it in short span
+
+=> SpringRest and Microservices[Pre-Requisite:: SpringBoot and SpringMVC]
+
+=> Distributed Applications
+	Using java we can develop several types of applications
+ 		a. CUI and GUI based applications
+ 		b. Web applications
+ 		c. Distributed applications.
+
+=> CUI and GUI based applications
+
+Note: If we build CUI/GUI applications every user should install these apps in their machine to use.
+ 	Standalone applications are specific to machine.
+
+=>  Web applications
+	The applications which runs over the internet is called "webapplications".
+
+=> Distributed applications
+	We prefer using WebServices and RestFulSevices to develop "DistributedApplications"
+	egg: browser=========> flipkart============> PayPal ===========> visa/Master/upi ============> SBI/ICICI
+    			webapps       distributed         distributed                  distributed
+
+=> Technologies available to build Distributed applications are
+	a. CORBA
+  	b. RMI
+  	c. EJB
+  	d. Webservices[Soap and XML]
+  	e. Restful services(RepresentationStateful Services)[SpringRest]
+
+
+============================================================================
+25_04_2023_spring_rest_class_notes.pdf AND 25_04_2023_spring_rest_images.pdf
+============================================================================
+
+=> SpringRest ====> SpringMVC++
+
+	Note: 	Webapplication ====> Customer 2 Business
+ 		DistributedApplications => Business 2 Business
+
+=> Technologies available to build Distributed applications are
+  	a. CORBA
+  	b. RMI
+  	c. EJB
+  	d. Webservices
+  	e. Restful services(RepresentationStateful Services)
+=> a. RMI
+     1. It stands for Remote Method Invocation, It is a part of JDK s/w only given by SUNMS.
+
+=>  b. EJB
+     1. It stands for Enterprise Java Beans.
+     2. It is given by SUNMS
+     3. Enhanced version of RMI
+=> c. CORBA
+     1. It stands for Common Object Request Broker Architecture.
+     2. It is a specification which is implemented using IDL(Interface Definition Language)
+
+=> To support Interopability Sun Microsystem released one Api called "JAX-RPC".
+ 	JAX-RPC(Java API for Xml - Remote Procedural Call) Api is built on the specification of B.P.1.0(WSI organization)
+
+=> WSI(WSI organization) -> WebServices Interoperability
+
+=> W.r.t B.P.1.1 specification SUN Microsystem released JAX-WS Api(Java Api for XML - WebServices)
+
+=> We can develop webservices in 2 ways
+ a. JAX-RPC(it is outdated because of xml)
+ b. JAX-WS(It is good because of annotation approach)
+
+=> WebServices in java can be developed in 2 ways
+ 	a. JAX-RPC(Java API for XML - Remote Procedure calls)
+ 	Implementation are 
+		a. Sun Implementation(SI)
+ 		b. Apache Axis
+ 		c. IBM WebSphere
+ 		d. Oracle WebLogic etc....
+
+ 	JAX-RPC Api follows rules and guidelines provided by B.P.1.0 specification(WS-I => Webservices Interoperability)
+ 	
+	b. JAX-WS(Java API For XML - WebServices)
+ 	Implementation are
+ 		a. Reference Implementations (RI)
+ 		b. Apache Axis2
+ 		c. Apache CXF
+ 		d. Oracle WebLogic
+ 		e. IBM WebSphere etc...
+
+ 	JAX-WS Api follows rules and guidelines provided by B.P.1.1 specification(WS-I => Webservices Interoperability)
+
+
+Note: If we develop a webservice using JAX-RPC or JAX-WS then that webservice is called as "SOAP Based WebServices".
+ 	SOAP(Simple Object Access Protocol) Webservice is called as "Big Services".
+
+=> RoyFielding identified few problems in B.P.1.1 specification, so SunMicroSystem released one Api called "JAX-RS" Api
+ 	JAX-RS (Java API For - Restful Services)
+  		a. Jersey implementation(Sun)
+  		b. Rest Easy implementation( JBoss)
+
+=> WebServices
+	It is a distributed technology which is used to develop distributed applications with Interoperability.
+=> What is Interoperability?
+	Irrespective of the platform and the Irrespective of the programming language, if two applications are communicating then those applications are called as "Interoperable applications".
+ 		egg: java   -------> python
+    		python -------> .NET
+    		.NET   -------> python
+
+=> WebServices Architecture
+
+   In the world of webservices we have 2 parties
+	a. Provider
+	b. Consumer
+
+ Note: Key players when we build webservices
+  1. Provider
+  2. WSDL : WebServices Description Language
+  3. UDDI : Universal Discovery Description Language
+  4. Consumer
+  5. SOAP : Simple Object Access Protocol
+
+NOTE: **************** For WebServices Introduction Refer Notes Once  ********************************
+
+=> REST Architecture [Refer notes once ]
+========================================
+2 Actors are involved here
+	a. Resource
+ 		It provides business services to other applications.
+ 	b. Client
+		It access business services from other applications.
+
+
+=>  REST COMPONENTS
+	1. Resource( REST Resource)
+   	2. WADL /Swagger
+   	3. XML/JSON/Text/Yml
+   	4. Client
+   	5. Postman(To test our application)
+
+=>SUN Microsystem also supported RoyFielding principle and they released on API called "JAX-RS".
+ (Java API for XML -RestFulSevices)  
+ Implementation of JAX-RS is "Jersey(SUN),Rest Easy (Jboss)".
+ Both Jersey and Rest Easy supports for both Rest Resource Development and Rest Client Development.
+
+Note: Spring MVC jars are sufficient to develop Restful Services (additional jars are not required).
+
+=>  Rest Architecture Principles
+	1. Unique Address
+ 	2. Uniform Constraint interfaces
+ 	3. Media Representation
+ 	4. Communication Stateless
+ 	5. Hateos
+=> Building First  Restful application using SpringBoot + Rest[refer notes]
+
+
+********[images file]******************
+-> distributed applications architecture 
+-> webservices And Web Services Architecture
+-> Soap Architecture 
+-> Rest Architecture
+-> Swagger Api ***
+-> HTTP Status Codes
+-> HTTP Response Message
+
+============================================================================
+26_04_2023_spring_boot_classnotes.pdf AND  26_04_2023_spring_rest_images.pdf
+============================================================================
+
+=> Note:: @RestController ===> @Controller + @ResponseBody
+
+=> ResponseEntity<T>(return type of handler methods) 
+	indicates that the generated output should directly go via DispatcherServlet to the RestClient.
+=> RestFulServices
+ 	1. RestResource
+ 	2. RestClient
+=> What is RestResource?
+
+=> What is RestClient?
+
+
+=> HttpMethods
+ 	1.GET -----> Selecting a Record from Database(Read operation)
+ 	2.POST ----> For Creating a Record(Insert Operation)
+ 	3.PUT  ----> For Updating a Record(Update Operation)
+	4.DELETE --> For Deleting a Record(Delete Operation)
+ 	5.PATCH  --> For Updating a Record(Update Operation)
+ 	6.TRACE
+ 	7.HEAD
+ 	8.OPTIONS
+ 	Note:: PUT for Complete updating / modification of Record.
+ 	       PATCH for Partial modification of Record.
+
+=> To send the request along with the data we need to use
+	a. Query parameter
+	b. Path parameter
+
+=> Note:
+  @RequestParam -> In Spring framework to hold query parameters(http://localhost:9999/test?name=sachin&courseId=10)
+  @PathVariable -> In Spring framework to send the data from client to server(/name/{courseId})
+  @PathParam    -> This annotation is not from Spring Framework, it is from JAX-RS.
+
+
+=> Difference b/w QueryParameter and PathParameter?
+
+************** images File *************
+-> request type + URL Examples
+-> postman and endpoint Example
+
+
+========================================
+28_04_2023_spring_rest_class_notes.pdf
+========================================
+
+=> JSON :: JavaScript Object Notation
+
+=> To convert the data from Json/Java or from Java/JSON we take the help of Api called "Jackson" Api.
+
+=> Note:: To convert JSON to POJO Object internally jackson-api calls "setXXXX()" and binds the value to java Properties.
+  	{
+		"id" : 10  ===setXXXX()=====> setId(10)
+	}
+
+ To Convert Pojo to JSON, internally jackson-api calls "getXXXX()" and binds to Json Object(K,V)
+
+=> Getting the data from Json into our application
+=> Sending the response from the application as JSON
+
+
+=> Working with RestApi to send Json as the response
+
+=>  Getting the Data from the Json | Xml to java application 
+
+Refer Notes for more clarity on how to get the data from Json to java and java To Json 
+
+
+
+============================================================================
+29_04_2023_spring_rest_classnotes.pdf AND 29_04_2023_spring_rest_images.pdf
+===========================================================================
+
+=> Usage of DEV-tools
+
+=> Project of TicketManagement System
+	refer:: SpringRest-06-TicketManagementApp
+=> SpringRest/SpringMVC is having Predefined Controller to handle the Exceptions/ HttpErrors which is gives default whitelable error pages.
+
+=> Note:: @RestControllerAdvice =>@ControllerAdvice+ @ReponseBody+ @Component
+
+=> Exception Handling the Spring Boot Using by Using the @RestControllerAdvice
+
+=> GlobalExceptionHandler in SpringRest
+	 refer:: SpringRest-07-TicketManagementAppErrorResponseApp
+
+=>  In the Exception handling project he has showed how to pass the xml from the postman to our application in 
+			SpringRest-07-TicketManagementAppErrorResponseApp App
+
+
+Image File
+==========
+
+=> TicketManagement Restful app Structure Creating the EndPoints 
+=> ***** VVVIMP   Exception Hierarchy in SpringBoot
+
+
+==============================================================================
+30_04_2023_spring_rest_class_notes.pdf and 30_04_2023_spring_rest_images.pdf
+==============================================================================
+
+
+=> API Creation / Development
+
+
+Note::
+ -> API(CoreJava, Advanced Java, Framework like hibernate, spring, SpringBoot) Collection of .class file zipped in the form of jar and given to the end-users
+ -> RestApi(Generating the RestEndPoints to establish cross communication b/w 2 programs where programs can be of same language/different language)
+
+
+=> Endpoints:: Providing multiple details or collection of details that is required to call methods/operations of RestController from ClientApp or to send the request from different tools like POSTMAN is called "ENDPOINTS".
+	Ex: refer Notes
+
+
+=> API Documentation
+ 
+
+=> After developing REST Apis we can provide API documentation for RestApi in the following ways
+ 	a. Using separate text docs
+ 	b. Using API documentation comments and Javadoc tool
+ 	c. Using Swagger/Swagger API(Creates Responsive API Documentation)
+ 	d. OpenAPI(it is an alternative to Swagger, but still companies are using Swagger only)
+
+=> SwaggerAPI
+
+=>  Procedure to work with Swagger Api
+
+
+=> Developing Consumer App using RestTemplate
+	
+=>  Note:: Do not forget Webservices is given to link different apps that are developed either in same language or in different language and running in same server or different server belonging to same machine or different machine.
+
+******** Images File ***************
+
+=> Swagger Api images
+
+=> RestTemplate Examples and work flow
+
+=> Distributed Application Communication
+
+
+
+
+==================================================================================
+01_05_2023_spring_rest_notes.pdf AND 01_05_2023_spring_rest_images.pdf
+==================================================================================
+
+=> Working with RestTemplate
+
+=> Instead of calling xxxForEntity as per the request methods we can use single exchange(,,) for all operations
+
+=>  Syntax of exchange()	
+	 public <T> ResponseEntity<T> exchange(
+						String URL,
+						HttpMethods method,
+						HttpEntity<?> requestEntity,
+						Class<T> response Type,
+						Object... Uri Variables 
+					)throws RestClientException
+
+Note: 	This method is an alternative to getForEntity(), postForEntity(),......
+  	RestTemplate supports synchronous communication.
+  	RestTemplate introduced in Spring3.X version
+       	Internally RestTemplate uses java.net connection to send HTTP Request
+
+=>  WebClient ****  It is introduced from Spring5.X
+	It supports for both Synchronous and Asynchronous request
+ 	To use WebClient, SpringBoot has provided a starter called "SpringWebFlux".
+
+=> Develop a REST API with HATEOAS ********8
+
+*************Images File************ 
+
+=> RestTemplate getForEntity() and postForEntityMethods()
+=> RestTemplate exchange() method
+=> WebClient Synchronous and asynchronous Workflow And Understanding the WebClient
+=> Everything about WebClient sample projects structure
+=> Hateos Project Structure and Output sample
+
+========================================================================================
+02_05_2-23_spring_data_jpa_classnotes.pdf AND 02_05_2-23_spring_data_jpa_images.pdf[POC]
+========================================================================================
+Embedded :: By default it would be a part of software.
+Embedded Database :: 	When running the application(In JRE it would available)
+ 			Once the application stops then Database Memory would be 
+			taken away from JRE.
+=> For POC(Proof of Concept) by default SpringBoot supports a database called "H2".
+
+=> Working with Embedded Database[Default port of the Embedded h2 database is the port which is used for running applications]
+
+
+=>  Embedded Database H2
+
+=>  Working with PostgreSQL[PortNo:: 5432]
+
+*********** Image File ****************
+
+=> About H2 Database and project 
+=> About PostgreSQL and Project
+
+===================================================================================
+04_05_2023_spring_data_jpa_classnotes.pdf AND 04_05_2023_spring_data_jpa_images.pdf
+===================================================================================
+=>  Multiple DB Integration
+	SpringBoot In autoconfiguration style, we can make SpringBoot to communicate with Only one Database
+=> How to connect with Multiple databases?
+  To connect with Multiple  databases, We need to write the code in Spring Style(Java Based Configuration)
+
+=> Configuration to get a data Source object 
+
+=> Association in SpringDataJPA
+
+=> Need of keeping Tables in association
+	Solution2::Take DB tables to maintain multiple entities info and keep them in relationship using FK(Foreign Key Column) Advantages
+
+
+=> SpringDataJPA supports 4 types of Association
+ 	a. One to One
+ 	b. One to Many
+ 	c. Many to One
+ 	d. Many to Many
+
+=>  Association in SpringDataJPA can be implemented in 2 modes
+	a. Unidirectional Association[ Only Parent to Child or Child to Parent ]
+	b. Bidirectional Association[ Both Parent to Child or Child to Parent ]
+
+=> Association in SpringDataJPA can be build in Entity class in 2 ways
+	a. Using  Reference type properties in Composition
+	b. Using Collection type properties in Composition
+=> Cascading in Association
+
+==============================================
+05_05_2023_springdatajpa_classnotes.pdf
+==============================================
+
+=> Joins
+
+ Syntax::
+  select <parent class properties>,<child class properties> from 
+<parent class><alias name> <join type> <parent class HAS-A property> <alias name> <additional condition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

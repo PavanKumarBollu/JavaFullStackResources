@@ -12,6 +12,7 @@
 	<!-- Configuring the Target bean -->
 	<bean id="fpkt" class="in.ineuron.comp.Flipkart" autowire="byType">
 		<property name="discount" value="30" />
+		
 	</bean>
 
 </beans>

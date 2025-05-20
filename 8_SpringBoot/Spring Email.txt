@@ -1,0 +1,39 @@
+=======================================================================
+05_05_2023_microservices_session.pdf AND 05_05_2023_spring_sessions.pdf
+=======================================================================
+=> Sending Email using Spring Boot
+ 
+=> Steps to develop Spring boot application to send Email
+
+ 1. Create spring boot application with below dependencies
+ 		a. spring-boot-starter-web
+ 		b. spring-boot-starter-mail
+ 2. Configure below properties
+ 		server.port 
+		smtp properties
+note: Here we are using Gmail SMTP properties for practice purpose, In company they will share SMTP properties for use.
+
+=> 4. Create Email Service Class with the required methods to send mail(we will use Spring Provided JavaMailSender to send emails)
+=> 5. Create RestController method to accept the request(This method will call Email Service class method to send mail)
+=> 6. Run boot application and Test it.
+
+ application.properites
+==========================
+ #Properties to tell the mail protocol vendor
+ spring.mail.host=smtp.gmail.com
+ spring.mail.port=587
+ #Actual username, password of sender
+ spring.mail.username=username
+ spring.mail.password=(password generated)
+ #Property to trigger smtp
+ spring.mail.properties.mail.smtp.auth=false
+ spring.mail.properties.mail.smtp.starttls.enable=true
+ spring.mail.properties.mail.smtp.starttls.required = true
+
+
+
+
+
+************ image file ***************
+
+=> mail Changes to send the mail

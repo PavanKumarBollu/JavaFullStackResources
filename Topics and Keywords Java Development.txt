@@ -1,0 +1,354 @@
+Keywords
+========
+
+
+CoreJava
+========
+
+Main method
+Identifiers
+Reserved keywords
+Data types
+Increments and Decrement operators
+Operators
+Conditionals
+Switch case
+Loops
+Patten Programs
+classes and objects
+JVM
+Stack and Heap
+Arrays
+Methods
+Linear Search, Binary Search, bubble sort
+Strings, Mutable string
+Encapsulation
+Constructors, This() vs This
+Static Keyword, Static block
+Inheritance
+Inherited vs overridden vs Specialized
+Super, Final Keyword
+Polymorphism 
+abstract keyword
+Has a relationship
+Dependency Injections
+Inner class
+interface
+Wrapper classes
+Var Argus
+New vs new Instances()
+Import statements
+Functional interface
+Lambda Expression
+Exception Handling
+Multi threading
+Collections***
+Interface new Features(67)
+Generics
+Enumerations
+Comparators vs Comparable
+Functional Interface
+stream API ***
+File operations
+Serialization and deserialization
+
+SQL
+====
+
+
+
+
+JDBC
+====
+
+
+
+Servlets
+========
+HTTP Request and HTTP Response
+Servlets creation using annotations
+HTTP Servlets Request
+Servlets config
+Servlets Context
+Load and startup
+Types of Scoops
+Hikaricp
+Request Dissipations
+Connection pulling using Hikaricp
+Session tracking
+welcome file list
+Private area and public area in web application
+
+
+JSP
+====
+JSP Architecture
+JSP Life cycle actions
+JSP Directives
+JSP Implicit Objects
+JSP Scripting elements
+JSP actions and Scoops
+JSP Custom Actions
+
+
+JSTI Library
+============
+
+
+
+Hibernate
+=========
+introduction to ORM tool
+Hibernate Architecture
+Configuration Files
+hibernate CRUD Operations
+Hibernate configuration using pure java, properties, xml approach, 
+Generators in Hibernate
+Jpa Generators, Custom Generators in MySQL
+Date and Time Insertion, Object Versioning 
+Time Stamping, 
+Connection Polling
+Interaction with Multiple db,
+Bulk Operations in Hibernate, 
+
+
+
+
+
+
+
+
+
+Framework
+=========
+Spring 
+=======
+Spring IOC Container
+
+Dependency Injections
+	Setter Injection 
+	Constructor Injection
+	Field Injection
+Bean Factory (I)
+Application Context (I)
+Constructor Injection using name, type, index Attribute using xml
+Cyclic Dependency******
+Dependency injection using xml and properties file
+Collection Injection,
+<Import resource = ""/>
+Null injection 
+Bean Inheritance
+Autowiring using primary, autowire-candidate = false;
+@Autowired
+@Component
+@Qualifier
+@Lazy
+@Scopr
+@Service
+
+Stereo Type Annotation
+Spring Web Mvc
+Spring ORM Intergration Using XML And Performing Layer Approach CRUD operation of Hibernate Template Class.
+
+Springboot
+==========
+
+@SpringBootApplication
+STS
+working with spring.Io initializer
+Spring Boot Datasource
+@Value
+@ConfigurationProperties
+Difference Between YML and Properties File
+Injecting List, Set, Map, has-a property
+Spring Bean
+Profiles In Spring Boot
+Project Profiles Using RealTime DI
+Spring Jdbc using xml And Spring Boot Approach
+Usage of RowMapper
+springBoot Jdbc Using Named ParametersJDbc Template,
+Calling Stored Procedure and setting the values using map and other types
+Spring data JPA using SpringBoot CrudRepository ANd PaggingAndSortingRepository****
+Spring Boot Mongo DB Performing CRUD Operations
+Spring Boot MVC 
+working with Request Path and controller methods
+RequestMapping @model Attribute
+Databinding[one way two way]
+Data Rendering 
+Spring Boot MVc Project Using JSP Thymleaf
+
+
+
+Spring Rest
+===========
+Difference Between Webservices Vs Restful Services
+Implementation of JAX-RS 
+Usage of SpringRest To Build RestAPIs,
+need of Annotation Called @RestController,@Controller
+@ResponseBody
+Spring AOP and it's Annotations like
+@Aspest @Pointcut
+@Joinpoint
+@Before
+@After
+Spring Rest Usage of postman Tool to send the get post put delete request
+@RequestParam, @PathVariable and Its Difference
+
+Writing point cut Expression
+Spring rest using @RequestParam and ResponseEntity<T>
+SpringRest TicketManagement using SpringRest, Testing With Postman Tool
+Working With GlobalExceptionHandler
+
+Integration of swagger, working with RestTemplate, Sending different type of response
+Spring rest using WebClient sending both synchronous and non synchronous Request in both get and post mode
+working with Hateos feature
+Usage of the Spring AOP in Realtime Application
+@Around and Different Types of Runners 
+Springboot runner Application runner vs Command Line Runner 
+
+spring Data Jpa for multiple DB Configuration and working with bi-directional mapping
+Executing different types of joins usage of cascading and fetch type
+
+
+Spring Microservices
+====================
+
+Springboot + mail Integration
+Usage of monolithic vs microservice Architecture
+Microservices Challenges Feign Client 
+StockAPI Project
+
+Integration of multiple Microservices, Actuators
+Spring cloud configuration, hysticcircuit-breaker
+Load Balancer at client side using ribbonclient
+Distrubuted Loggging using sluth and zipkin server working with redisCache and integration with swagger api
+Spring boot message broker(Apacke-kafka),
+Spring Reactive Programming (mono and flux Objects)
+
+Docker and Kubernetes
+======================
+
+
+
+Spring Security
+================
+Basic Authentication and Springboot with jdbc Authentication 
+Inmemory authentication and spring security using oAuth2 
+Spring security using datajpa 
+Registration for users and performing authentication by customizing the page
+spring security for authentication and authorization for wrbapp's using datajpa
+springOauthauthentication using Facebook Login for restapi's 
+working with stateless authentication and stateful authentication , spring security using jwt spring security using facebook OauthLogin
+
+
+JUnit
+=====
+JUnit with maven
+JUnit Advanced topic
+HTTP Unit For Testing Webapplications
+Mockito, Solution to CSRF using Webapplication and need of @Crossorigin Annotation
+
+
+
+React Integration 
+==================
+
+Types of JDBC Driver
+======================
+
+
+
+
+
+
+
+
+
+Maven
+=====
+Creating maven Projects Using CLI
+Maven Inheritance
+Working with local, central, Remote Repositories
+Standalone Project Creation using Maven
+creating War and Deploying Manually
+Creating Maven Projects for working with servlet, jsp, hibernate,jdbc,jstl,
+Maven Multi Module
+Lombok API usage of Lombok Api in hibernate
+
+
+
+Logging
+========
+
+Log4j 
+Loa4j Using Appender And Layout
+Log4j Setup Using JDBC Environment
+Spring boot Logging using Sl4j spring boot Logging using log4j2
+
+
+Debugging
+=========
+Eclipse Debugging using IDE Debugger
+Debugging for standalone application, Spring Projects And HibernateProjects
+
+
+MongoDB
+=======
+Mongo DB Installation And CRUD Operations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+

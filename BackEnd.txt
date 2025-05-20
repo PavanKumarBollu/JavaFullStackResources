@@ -1,0 +1,218 @@
+BackEnd
+========
+CoreJava
+Collections
+SQL
+Hibernate 
+Spring Core
+Spring AOP
+Spring Beans
+Spring JDBC
+Spring ORM
+Spring Web MVC
+Spring Security
+Spring HATEOAS
+Spring Data Jpa
+SpringJDBC
+SpringMongoDB
+SpringRest
+SwaggerAPI
+RestTemplate and WebClient 
+MonolithArchitecture
+Microservice Architecture 
+Feign Client 
+Actuators
+Spring cloud configuration
+hysticcircuit-breaker
+ribbonclient
+sluth and zipkin server
+redisCache
+Apacke-kafka
+SpringReactive Programming
+oAuth2
+jwt
+Thymleaf
+
+
+Debugging 
+HTML 
+CSS
+JavaScript 
+ReactJs
+
+Postman Tool
+Maven
+STS
+Spring.io
+SL4J 
+LOG4J
+JUnit
+HttpUnit
+Mockito 
+
+
+JDBC
+Servlets
+Jsp
+JSTL
+EL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> 20th March 	SpringCore 	Start
+-> 29th March 	SpringCore 	End
+-> 30th March 	SpringBoot 	Start
+-> 5th 	May 	SpringBoot 	End
+-> 5Th	May 	Microservices 	Start
+-> 11th May 	Microservices 	End
+
+SpringCore
+----------
+SpringCore
+IOCContainer
+DependencyLookup [JNDI]
+SpringBean
+DependencyManagement
+DepnedencyInjection
+ConstructorInjection
+SetterInjection
+CollectionInjection
+NullInjection
+BeanInheritance     
+Autowiring 
+SpringBeanLifeCycle 
+Stereotypeannotations
+
+
+
+Maven
+-----
+Archetypes maven-archetype-quickstart, maven-archetype-webapp
+GAV
+Maven repositories Central Repositories, Local  Repositories, Remote  Repositories
+Maven Life cycles
+Maven Inheritance
+dependency scope
+
+
+
+SL4J and LOG4J
+--------------
+Auditing
+Logger object, Appender object, Layout object
+
+
+
+SpringBoot 
+-----------
+
+SpringBoot
+@Value,  @ConfigurationProperties
+Profiles in SpringBoot
+SpringJDBC (JdbcTemplate, NamedParameterJdbcTemplate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

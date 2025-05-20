@@ -13,15 +13,14 @@ Spring_Core_Important_Things
 Framework is not a new technology, rather it is an abstraction provided on top of technology.
 
 => Spring Overview
-=>Building Applications Using Technology
+=> Building Applications Using Technology
 => Building Applications Using Framework
-=>Building Applications Using Application Framework.
+=> Building Applications Using Application Framework.
 => Distributed Applications
 => Local Client And remote client
 => Spring IOC
 
- Spring    -----> based on configuration details supplied, it will create 
-an object and maintains the object and performs dependency injection.
+ Spring    -----> based on configuration details supplied, it will create an object and maintains the object and performs dependency injection.
 
 
 => Different types of Framework to build application
@@ -35,9 +34,9 @@ an object and maintains the object and performs dependency injection.
 
 =>  Based on the mode of development we do, we have 2 types of framework
  	a. Invasive Framework
-		 eg: Servlet,Struts(1.X)
+		 eg: Servlet, Struts(1.X)
  	b. Non-Invasive Framework
-		 eg: Spring,Hibernate,......
+		 eg: Spring, Hibernate,......
 
 
 => Terminologies
@@ -59,21 +58,19 @@ an object and maintains the object and performs dependency injection.
  Spring Vs Struts
  ----------------
 
- 	Answer. No, Struts will be used to build only webbased application Spring can be used to build any type of application.
+ 	Answer. No, Struts will be used to build only web based application Spring can be used to build any type of application.
 
     		SpringMVC is an alternative to Struts.
 
      Spring vs Hibernate
      ===================
 
- Answer. NO, hibernate is orm framework to build persistence logic Spring has its own orm module through which it promotes abstraction
-
-   	SpringORM, SpringDataJPA is an alternative to hibernate.
+ Answer. NO, hibernate is orm framework to build persistence logic Spring has its own orm module through which it promotes abstraction SpringORM, SpringDataJPA is an alternative to hibernate.
 
     Spring vs JEE(Java Enterprise Edition)
 -------------------------------------------
 
- Answer. No, JEE is a technology which gives api for persistence logic and building webapps  Where as Spring provides an abstraction on top of JEE api's
+ Answer. No, JEE is a technology which gives Api for persistence logic and building webapps  Where as Spring provides an abstraction on top of JEE Apis
  		 
 		SpringJDBC-> JDBC,
 		SpringMVC-> Servlet, JSP
@@ -90,16 +87,17 @@ SpringCore
   		=> These 2 containers perform the following operations
  			a. It manages the SpringBean/Object life cycle
  			b. It performs Dependency Management
-			a. Dependancy LookUp[JNDI]
- 			b. Depenancy Injection[commonly used]
+			a. Dependency Lookup[JNDI]
+ 			b. Dependency Injection[commonly used]
 
 
  SpringApp can be developed in 4 approaches
  	a. XML approach(only used in maintenance project).
  	b. using Annotation driven configuration(XML + Java).
  	c. using java code configuration.(no XML)
- 	d. using Spring boot autodriven configuration.[supported by SpringBoot]
- Different modes of DependancyInjection
+ 	d. using Spring boot auto driven configuration.[supported by SpringBoot]
+
+ Different modes of DepnedencyInjection
  =====================================
  1. Setter Injection.
  2. Constructor injection.
@@ -111,20 +109,20 @@ SpringCore
 
 => What is SpringBean?
 
-	Any Java class(PreDefined/userDefined/ThirdParty api) whose object is created and  managed by Spring container is called "SpringBean".
+	Any Java class(Predefined/user Defined/Third-party Api) whose object is created and  managed by Spring container is called "SpringBean".
  
-=> Dependancy Management
+=> Dependency Management
  =======================
- => It is the process of assigning dependant object to Target object by loading both the classes and by creating the objects for both the classes.
+ => It is the process of assigning dependent object to Target object by loading both the classes and by creating the objects for both the classes.
  => The classes/objects which uses the other class services is called "Target Class".
- => The classes that acts like helper class to main/target class is called "Dependant class".
+ => The classes that acts like helper class to main/target class is called "Dependent class".
 
- 		eg:: Target class    => Flipkart, Vehicle,   
+ 		egg:: Target class    => Flipkart, Vehicle,   
 			Student,      Mobile
- 			CourseMaterial,  SIM
+ 			Course Material,  SIM
 => 1. Setter Injection.
-     Dependant class => DTDC    , Engine , 
-=> It is the process of assigning dependant object to Target object by loading both the classes and by creating the objects for both the classes and injecting the Dependent object to Target Object using Setter is called "Setter Injection".
+     Dependent class => DTDC    , Engine , 
+=> It is the process of assigning dependent object to Target object by loading both the classes and by creating the objects for both the classes and injecting the Dependent object to Target Object using Setter is called "Setter Injection".
 
 
 
@@ -140,7 +138,7 @@ SpringCore
 
 => Setter Injection
 
-=> What is the difference b/w FileSystemResource and ClassPathResource?
+=> What is the difference b/w FilesystemResource and ClassPathResource?
  
 
 => Constructor Injection
@@ -237,10 +235,9 @@ SpringCore
 
 =>  Assignment Project with following Specifications
 		
-		Design a layered approach application to perform CRUD opearation on database called  Employee using SpringCore Concepts 
-		to be used are 
+		Design a layered approach application to perform CRUD opearation on database called  Employee using SpringCore Concepts to be used are 
 			a. Properties file injection
- 			b. use BeanInheritane and work with hikaricp
+ 			b. use BeanInheritance and work with hikaricp
  			c. use Collection injection
  			d. use VO,BO,DTO approach
  			a. Employee => eid, ename, eage, eaddress 
@@ -273,21 +270,21 @@ SpringCore
 
 => Bean alias
 
-=> AutoWiring
+=> Autowiring
 
 	Assigning the dependent class object to target class object is called "Dependency injection" / "AutoWiring".
 
-	AutoWiring can be done in 2 ways
-		a. Explicit AutoWiring / Manual Injection
+	Autowiring can be done in 2 ways
+		a. Explicit Autowiring / Manual Injection
  			a. <property name='' ref=''/>
  			b. <constructor-arg name='' ref=''/>
- 		b. AutoWiring / AutoInjection
+ 		b. Autowiring / AutoInjection
  			<bean id ='' class='' autowire=''/>
  			autowire will take 3 values
  				a. byName
  				b. byType
  				c. constructor
- 	Note: AutoWiring is very useful because it helps in RAD(Rapid Application Development).
+ 	Note: Autowiring is very useful because it helps in RAD(Rapid Application Development).
 
 => autowire = byName
 
@@ -295,16 +292,16 @@ SpringCore
 
 => autowire = constructor
 
-=> limitations of AutoWiring
+=> limitations of Autowiring
 
 => autowire-candidate = false
 
 
 	 What is the difference b/w autowire and autowire-candidate.?
- 		autowire = no => Disables the AutoWiring, programmer should explicitly perform AutoWiring.
- 		autowire-candidate =false => it makes the spring bean not to participate in AutoWiring.
+ 		autowire = no => Disables the Autowiring, programmer should explicitly perform Autowiring.
+ 		autowire-candidate =false => it makes the spring bean not to participate in Autowiring.
 
- 	 Note: The bean which is disabled through <bean id="" class="" autowire candidate="false"/> can be used for Explicit AutoWiring
+ 	 Note: The bean which is disabled through <bean id="" class="" autowire-candidate="false"/> can be used for Explicit Autowiring
  
 
 =>  Support of I18N(Internationalization) Making our application work for all different locale is called I18N.
@@ -358,7 +355,7 @@ SpringCore
  	4. Spring boot driven configuration 
 
 => Annotation Driven Configuration
-	@Required --> Deprecated not using in real time if you want to use you don't any other choice go for the constructor injection
+	@Required --> Deprecated not using in real time if you want to use you don't have any other choice go for the constructor injection
 	@Autowired 
 
 

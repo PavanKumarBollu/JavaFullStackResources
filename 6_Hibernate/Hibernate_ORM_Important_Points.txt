@@ -1,9 +1,9 @@
 Hibernate ORM
 =============
 
-
-					28_02_2023_hibernate_introduction_images.pdf AND 28_02_2023_hibernate_class_notes.pdf
-					======================================================================================
+======================================================================================
+28_02_2023_hibernate_introduction_images.pdf AND 28_02_2023_hibernate_class_notes.pdf
+======================================================================================
 
 
 => Language Vs Technology Vs Framework
@@ -50,8 +50,8 @@ Hibernate ORM
 	=> b. non-invasive framework
 
 
-					01_03_2023_hibernate_class_notes.pdf AND 01_03_2023_hibernate_images.pdf
-					=========================================================================
+01_03_2023_hibernate_class_notes.pdf AND 01_03_2023_hibernate_images.pdf
+=========================================================================
 
 
 

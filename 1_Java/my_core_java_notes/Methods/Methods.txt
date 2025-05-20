@@ -50,7 +50,7 @@ parameters won't change but the arguments will change.
 
 example:
 
-public void displayStudent(String name, int age)//name and age is the parameters
+public void displayStudent(String name, int age)//name and age are parameters
 {
 	System.out.println("studentName: " + name + " and student age " + age);
 }
@@ -122,7 +122,7 @@ class Demo
 
 
 		Child c1 = new Child();
-		c1.m1();// i am from the parent class
+		c1.m1();// i am from the Child class
 	}
 
 }

@@ -1,0 +1,150 @@
+=> Core & In-Demand Backend Skill score Java
+
+Spring Boot 
+
+Spring Core
+
+Spring Web MVC
+
+Spring Security
+
+Spring Data JPA
+
+Hibernate
+
+Spring REST
+
+Microservice Architecture
+
+Spring Cloud Configuration
+
+Feign Client
+
+OAuth2
+
+JWT
+
+RestTemplate and WebClient
+
+Actuators
+
+Hysterix Circuit Breaker
+
+Ribbon Client
+
+Sleuth and Zipkin Server
+
+Redis Cache
+
+Apache Kafka
+
+Swagger API
+
+Spring Reactive Programming
+
+Spring AOP
+
+Spring Beans
+
+Spring ORM
+
+Spring JDBC
+
+Spring MongoDB
+
+Spring HATEOAS
+
+Monolith Architecture
+
+=> Testing, Debugging & Logging Debugging
+
+JUnit
+
+Mockito
+
+HttpUnit
+
+SLF4J
+
+LOG4J
+
+=> Tools & Platforms
+
+Maven
+
+Postman Tool
+
+STS
+
+Spring.io
+
+=> Frontend & UI
+
+HTML
+
+CSS
+
+JavaScript
+
+ReactJS
+
+Thymeleaf
+
+=> Legacy / Traditional Java EE
+
+JDBC
+
+Servlets
+
+JSP
+
+JSTL
+
+EL
+
+=========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SpringBoot Exception Handling
+SwaggerAPI -> for documentation
+RestTemplate -> for Testing the End Points
+WebClient [SpringWebFlux][reactive Web]
+Hateos-> giving some related to the use accessing the object
+Joins in video 202 video no --> Query Mapping
+
+Api Gateway
+
+actuators 
+
+OpenAPI for documentation --> need to learn
+
+PostgreSQL
+Association in SpringDataJPA 
+
+Reactive Programing 
+mono and flux 
+
+Spring Starter Cloud instead of Zuul Server for the gateway Purpose
+
+jUnit
+
+HttpUnit
+
+Mokito
+
+CSRF

@@ -1,0 +1,273 @@
+Microservices(Architecture) Topics
+ =================================
+ 1.  Difference b/w Monolith and Microservice Architecture
+ 2.  LoadBalancing(ClientSide (Ribbonclient) and ServerSide[LBR])
+ 3.  Eureka Server and DiscoverEureka Client[Netflix provider]
+ 4.  Interservice-Communication(FeignClient) vs Intra-Service Communication[RestTemplate, WebClient]
+ 5.  Actuators
+ 6.  SpringBoot-Admin Server and SpringBoot Admin Client
+ 7.  SpringCloud(Connnecting the microservices to Github)
+ 8.  Api-Gateway(Zuul proxy)
+ 9.  Distrubted logging[Zipkin Server and Sleuth]
+ 10. Caching[RedisCache]
+ 11. CircuitBreaker[Hystric Circuit Breaker]
+ 12. EmbededDatabase[h2]
+ 13. Apache-Kafka Integration
+ 14. Spring-Reactive Programming[Mono and Flux Object]
+ 15. Swagger(Response Testing]	
+
+
+
+
+
+
+
+========================================================================
+05_05_2023_microservices_session.pdf AND 05_05_2023_spring_sessions.pdf
+========================================================================
+
+=> Microservices
+
+=> Monolith Architecture
+	refer : MonolithArchitecure.png
+
+=> Benefits of going for Monolith Architecture
+
+=> Disadvantages of Monolith Architecture
+
+=> LoadBalancers and LoadBalancers Algorithms
+
+=>  How LoadBalancers will distribute the load?
+
+=> Algorithms Used in Load Balancing
+
+=> What is Microservices?
+	refer: image file
+
+
+=> What are the challenges which will be faced by the developers if we are following microservices design pattern in our project?
+
+   	a. Bounded context
+   	b. Lot of configuration 
+   	c. Less visibility
+   	d. Pack of Cards Problem
+
+
+
+
+*************** Images File ********************
+=> MonolithArchitecture
+=> Load Balancer
+=> MonolithArchitecture with load balancer
+=> MonolithArchitecture vs Microservices Architecture
+
+=================================================================================
+06_05_2023_microservices_class_notes.pdf AND 06_05_2023_microservices_images.pdf
+=================================================================================
+=> image file is very much important*******************
+
+
+=> What are the challenges which will be faced by the developers if we are following microservices design pattern in our project?
+
+	a. Bounded context
+   	b. Lot of configuration 
+   	c. Less visibility
+   	d. Pack of Cards Problem
+	 	refer: Challenges of Microservices.png
+
+=>  Advantages of Microservices
+	1. Easy maintenance 
+	2. Faster releases  
+	3. Parallel development 
+	4. Adopting to new technology  
+	5. Easy Scaling
+
+=> Microservices Architecture
+
+	 Note : There is no fixed Microservices Architecture, they would be using as per their comfort and requirement.
+
+=> Generalized Microservice Architecture
+	Microservices Architecture Components
+   	a. Service Registry(Eureka Server)
+   	b. Micro-Services (RestApi's)
+   	c. API Gateway(Zuul proxy)
+
+=>  What is Service Registry?
+	 => We can use Eureka Server as a "Service Registry".
+
+=> What is Services?
+
+=> What is API Gateway?
+	refer: Microservice Architecture.png
+
+=> How to register with Eureka Server?
+
+=> What is the advantages of register the services in Eureka Server?
+	
+=> Developing the Eureka Server(default port no : 8761)
+
+=> Develop First Service as Eureka client
+
+=> Develop Second Service as Eureka Client
+
+	Note: Before running client application, make sure Eureka server project is running
+
+=> If u want 2 change the port no of eureka server, we use the following code
+
+=> Interservice Communication
+	In our project, if one microservice wants to communicate with another microservice then it is called  as 
+	"Inter Service Communication".
+	 Note: Both microservice belongs to same project.
+
+==================================================================================
+07_05_2023_microservices_class_notes.pdf AND 07_05_2023_microservices_images.pdf
+==================================================================================
+
+
+Note: Zull Proxy Server is outdated and now we are using the spring cloud api gateway
+
+sample file 
+# Define the first route (Index 0)
+# A unique and descriptive ID for the route
+spring.cloud.gateway.routes[0].id=stock_service_route 
+
+# Set the target URI
+# Option 1: Using Service Discovery (Recommended for microservices)
+# Uses the service name to find instances via your discovery server (e.g., Eureka)
+spring.cloud.gateway.routes[0].uri=lb://02-Stock-API-Stock-Service
+
+# Option 2: Direct URI (If not using service discovery)
+# spring.cloud.gateway.routes[0].uri=http://localhost:1111/ # Use the direct address
+
+# Predicate: Match incoming requests based on path
+# This matches requests starting with /api/stock/
+spring.cloud.gateway.routes[0].predicates[0]=Path=/api/stock/**
+
+# Filter: Modify the path before forwarding to the target service
+# This removes the /api/stock/ prefix from the path sent to the backend service
+# Example: /api/stock/details -> /details sent to http://localhost:1111/details
+spring.cloud.gateway.routes[0].filters[0]=RewritePath=/api/stock/(?<remaining>.*), /${remaining}
+
+=> APIGateway
+=> Steps to develop API Gateway
+=> Actuators
+=> What is the meaning of Monitoring the application?
+=> Working with actuators
+
+ Note: In order to include all the inbuilt endpoints
+ management.endpoints.web.exposure.include=*
+ management.endpoints.web.exposure.exclude=health,mappings,beans
+
+***************** Image File **********************
+=> Microservice Architecture of Stock Project
+
+=> Zipping the project
+
+=> Microservice Architecture Without APIGateway
+
+=> Microservice Architecture with APIGateway  
+
+==========================================
+08_05_2023_microservices_class_notes.pdf
+==========================================
+
+
+=> Actuators
+
+=> What is the meaning of Monitoring the application?
+  a. Health Check
+  b. Beans Check
+  c. config Props check
+  d. Heap dump
+  e. Thread dump(information about threads)
+  f. Http trace etc.....
+
+=>  shutdown
+   It is a special endpoint.
+   It is used to stop the application.
+   This endpoint by default is in disable state.
+   This endpoint is binded to HTTPPOST request method(we can't send the request from browser due to security reasons)
+ 		management.endpoint.shutdown.enabled=true
+ 	For any application we can send the request in the following ways
+   	POST => http://localhost:9999/actuator/shutdown   in postman tool then the application would be shutdown
+
+=>  SpringBoot Admin Server and Admin Client
+
+	Note: Our RestApi's should be register with Admin Server then our RestApi's  is called "Admin Client".
+
+=> Steps to create Admi Server for our application
+
+=> Steps to create Admi Client for our application
+
+
+=> Spring Cloud Config Server
+
+ 	=> Spring Cloud provided Config server
+ 	=> Config Server is used to externalize the configuration properties from our application.
+ 
+Scenario
+ Microservice -------> Config Server -----> Git Rep
+
+
+=================================================================================
+09_05_2023_microservices_class_notes.pdf AND 09_05_2023_microservices_images.pdf
+=================================================================================
+
+=> SpringCloud Config Server
+
+=> Steps to work with ConfigServer
+ 
+=> Steps to work with ConfigServer client
+
+=> Circuit Breaker
+	refer:: Image File
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================================================================================================
+09_05_2023_microservices_advanced_topics_notes.pdf AND 09_05_2023_microservices_advanced_topics_images.pdf
+==========================================================================================================
+**** Open the Documents *********
+=> Load Balancing at the client side
+=> Distributed Logging 
+=> 
+
+=====================================================================
+11_05_2023_microservices.pdf AND 11_05_2023_microservices_images.pdf
+=====================================================================
+
+=>  MessageBroker
+
+=> Terminologies associated with ApacheKafka
+
+=> Apache Kafka internally uses 4 apis
+
+=> Spring Boot + Apache Kafka Application
+
+=>  Mono and flux Object
+
+=> Steps to create Rest API using Mono and Flux Objects
+
+********** Images File ***********************
+
+=> Zookeeper-Admin
+=> Apache-Kafka
+=> Mono And Flux Objects
+
+
+
+
+
+

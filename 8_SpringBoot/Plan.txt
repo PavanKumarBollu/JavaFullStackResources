@@ -1,0 +1,104 @@
+Companies
+=========
+visa 
+lti mindtree
+deloitte
+micron
+
+=> Resilience4j is the alternative to hysteric 
+
+
+Note: When Watching the videos please complete the notes and imp noting points also 
+
+14-04-2024 [28,29,30thApril]
+===========
+videoNo -> duration
+ 192	-> 3.34	--> Completed 
+ 193	-> 5.05	--> Completed
+ 195 	-> 4.32	--> Completed
+
+
+15-05-2024[1,2,4,5thMay]
+==========
+videoNo -> duration
+ 197	-> 3.3	--> Completed
+ 200	-> 2.3	--> Completed
+ 201	-> 3.3	--> Completed 
+ 202	-> 2.4	--> Watched IMP Joins
+
+16-05-2024[5,6,7thMay]
+==========
+videoNo -> duration
+ 203	-> 3.28	-> Completed	-> Microservices Start
+ 204	-> 5.36 -> Watched
+ 206	-> 5.3	-> Watched
+
+17-05-2024[8,9,9,11thMay]
+==========
+videoNo -> duration
+ 207	-> 2.4	-> Watched 
+ 208 	-> 2.4	-> Watched
+ 209	-> 4.06	-> Watched
+ 210 	-> 3.52	-> Apache-Kafka
+
+18-05-2024[16,23July,12thAugust,16,17Sep]
+==========
+videoNo -> duration
+ 223 	-> 2.12	-> Docker And Kubernetes
+ 224	-> 1.11
+ 225	-> 2.37
+ 226	-> 4.32	-> SpringSecurity
+ 227	-> 4.31	-> OAuth2
+
+19-05-2024[22,23,24thSep]
+=========================
+videoNo -> duration
+
+ 228	-> 3.03
+ 229	-> 4.2
+ 230 	-> 4.22	-> JWT
+
+20-05-2024[27,28,29,30thSep]
+============================
+videoNo -> duration
+ 231	-> 3.06	-> JUnit
+ 232	-> 3.10
+ 233	-> 3.15
+ 234	-> 4.27	-> Mockito
+
+[5,6thOct]
+ 235 	-> 4.09	-> ReactIntegration
+ 236	-> 5.13
+
+
+Plan --- > 2 Interview Level
+=============================
+pending things to learn
+------------------------
+hibernate 
+spring security
+junit
+Mockito
+docker and Kubernetes  
+
+things to keep in mind
+----------------------
+-> Need to know the how much does a 2 years experience guy do the code, contact hostel guys request him to show his work and try to understand the code of different levels
+-> Resume preparation 
+-> project of Edunet story and drama
+-> career gap Story and Drama how to tell the interviewer
+-> Salary Drama 
+-> Revision of all the topics bit by bit and in a day i have to prepare all the topics
+-> apply minimum 10 jobs in a day and make a note of it in excel to keep track 
+
+
+21-05-2024
+============
+
+
+
+
+
+
+
+
